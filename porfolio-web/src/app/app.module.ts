@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { Page404Component } from './components/page404/page404.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TechnologiesComponent } from './components/technologies/technologies.co
     HeaderComponent,
     Page404Component,
     ProjectsComponent,
-    TechnologiesComponent
+    TechnologiesComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
