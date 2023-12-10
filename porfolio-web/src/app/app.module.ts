@@ -8,6 +8,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactComponent } from './components/contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

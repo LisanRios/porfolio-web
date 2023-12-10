@@ -1,0 +1,122 @@
+{
+    "nombre": "Lisandro Rios",
+    "age": "20",
+    "image": "https://pps.whatsapp.net/v/t61.24694-24/362317301_174376545552283_4593553840056302147_n.jpg?ccb=11-4&oh=01_AdTZ9nQjH0gb3T69JQKXeoEizO-NG4VfaUa8yQdn8XajvQ&oe=64FDBD6C&_nc_cat=108",
+    "position": "Programador Web Full Stack Junior",
+    "ubication": "Buenos Aires (Argentina)",
+    "project": 
+    [
+        {
+            "type": "Página Web",
+            "name": "Nombre del proyecto",
+            "date": "00/00/2999",
+            "description": "Este proyecto se encuentra en desarrollo.",
+            "link": "#"
+        }
+    ],
+    "tecnology":
+    [
+        {
+            "icon":"fa-brands fa-html5",
+            "name":"HTML",
+            "nivel": "★★★★★",
+            "description":"HTML, siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web."
+        },
+        {
+            "icon":"fa-brands fa-css3-alt",
+            "name":"CSS",
+            "nivel": "★★★★★",
+            "description":"CSS, es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado."
+        },
+        {
+            "icon":"fa-brands fa-js",
+            "name":"JavaScript",
+            "nivel": "★★★★☆",
+            "description":"JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente tipado y dinámico."
+        },
+        {
+            "icon":"fa-solid fa-code",
+            "name":"PSeInt",
+            "nivel": "★★★★☆",
+            "description":"PSeInt es un software libre educativo multiplataforma dirigido a personas que se inician en la programación.​"
+        },
+        {
+            "icon":"fa-brands fa-git-alt",
+            "name":"Git",
+            "nivel": "★★★★★",
+            "description":"Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente."
+        },
+        {
+            "icon":"fa-brands fa-angular",
+            "name":"Angular",
+            "nivel": "★★★★☆",
+            "description":"Angular es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página."
+        },
+        {
+            "icon":"fa-brands fa-bootstrap",
+            "name":"Boolstrap",
+            "nivel": "★★★★★",
+            "description":"Bootstrap es una biblioteca multiplataforma o conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web."
+        },
+        {
+            "icon":"bx bxl-typescript",
+            "name":"TypeScript",
+            "nivel": "★★★★☆",
+            "description":"TypeScript es un lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft. Es un superconjunto de JavaScript, que esencialmente añade tipos estáticos y objetos basados en clases."
+        },
+        {
+            "icon":"ti ti-brand-mysql",
+            "name":"MySQL",
+            "nivel": "★★★★★",
+            "description":"MySQL es un sistema de gestión de bases de datos relacional desarrollado bajo licencia dual: Licencia pública general/Licencia comercial por Oracle Corporation y está considerada como la base de datos"
+        },
+        {
+            "icon":"fa-brands fa-java",
+            "name":"JAVA",
+            "nivel": "★★★★★",
+            "description":"El lenguaje de programación Java la sintaxis deriva en gran medida de C y C++, pero tiene menos utilidades de bajo nivel que cualquiera de ellos. Las aplicaciones de Java son compiladas a bytecode (clase Java), que puede ejecutarse en cualquier máquina virtual Java (JVM) sin importar la arquitectura de la computadora subyacente."
+        },
+        {
+            "icon":"bx bxl-spring-boot",
+            "name":"Spring Boot",
+            "nivel": "★★★★☆",
+            "description":"Java Spring Boot (Spring Boot) es una herramienta que hace que el desarrollo de aplicaciones web y microservicios con Spring Framework sea más rápido y fácil a través de tres funcionalidades principales: Configuración automática."
+        },
+        {
+            "icon":"bx bxs-copyright",
+            "name":"C",
+            "nivel": "★★☆☆☆",
+            "description":"C es un lenguaje de programación de propósito general​ originalmente desarrollado por Dennis Ritchie entre 1969 y 1972 en los Laboratorios Bell, ​ como evolución del anterior lenguaje B, a su vez basado en BCPL.​​​Al igual que B, es un lenguaje orientado a la implementación de sistemas operativos, concretamente Unix."
+        },
+        {
+            "icon":"bx bxl-c-plus-plus",
+            "name":"C++",
+            "nivel": "★★★☆☆",
+            "description":"C++ es un lenguaje de programación diseñado en 1979 por Bjarne Stroustrup. La intención de su creación fue extender al lenguaje de programación C y añadir mecanismos que permiten la manipulación de objetos. En ese sentido, desde el punto de vista de los lenguajes orientados a objetos, C++ es un lenguaje híbrido."
+        }
+    ],
+    "titule": 
+    [
+        {
+            "type": "Progaramador Web Full Stack",
+            "name": "Argentina Progarama 4.0",
+            "dateInicio": "01/10/2022",
+            "dateFin": "30/05/2023",
+            "description": "Se trata de un programa nacional y federal que tiene como objetivo capacitar a personas en lenguajes y conocimientos sobre programación, testing y habilidades digitales para potenciar la empleabilidad en el sector del software y la tecnología."
+        },
+        {
+            "type": "Técnico Universitario en Programación Informática",
+            "name": "UNSAM (Universidad Nacional de San Martín)",
+            "dateInicio": "01/02/2022",
+            "dateFin": "En curso",
+            "description": "El  objetivo  es  formar  técnicos  en  programación,  que  puedan  desarrollar proyectos de mediana envergadura, determinar las necesidades informáticas de empresas de mediano porte, resolver los problemas  informáticos de las mismas, trabajar en forma independiente en proyectos, acotados a las necesidades de la pequeña y mediana industria, y  colaborar    en estos mismos  temas con profesionales de la informática cuando los proyectos sean de mayor envergadura. El egresado de esta tecnicatura  tendrá  las herramientas  necesarias para poder comprender  las  nuevas  tecnologías  de  programación y hacer uso de ellas eficientemente para resolver problemas."
+        },
+        {
+            "type": "ONE – Oracle Next Education",
+            "name": "ONE – Oracle Next Education",
+            "dateInicio": "03/04/2023",
+            "dateFin": "En curso",
+            "description": "¿Qué es ONE? Oracle Next Education es un programa de educación, empleabilidad e inclusión 100% gratuito, creado para ofrecer formación de calidad a personas que no han contado con oportunidades para continuar sus estudios y desarrollar una carrera profesional."
+        }
+    ]
+}
