@@ -1,18 +1,19 @@
 {
     "nombre": "Lisandro Rios",
     "age": "20",
-    "image": "https://pps.whatsapp.net/v/t61.24694-24/362317301_174376545552283_4593553840056302147_n.jpg?ccb=11-4&oh=01_AdTZ9nQjH0gb3T69JQKXeoEizO-NG4VfaUa8yQdn8XajvQ&oe=64FDBD6C&_nc_cat=108",
+    "foto": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
     "position": "Programador Web Full Stack Junior",
     "ubication": "Buenos Aires (Argentina)",
     "project": 
     [
         {
-            "type": "Página Web",
-            "name": "Nombre del proyecto",
-            "date": "00/00/2999",
-            "description": "Este proyecto se encuentra en desarrollo.",
+            "type": "Videojuego",
+            "name": "Buscawachas",
+            "date": "24/11/2023",
+            "description": "El proyecto denominado “Buscamías” fue desarrollado como parte de la cátedra de Sistemas de Procesamiento de Datos (SPD) para la Universidad Nacional de San Martín (UNSAM). En esta iniciativa, se nos encomendó la creación de un videojuego a elección. Mi equipo y yo optamos por el desafío de diseñar y construir el mencionado juego en lenguaje ensablador.",
+            "lenguajess": "Ensamblador",
             "link": "#"
-        }
+        } 
     ],
     "tecnology":
     [
