@@ -1,0 +1,265 @@
+{
+    "nombre": "Lisandro Rios",
+    "age": "20",
+    "foto": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
+    "position": "Programador Web Full Stack Junior",
+    "ubication": "Buenos Aires (Argentina)",
+    "project": 
+    [
+        {
+            "type": "Pagina Web",
+            "name": "Porfolio Web",
+            "date": "Se Actualiza Constantemente",
+            "image": "https://github.com/LisanRios/porfolio-web/blob/main/Captura%20de%20pantalla%202023-12-11%20112521.png?raw=true",
+            "description": "Mi portafolio web es el espacio donde exhibo mis habilidades de programación, tanto en el desarrollo backend como frontend, además de otros numerosos proyectos. A través de este sitio, doy vida a mis creaciones digitales, demostrando mi pasión por la tecnología y mi capacidad para transformar ideas en soluciones funcionales. Si deseas explorar más acerca de mi trabajo, te invito a visitar mi portafolio en este enlace. 🚀",            
+            "link": "https://github.com/LisanRios/porfolio-web",
+            "lenguaje": [
+                {
+                    "name": "fa-brands fa-angular"
+                },
+                {
+                    "name": "fa-brands fa-bootstrap"
+                },
+                {
+                    "name": "fa-brands fa-css3-alt"
+                },
+                {
+                    "name": "bx bxl-typescript"
+                },
+                {
+                    "name": "ti ti-brand-mysql"
+                },
+                {
+                    "name": "bx bxl-spring-boot"
+                },
+                {
+                    "name": "fa-brands fa-java"
+                }
+            ]
+        }, 
+        {
+            "type": "Pagina Web",
+            "name": "Challenge-Alura-Encriptador",
+            "date": "30/04/2023",
+            "image": "https://github.com/LisanRios/Challenge-Alura-Encriptador/blob/main/Captura%20de%20pantalla%202023-12-11%20110241.png?raw=true",
+            "description": "El proyecto encriptador de Alura ONE es un desafío web que permite encriptar y desencriptar texto. Utiliza HTML, CSS y JavaScript, y emplea expresiones regulares para validar la entrada de texto. La aplicación resultante es totalmente responsiva.",            
+            "link": "https://github.com/LisanRios/Challenge-Alura-Encriptador",
+            "lenguaje": [
+                {
+                    "name": "fa-brands fa-html5"
+                },
+                {
+                    "name": "fa-brands fa-css3-alt"
+                },
+                {
+                    "name": "fa-brands fa-js"
+                }
+            ]
+        }, 
+        {
+            "type": "Robotica",
+            "name": "Arduino-Morse",
+            "date": "05/06/2023",
+            "image": "https://github.com/LisanRios/Arduino-Morse/blob/main/358172839_172667199129487_1108238551401241728_n.jpeg?raw=true",
+            "description": "El proyecto se centró en la creación de un dispositivo Arduino utilizando el lenguaje C. Este dispositivo constaba de una placa Arduino Uno equipada con dos botones (representando los caracteres punto y raya en código Morse) y una pantalla que visualizaba el texto escrito en dicho código.",            
+            "link": "https://github.com/LisanRios/Arduino-Morse",
+            "lenguaje": [
+                {
+                    "name": "bx bxs-copyright"
+                },
+                {
+                    "name": "bx bxl-c-plus-plus"
+                },
+                {
+                    "name": "fa-solid fa-robot"
+                }
+            ]
+        }, 
+        {
+            "type": "Codigo",
+            "name": "Propiedades",
+            "date": "24/11/2023",
+            "image": "https://e1.pxfuel.com/desktop-wallpaper/585/789/desktop-wallpaper-c-programming-language.jpg",
+            "description": "El proyecto se basó en la aplicación del lenguaje de programación C a un problema real de una empresa dedicada al sector inmobiliario. El propósito del proyecto fue crear un sistema informático que permitiera gestionar las propiedades de la empresa de forma eficiente y segura, cumpliendo con todos los requisitos funcionales y no funcionales que se habían establecido previamente. El sistema debía ofrecer funcionalidades como el registro, la búsqueda, la modificación y la eliminación de propiedades, así como la generación de informes y estadísticas.",
+            "link": "https://github.com/LisanRios/Propiedades",
+            "lenguaje": [
+                {
+                    "name": "bx bxs-copyright"
+                },
+                {
+                    "name": "bx bxl-c-plus-plus"
+                },
+                {
+                    "name": "bi bi-filetype-txt"
+                }
+            ]
+        }, 
+        {
+            "type": "Videojuego",
+            "name": "Python Invaders",
+            "date": "24/11/2023",
+            "image": "https://github.com/LisanRios/Python-Invaders/blob/main/TP%20PYTHON%20REEVES_RIOS_SALGUERO_NAVARRO/imagenes/inicio.png?raw=true",
+            "description": "El presente proyecto fue realizado en el marco del trabajo integrador final de la asignatura Laboratorio de Informática 2 (Labo 2) de la Universidad Nacional de San Martín (UNSAM). El objetivo del trabajo consistió en desarrollar un videojuego utilizando el lenguaje de programación Python. Para ello, elegimos el desafío de diseñar y construir un juego de nuestra propia creación.",            
+            "link": "https://github.com/LisanRios/Python-Invaders",
+            "lenguaje": [
+                {
+                    "name": "fa-brands fa-python"
+                }
+            ]
+        }, 
+        {
+            "type": "Videojuego",
+            "name": "Buscawachas",
+            "date": "24/11/2023",
+            "image": "https://raw.githubusercontent.com/LisanRios/Proyecto-Final-SPD/main/test.bmp",
+            "description": "El proyecto “Buscawachas” se llevó a cabo como parte un trabajo integrador final de la cátedra de Sistemas de Procesamiento de Datos (SPD) en la Universidad Nacional de San Martín (UNSAM). Nuestra tarea consistió en desarrollar un videojuego a elección. Optamos por el desafío de diseñar y construir dicho juego utilizando lenguaje ensamblador.",
+            "link": "https://github.com/LisanRios/Proyecto-Final-SPD",
+            "lenguaje": [
+                {
+                    "name": "bi bi-nut"
+                }
+            ]
+        }
+    ],
+    "tecnology":
+    [
+        {
+            "icon":"fa-brands fa-html5",
+            "name":"HTML",
+            "nivel": "★★★★★",
+            "description":"HTML, siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web."
+        },
+        {
+            "icon":"fa-brands fa-css3-alt",
+            "name":"CSS",
+            "nivel": "★★★★★",
+            "description":"CSS, es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado."
+        },
+        {
+            "icon":"fa-brands fa-js",
+            "name":"JavaScript",
+            "nivel": "★★★★☆",
+            "description":"JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente tipado y dinámico."
+        },
+        {
+            "icon":"fa-solid fa-code",
+            "name":"PSeInt",
+            "nivel": "★★★★☆",
+            "description":"PSeInt es un software libre educativo multiplataforma dirigido a personas que se inician en la programación.​"
+        },
+        {
+            "icon":"fa-brands fa-git-alt",
+            "name":"Git",
+            "nivel": "★★★★★",
+            "description":"Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente."
+        },
+        {
+            "icon":"fa-brands fa-angular",
+            "name":"Angular",
+            "nivel": "★★★★☆",
+            "description":"Angular es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página."
+        },
+        {
+            "icon":"fa-brands fa-bootstrap",
+            "name":"Boolstrap",
+            "nivel": "★★★★★",
+            "description":"Bootstrap es una biblioteca multiplataforma o conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web."
+        },
+        {
+            "icon":"bx bxl-typescript",
+            "name":"TypeScript",
+            "nivel": "★★★★☆",
+            "description":"TypeScript es un lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft. Es un superconjunto de JavaScript, que esencialmente añade tipos estáticos y objetos basados en clases."
+        },
+        {
+            "icon":"ti ti-brand-mysql",
+            "name":"MySQL",
+            "nivel": "★★★★★",
+            "description":"MySQL es un sistema de gestión de bases de datos relacional desarrollado bajo licencia dual: Licencia pública general/Licencia comercial por Oracle Corporation y está considerada como la base de datos"
+        },
+        {
+            "icon":"fa-brands fa-java",
+            "name":"JAVA",
+            "nivel": "★★★★★",
+            "description":"El lenguaje de programación Java la sintaxis deriva en gran medida de C y C++, pero tiene menos utilidades de bajo nivel que cualquiera de ellos. Las aplicaciones de Java son compiladas a bytecode (clase Java), que puede ejecutarse en cualquier máquina virtual Java (JVM) sin importar la arquitectura de la computadora subyacente."
+        },
+        {
+            "icon":"bx bxl-spring-boot",
+            "name":"Spring Boot",
+            "nivel": "★★★★☆",
+            "description":"Java Spring Boot (Spring Boot) es una herramienta que hace que el desarrollo de aplicaciones web y microservicios con Spring Framework sea más rápido y fácil a través de tres funcionalidades principales: Configuración automática."
+        },
+        {
+            "icon":"bx bxs-copyright",
+            "name":"C",
+            "nivel": "★★★★★",
+            "description":"C es un lenguaje de programación de propósito general​ originalmente desarrollado por Dennis Ritchie entre 1969 y 1972 en los Laboratorios Bell, ​ como evolución del anterior lenguaje B, a su vez basado en BCPL.​​​Al igual que B, es un lenguaje orientado a la implementación de sistemas operativos, concretamente Unix."
+        },
+        {
+            "icon":"fa-solid fa-file-excel",
+            "name":"Archivos XML (Excel)",
+            "nivel": "★★★★★",
+            "description":".xml (Extensible Markup Language) es el estándar para el intercambio de datos entre dos sistemas y puede ser leído tanto por humanos como por ordenadores. Un simple editor de texto es suficiente para abrir un archivo .xml, pero puede ser más fácil trabajar con una herramienta profesional."
+        },
+        {
+            "icon":"bx bxl-c-plus-plus",
+            "name":"C++",
+            "nivel": "★★★★★",
+            "description":"C++ es un lenguaje de programación diseñado en 1979 por Bjarne Stroustrup. La intención de su creación fue extender al lenguaje de programación C y añadir mecanismos que permiten la manipulación de objetos. En ese sentido, desde el punto de vista de los lenguajes orientados a objetos, C++ es un lenguaje híbrido."
+        },
+        {
+            "icon":"fa-solid fa-robot",
+            "name":"Arduino",
+            "nivel": "★★★★☆",
+            "description":"Arduino es una plataforma de hardware libre, basada en una placa con un microcontrolador y un entorno de desarrollo, diseñada para facilitar el uso de la electrónica en proyectos multidisciplinares."
+        },
+        {
+            "icon":"fa-brands fa-python",
+            "name":"Python",
+            "nivel": "★★★★★",
+            "description":"Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.​ Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional."
+        },
+        {
+            "icon":"bi bi-nut",
+            "name":"Assembly",
+            "nivel": "★★★★☆",
+            "description":"Assembly es un lenguaje de bajo nivel que se utiliza para programar directamente el hardware de la computadora. Es específico para cada tipo de procesador y permite un control detallado sobre el funcionamiento de la máquina."
+        },
+        {
+            "icon":"bi bi-cpu",
+            "name":"Inteligencia Artificial",
+            "nivel": "★★★★★",
+            "description":"La inteligencia artificial (IA) es la simulación de procesos de inteligencia humana por parte de máquinas, especialmente sistemas informáticos. Estos procesos incluyen el aprendizaje (la adquisición de información y reglas para utilizar la información), el razonamiento (usando las reglas para llegar a conclusiones aproximadas o definitivas) y la autocorrección."
+        },
+        {
+            "icon":"fa-brands fa-php",
+            "name":"PHP",
+            "nivel": "★★☆☆☆",
+            "description":"PHP es un popular lenguaje de programación de código abierto que es especialmente adecuado para el desarrollo web y puede ser incrustado en HTML."
+        }
+    ],
+    "titule": 
+    [
+        {
+            "type": "Técnico Universitario en Programación Informática",
+            "name": "Universidad Nacional de San Martin (UNSAM)",
+            "dateInicio": "01/02/2022",
+            "dateFin": "En curso",
+            "description": "Capaz de desarrollar proyectos de mediana envergadura, determinar las  necesidades  informáticas  de  empresas  de  tamaño  medio, solucionar problemas informáticos, trabajar de manera independiente en proyectos acotados a las necesidades de la pequeña y mediana industria, y colaborar en temas informáticos con profesionales cuando los  proyectos  sean  de  mayor  envergadura.  El  egresado  de  esta tecnicatura adquirirá las herramientas necesarias para comprender y utilizar eficientemente las nuevas tecnologías de programación en la resolución de problemas."
+        },
+        {
+            "type": "Programador Web Full Stack",
+            "name": "Argentina Progarama 4.0",
+            "dateInicio": "01/10/2022",
+            "dateFin": "30/05/2023",
+            "description": "Se trata de un programa nacional y federal que tiene como objetivo capacitar  a  personas  en  lenguajes  y  conocimientos  sobre programación,  testing  y  habilidades  digitales  para  potenciar  la empleabilidad  en  el  sector  del  software  y  la  tecnología."
+        },
+        {
+            "type": "ONE",
+            "name": "Oracle Next Education",
+            "dateInicio": "03/04/2023",
+            "dateFin": "28/9/2023",
+            "description": "Oracle Next Education es un programa de educación, empleabilidad e inclusión 100% gratuito, creado para ofrecer formación de calidad a personas que no han contado con oportunidades para continuar sus estudios y desarrollar una carrera profesional."
+        }
+    ]
+}
