@@ -7,13 +7,119 @@
     "project": 
     [
         {
+            "type": "Pagina Web",
+            "name": "Porfolio Web",
+            "date": "Se Actualiza Constantemente",
+            "image": "",
+            "description": "Mi portafolio web es el espacio donde exhibo mis habilidades de programación, tanto en el desarrollo backend como frontend, además de otros numerosos proyectos. A través de este sitio, doy vida a mis creaciones digitales, demostrando mi pasión por la tecnología y mi capacidad para transformar ideas en soluciones funcionales. Si deseas explorar más acerca de mi trabajo, te invito a visitar mi portafolio en este enlace. 🚀",            
+            "link": "https://github.com/LisanRios/porfolio-web",
+            "lenguaje": [
+                {
+                    "name": "fa-brands fa-angular"
+                },
+                {
+                    "name": "fa-brands fa-bootstrap"
+                },
+                {
+                    "name": "fa-brands fa-css3-alt"
+                },
+                {
+                    "name": "bx bxl-typescript"
+                },
+                {
+                    "name": "ti ti-brand-mysql"
+                },
+                {
+                    "name": "bx bxl-spring-boot"
+                },
+                {
+                    "name": "fa-brands fa-java"
+                }
+            ]
+        }, 
+        {
+            "type": "Pagina Web",
+            "name": "Challenge-Alura-Encriptador",
+            "date": "30/04/2023",
+            "image": "https://github.com/LisanRios/Challenge-Alura-Encriptador/blob/main/Captura%20de%20pantalla%202023-12-11%20110241.png?raw=true",
+            "description": "El proyecto encriptador de Alura ONE es un desafío web que permite encriptar y desencriptar texto. Utiliza HTML, CSS y JavaScript, y emplea expresiones regulares para validar la entrada de texto. La aplicación resultante es totalmente responsiva.",            
+            "link": "https://github.com/LisanRios/Challenge-Alura-Encriptador",
+            "lenguaje": [
+                {
+                    "name": "fa-brands fa-html5"
+                },
+                {
+                    "name": "fa-brands fa-css3-alt"
+                },
+                {
+                    "name": "fa-brands fa-js"
+                }
+            ]
+        }, 
+        {
+            "type": "Robotica",
+            "name": "Arduino-Morse",
+            "date": "05/06/2023",
+            "image": "https://logos-download.com/wp-content/uploads/2016/09/Arduino_logo.png",
+            "description": "El proyecto se centró en la creación de un dispositivo Arduino utilizando el lenguaje C. Este dispositivo constaba de una placa Arduino Uno equipada con dos botones (representando los caracteres punto y raya en código Morse) y una pantalla que visualizaba el texto escrito en dicho código.",            
+            "link": "https://github.com/LisanRios/Arduino-Morse",
+            "lenguaje": [
+                {
+                    "name": "fa-solid fa-c"
+                },
+                {
+                    "name": "bx bxl-c-plus-plus"
+                },
+                {
+                    "name": "fa-solid fa-robot"
+                }
+            ]
+        }, 
+        {
+            "type": "Codigo",
+            "name": "Propiedades",
+            "date": "24/11/2023",
+            "image": "https://raw.githubusercontent.com/LisanRios/Proyecto-Final-SPD/main/test.bmp",
+            "description": ".",
+            "link": "https://github.com/LisanRios/Proyecto-Final-SPD",
+            "lenguaje": [
+                {
+                    "name": "fa-solid fa-c"
+                },
+                {
+                    "name": "bx bxl-c-plus-plus"
+                },
+                {
+                    "name": "bi bi-filetype-txt"
+                }
+            ]
+        }, 
+        {
+            "type": "Videojuego",
+            "name": "Python Invaders",
+            "date": "24/11/2023",
+            "image": "https://raw.githubusercontent.com/LisanRios/Proyecto-Final-SPD/main/test.bmp",
+            "description": "El proyecto “Buscawachas” se llevó a cabo como parte un trabajo integrador final de la cátedra de Sistemas de Procesamiento de Datos (SPD) en la Universidad Nacional de San Martín (UNSAM). Nuestra tarea consistió en desarrollar un videojuego a elección. Optamos por el desafío de diseñar y construir dicho juego utilizando lenguaje ensamblador.",
+            "link": "https://github.com/LisanRios/Proyecto-Final-SPD",
+            "lenguaje": [
+                {
+                    "name": "fa-brands fa-python"
+                }
+            ]
+        }, 
+        {
             "type": "Videojuego",
             "name": "Buscawachas",
             "date": "24/11/2023",
-            "description": "El proyecto denominado “Buscamías” fue desarrollado como parte de la cátedra de Sistemas de Procesamiento de Datos (SPD) para la Universidad Nacional de San Martín (UNSAM). En esta iniciativa, se nos encomendó la creación de un videojuego a elección. Mi equipo y yo optamos por el desafío de diseñar y construir el mencionado juego en lenguaje ensablador.",
-            "lenguajess": "Ensamblador",
-            "link": "#"
-        } 
+            "image": "https://raw.githubusercontent.com/LisanRios/Proyecto-Final-SPD/main/test.bmp",
+            "description": "El proyecto “Buscawachas” se llevó a cabo como parte un trabajo integrador final de la cátedra de Sistemas de Procesamiento de Datos (SPD) en la Universidad Nacional de San Martín (UNSAM). Nuestra tarea consistió en desarrollar un videojuego a elección. Optamos por el desafío de diseñar y construir dicho juego utilizando lenguaje ensamblador.",
+            "link": "https://github.com/LisanRios/Proyecto-Final-SPD",
+            "lenguaje": [
+                {
+                    "name": "fa-solid fa-font"
+                }
+            ]
+        }
     ],
     "tecnology":
     [

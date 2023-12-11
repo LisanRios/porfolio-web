@@ -10,6 +10,7 @@ import { PorfolioService } from '../../service/porfolio.service';
 export class ProjectsComponent implements OnInit{
   projectList:any;
   tecnologyList:any;
+  lengList:any;
 
   constructor(private datosPorfolio:PorfolioService) {
   
@@ -18,9 +19,6 @@ export class ProjectsComponent implements OnInit{
   ngOnInit(): void {
     this.datosPorfolio.obtenerDatos().subscribe(data=> {
       this.projectList = data.project;
-    });
-    this.datosPorfolio.obtenerDatos().subscribe(data=> {
-      this.tecnologyList = data.tecnology;
     });
   }
 }
