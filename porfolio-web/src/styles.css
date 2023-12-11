@@ -142,6 +142,12 @@ html.dark-mode .form_input {
     color: #a8a8a8 !important;
 }
 
+html.dark-mode .foc2 {
+    filter: invert(100%);
+    color: #fff !important;
+}
+
+
 html.dark-mode .fondoDelSwich {
     filter: invert(100%);
 }
@@ -197,3 +203,7 @@ html.dark-mode .lineaphotos {
     background-color: #070066 !important;
 }
 
+html.dark-mode .foc {
+    filter: invert(100%);
+    color: #4d29ff !important;
+}

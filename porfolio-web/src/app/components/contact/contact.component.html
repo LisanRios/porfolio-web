@@ -3,18 +3,21 @@
     <div class="row">
         <div class="col-xxl-3 col-md-3 col-sm-0"></div>
         <div class="col-xxl-6 col-md-6 col-sm-12">
-            <form class="form">
+            <form class="form" action="enviar.php" method="POST">
                 <div class="form_section">
-                    <input type="text" placeholder="Nombre" class="form_input">
+                    <input type="text" name="name" required placeholder="Nombre" class="form_input">
                 </div>
                 <div class="form_section">
-                    <input type="email" placeholder="Mail" class="form_input">
+                    <input type="email" name="mail" required placeholder="Mail" class="form_input">
                 </div>
                 <div class="form_section">
-                    <textarea class="form_input" placeholder="Asunto"></textarea>
+                    <input type="text" name="phone" required placeholder="Teléfono" class="form_input">
                 </div>
                 <div class="form_section">
-                    <input type="submit" class="form_input button" name="">
+                    <textarea class="form_input" name="message" required placeholder="Mensaje"></textarea>
+                </div>
+                <div class="form_section">
+                    <input type="submit"  class="form_input button" name="">
                 </div>
             </form>
         </div>

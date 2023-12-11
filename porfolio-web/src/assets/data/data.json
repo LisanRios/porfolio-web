@@ -10,7 +10,7 @@
             "type": "Pagina Web",
             "name": "Porfolio Web",
             "date": "Se Actualiza Constantemente",
-            "image": "",
+            "image": "https://github.com/LisanRios/porfolio-web/blob/main/Captura%20de%20pantalla%202023-12-11%20112521.png?raw=true",
             "description": "Mi portafolio web es el espacio donde exhibo mis habilidades de programación, tanto en el desarrollo backend como frontend, además de otros numerosos proyectos. A través de este sitio, doy vida a mis creaciones digitales, demostrando mi pasión por la tecnología y mi capacidad para transformar ideas en soluciones funcionales. Si deseas explorar más acerca de mi trabajo, te invito a visitar mi portafolio en este enlace. 🚀",            
             "link": "https://github.com/LisanRios/porfolio-web",
             "lenguaje": [
@@ -60,12 +60,12 @@
             "type": "Robotica",
             "name": "Arduino-Morse",
             "date": "05/06/2023",
-            "image": "https://logos-download.com/wp-content/uploads/2016/09/Arduino_logo.png",
+            "image": "https://github.com/LisanRios/Arduino-Morse/blob/main/358172839_172667199129487_1108238551401241728_n.jpeg?raw=true",
             "description": "El proyecto se centró en la creación de un dispositivo Arduino utilizando el lenguaje C. Este dispositivo constaba de una placa Arduino Uno equipada con dos botones (representando los caracteres punto y raya en código Morse) y una pantalla que visualizaba el texto escrito en dicho código.",            
             "link": "https://github.com/LisanRios/Arduino-Morse",
             "lenguaje": [
                 {
-                    "name": "fa-solid fa-c"
+                    "name": "bx bxs-copyright"
                 },
                 {
                     "name": "bx bxl-c-plus-plus"
@@ -79,12 +79,12 @@
             "type": "Codigo",
             "name": "Propiedades",
             "date": "24/11/2023",
-            "image": "https://raw.githubusercontent.com/LisanRios/Proyecto-Final-SPD/main/test.bmp",
-            "description": ".",
-            "link": "https://github.com/LisanRios/Proyecto-Final-SPD",
+            "image": "https://e1.pxfuel.com/desktop-wallpaper/585/789/desktop-wallpaper-c-programming-language.jpg",
+            "description": "El proyecto se basó en la aplicación del lenguaje de programación C a un problema real de una empresa dedicada al sector inmobiliario. El propósito del proyecto fue crear un sistema informático que permitiera gestionar las propiedades de la empresa de forma eficiente y segura, cumpliendo con todos los requisitos funcionales y no funcionales que se habían establecido previamente. El sistema debía ofrecer funcionalidades como el registro, la búsqueda, la modificación y la eliminación de propiedades, así como la generación de informes y estadísticas.",
+            "link": "https://github.com/LisanRios/Propiedades",
             "lenguaje": [
                 {
-                    "name": "fa-solid fa-c"
+                    "name": "bx bxs-copyright"
                 },
                 {
                     "name": "bx bxl-c-plus-plus"
@@ -98,9 +98,9 @@
             "type": "Videojuego",
             "name": "Python Invaders",
             "date": "24/11/2023",
-            "image": "https://raw.githubusercontent.com/LisanRios/Proyecto-Final-SPD/main/test.bmp",
-            "description": "El proyecto “Buscawachas” se llevó a cabo como parte un trabajo integrador final de la cátedra de Sistemas de Procesamiento de Datos (SPD) en la Universidad Nacional de San Martín (UNSAM). Nuestra tarea consistió en desarrollar un videojuego a elección. Optamos por el desafío de diseñar y construir dicho juego utilizando lenguaje ensamblador.",
-            "link": "https://github.com/LisanRios/Proyecto-Final-SPD",
+            "image": "https://github.com/LisanRios/Python-Invaders/blob/main/TP%20PYTHON%20REEVES_RIOS_SALGUERO_NAVARRO/imagenes/inicio.png?raw=true",
+            "description": "El presente proyecto fue realizado en el marco del trabajo integrador final de la asignatura Laboratorio de Informática 2 (Labo 2) de la Universidad Nacional de San Martín (UNSAM). El objetivo del trabajo consistió en desarrollar un videojuego utilizando el lenguaje de programación Python. Para ello, elegimos el desafío de diseñar y construir un juego de nuestra propia creación.",            
+            "link": "https://github.com/LisanRios/Python-Invaders",
             "lenguaje": [
                 {
                     "name": "fa-brands fa-python"
@@ -116,7 +116,7 @@
             "link": "https://github.com/LisanRios/Proyecto-Final-SPD",
             "lenguaje": [
                 {
-                    "name": "fa-solid fa-font"
+                    "name": "bi bi-nut"
                 }
             ]
         }
@@ -192,38 +192,74 @@
         {
             "icon":"bx bxs-copyright",
             "name":"C",
-            "nivel": "★★☆☆☆",
+            "nivel": "★★★★★",
             "description":"C es un lenguaje de programación de propósito general​ originalmente desarrollado por Dennis Ritchie entre 1969 y 1972 en los Laboratorios Bell, ​ como evolución del anterior lenguaje B, a su vez basado en BCPL.​​​Al igual que B, es un lenguaje orientado a la implementación de sistemas operativos, concretamente Unix."
+        },
+        {
+            "icon":"fa-solid fa-file-excel",
+            "name":"Archivos XML (Excel)",
+            "nivel": "★★★★★",
+            "description":".xml (Extensible Markup Language) es el estándar para el intercambio de datos entre dos sistemas y puede ser leído tanto por humanos como por ordenadores. Un simple editor de texto es suficiente para abrir un archivo .xml, pero puede ser más fácil trabajar con una herramienta profesional."
         },
         {
             "icon":"bx bxl-c-plus-plus",
             "name":"C++",
-            "nivel": "★★★☆☆",
+            "nivel": "★★★★★",
             "description":"C++ es un lenguaje de programación diseñado en 1979 por Bjarne Stroustrup. La intención de su creación fue extender al lenguaje de programación C y añadir mecanismos que permiten la manipulación de objetos. En ese sentido, desde el punto de vista de los lenguajes orientados a objetos, C++ es un lenguaje híbrido."
+        },
+        {
+            "icon":"fa-solid fa-robot",
+            "name":"Arduino",
+            "nivel": "★★★★☆",
+            "description":"Arduino es una plataforma de hardware libre, basada en una placa con un microcontrolador y un entorno de desarrollo, diseñada para facilitar el uso de la electrónica en proyectos multidisciplinares."
+        },
+        {
+            "icon":"fa-brands fa-python",
+            "name":"Python",
+            "nivel": "★★★★★",
+            "description":"Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.​ Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional."
+        },
+        {
+            "icon":"bi bi-nut",
+            "name":"Assembly",
+            "nivel": "★★★★☆",
+            "description":"Assembly es un lenguaje de bajo nivel que se utiliza para programar directamente el hardware de la computadora. Es específico para cada tipo de procesador y permite un control detallado sobre el funcionamiento de la máquina."
+        },
+        {
+            "icon":"bi bi-cpu",
+            "name":"Inteligencia Artificial",
+            "nivel": "★★★★★",
+            "description":"La inteligencia artificial (IA) es la simulación de procesos de inteligencia humana por parte de máquinas, especialmente sistemas informáticos. Estos procesos incluyen el aprendizaje (la adquisición de información y reglas para utilizar la información), el razonamiento (usando las reglas para llegar a conclusiones aproximadas o definitivas) y la autocorrección."
+        },
+        {
+            "icon":"fa-brands fa-php",
+            "name":"PHP",
+            "nivel": "★★☆☆☆",
+            "description":"PHP es un popular lenguaje de programación de código abierto que es especialmente adecuado para el desarrollo web y puede ser incrustado en HTML."
         }
     ],
     "titule": 
     [
         {
-            "type": "Progaramador Web Full Stack",
+            "type": "Técnico Universitario en Programación Informática",
+            "name": "Universidad Nacional de San Martin (UNSAM)",
+            "dateInicio": "01/02/2022",
+            "dateFin": "En curso",
+            "description": "Capaz de desarrollar proyectos de mediana envergadura, determinar las  necesidades  informáticas  de  empresas  de  tamaño  medio, solucionar problemas informáticos, trabajar de manera independiente en proyectos acotados a las necesidades de la pequeña y mediana industria, y colaborar en temas informáticos con profesionales cuando los  proyectos  sean  de  mayor  envergadura.  El  egresado  de  esta tecnicatura adquirirá las herramientas necesarias para comprender y utilizar eficientemente las nuevas tecnologías de programación en la resolución de problemas."
+        },
+        {
+            "type": "Programador Web Full Stack",
             "name": "Argentina Progarama 4.0",
             "dateInicio": "01/10/2022",
             "dateFin": "30/05/2023",
-            "description": "Se trata de un programa nacional y federal que tiene como objetivo capacitar a personas en lenguajes y conocimientos sobre programación, testing y habilidades digitales para potenciar la empleabilidad en el sector del software y la tecnología."
+            "description": "Se trata de un programa nacional y federal que tiene como objetivo capacitar  a  personas  en  lenguajes  y  conocimientos  sobre programación,  testing  y  habilidades  digitales  para  potenciar  la empleabilidad  en  el  sector  del  software  y  la  tecnología."
         },
         {
-            "type": "Técnico Universitario en Programación Informática",
-            "name": "UNSAM (Universidad Nacional de San Martín)",
-            "dateInicio": "01/02/2022",
-            "dateFin": "En curso",
-            "description": "El  objetivo  es  formar  técnicos  en  programación,  que  puedan  desarrollar proyectos de mediana envergadura, determinar las necesidades informáticas de empresas de mediano porte, resolver los problemas  informáticos de las mismas, trabajar en forma independiente en proyectos, acotados a las necesidades de la pequeña y mediana industria, y  colaborar    en estos mismos  temas con profesionales de la informática cuando los proyectos sean de mayor envergadura. El egresado de esta tecnicatura  tendrá  las herramientas  necesarias para poder comprender  las  nuevas  tecnologías  de  programación y hacer uso de ellas eficientemente para resolver problemas."
-        },
-        {
-            "type": "ONE – Oracle Next Education",
-            "name": "ONE – Oracle Next Education",
+            "type": "ONE",
+            "name": "Oracle Next Education",
             "dateInicio": "03/04/2023",
-            "dateFin": "En curso",
-            "description": "¿Qué es ONE? Oracle Next Education es un programa de educación, empleabilidad e inclusión 100% gratuito, creado para ofrecer formación de calidad a personas que no han contado con oportunidades para continuar sus estudios y desarrollar una carrera profesional."
+            "dateFin": "28/9/2023",
+            "description": "Oracle Next Education es un programa de educación, empleabilidad e inclusión 100% gratuito, creado para ofrecer formación de calidad a personas que no han contado con oportunidades para continuar sus estudios y desarrollar una carrera profesional."
         }
     ]
 }
