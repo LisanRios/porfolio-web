@@ -1,0 +1,18 @@
+<div class="container"> 
+    <h3 class="pb-2"><i>Tecnologías Dominadas</i></h3>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+       <li class="linea1 list-group-item p-2" *ngFor="let Tecnologia of tecnologyList">     
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-static">
+            <div class=" col p-4 d-flex flex-column position-static">
+                    <h3 class="mb-0 foc2"><i class={{Tecnologia.icon}}></i></h3>
+                        <div class="feature col">
+                            <h3 class="fs-2 text-body-emphasis foc2">{{Tecnologia.name}}</h3>
+                            <p class="card-text mb-auto foc2">{{Tecnologia.nivel}}</p>
+                            <p class="card-text mb-auto foc2">{{Tecnologia.description}}</p>
+                        </div>
+            </div>
+            <div class="col-auto d-none d-lg-block"></div> 
+        </div>
+        </li>
+    </div>
+</div>
