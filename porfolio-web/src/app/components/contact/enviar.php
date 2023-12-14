@@ -18,7 +18,8 @@ $message .= "Enviado el: " . date('d/m/Y', time());
 $para = 'rios.lisandro369@gmail.com';
 $asunto = 'MENSAJE DE CONTACO';
 
-mail($para, $asunto, utf8_decode($message), $header);
+$message = mb_convert_encoding($message, 'ISO-8859-1', 'UTF-8');
+mail($para, $asunto, $message, $header);
 
-header("Location: contact.component.html");
+header("Location: index.html");
 ?>

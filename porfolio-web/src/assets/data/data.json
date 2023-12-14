@@ -7,7 +7,7 @@
     "project": 
     [
         {
-            "type": "Pagina Web",
+            "type": "Página Web",
             "name": "Porfolio Web",
             "date": "Se Actualiza Constantemente",
             "image": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
@@ -34,11 +34,14 @@
                 },
                 {
                     "name": "fa-brands fa-java"
+                },
+                {
+                    "name": "fa-brands fa-php"
                 }
             ]
         }, 
         {
-            "type": "Pagina Web",
+            "type": "Página Web",
             "name": "Challenge-Alura-Encriptador",
             "date": "30/04/2023",
             "image": "https://github.com/LisanRios/Challenge-Alura-Encriptador/blob/main/Captura%20de%20pantalla%202023-12-11%20110241.png?raw=true",
@@ -57,7 +60,7 @@
             ]
         }, 
         {
-            "type": "Robotica",
+            "type": "Robótica",
             "name": "Arduino-Morse",
             "date": "05/06/2023",
             "image": "https://github.com/LisanRios/Arduino-Morse/blob/main/358172839_172667199129487_1108238551401241728_n.jpeg?raw=true",
