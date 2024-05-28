@@ -2,21 +2,24 @@
     <h3 class="pb-4"><i>Contactame</i></h3>
     <div class="row justify-content-center">
         <div class="col-xxl-6 col-md-6 col-sm-12">
-            <form class="form" action="enviar.php" method="POST">
+            <form [formGroup]="datos_correos" class="form">
                 <div class="form_section">
-                    <input type="text" name="name" required placeholder="Nombre" class="form_input">
+                    <input type="text" formControlName="name" placeholder="Nombre" class="form_input">
                 </div>
                 <div class="form_section">
-                    <input type="email" name="mail" required placeholder="Mail" class="form_input">
+                    <input type="email" formControlName="mail" placeholder="Mail" class="form_input">
                 </div>
                 <div class="form_section">
-                    <input type="text" name="phone" required placeholder="Teléfono" class="form_input">
+                    <input type="text" formControlName="phone" placeholder="Teléfono" class="form_input">
                 </div>
                 <div class="form_section">
-                    <textarea class="form_input" name="message" required placeholder="Mensaje"></textarea>
+                    <input type="text" formControlName="asunto" placeholder="Asunto" class="form_input">
                 </div>
                 <div class="form_section">
-                    <input type="submit"  class="form_input button" name="">
+                    <textarea class="form_input" formControlName="message" placeholder="Mensaje"></textarea>
+                </div>
+                <div class="form_section">
+                    <input type="submit"  class="form_input button" (click)="envioCorreo()" name="">
                 </div>
             </form>
         </div>

@@ -127,40 +127,58 @@
     "tecnology":
     [
         {
-            "icon":"fa-brands fa-html5",
-            "name":"HTML",
-            "nivel": "★★★★★",
-            "description":"HTML, siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web."
-        },
-        {
-            "icon":"fa-brands fa-css3-alt",
-            "name":"CSS",
-            "nivel": "★★★★★",
-            "description":"CSS, es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado."
-        },
-        {
-            "icon":"fa-brands fa-js",
-            "name":"JavaScript",
+            "icon":"fa-brands fa-angular",
+            "name":"Angular",
             "nivel": "★★★★☆",
-            "description":"JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente tipado y dinámico."
+            "description":"Angular es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página."
         },
         {
-            "icon":"fa-solid fa-code",
-            "name":"PSeInt",
+            "icon":"ti ti-brand-mysql",
+            "name":"MySQL",
+            "nivel": "★★★★★",
+            "description":"MySQL es un sistema de gestión de bases de datos relacional desarrollado bajo licencia dual: Licencia pública general/Licencia comercial por Oracle Corporation y está considerada como la base de datos"
+        },
+        {
+            "icon":"fa-brands fa-java",
+            "name":"JAVA + Spring Boot",
+            "nivel": "★★★★★",
+            "description":"El lenguaje de programación Java la sintaxis deriva en gran medida de C y C++, pero tiene menos utilidades de bajo nivel que cualquiera de ellos. Las aplicaciones de Java son compiladas a bytecode (clase Java), que puede ejecutarse en cualquier máquina virtual Java (JVM) sin importar la arquitectura de la computadora subyacente."
+        },
+        {
+            "icon":"fa-brands fa-react",
+            "name":"React",
             "nivel": "★★★★☆",
-            "description":"PSeInt es un software libre educativo multiplataforma dirigido a personas que se inician en la programación.​"
+            "description":"React es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página."
+        },
+        {
+            "icon":"fa-brands fa-python",
+            "name":"Python",
+            "nivel": "★★★★★",
+            "description":"Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.​ Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional."
+        },
+        {
+            "icon":"bx bxs-copyright",
+            "name":"C",
+            "nivel": "★★★★★",
+            "description":"C es un lenguaje de programación de propósito general​ originalmente desarrollado por Dennis Ritchie entre 1969 y 1972 en los Laboratorios Bell, ​ como evolución del anterior lenguaje B, a su vez basado en BCPL.​​​Al igual que B, es un lenguaje orientado a la implementación de sistemas operativos, concretamente Unix."
+        },
+        {
+            "icon":"bi bi-nut",
+            "name":"Assembly",
+            "nivel": "★★★★☆",
+            "description":"Assembly es un lenguaje de bajo nivel que se utiliza para programar directamente el hardware de la computadora. Es específico para cada tipo de procesador y permite un control detallado sobre el funcionamiento de la máquina."
+        },
+        {
+            "icon":"fa-brands fa-ubuntu",
+            "name":"Bash scripts on Unix/Linux",
+            "nivel": "★★★★☆",
+            "description":"GNU Bash o simplemente Bash es una interfaz de usuario de línea de comandos popular, específicamente un shell de Unix; así como un lenguaje de scripting."
         },
         {
             "icon":"fa-brands fa-git-alt",
             "name":"Git",
             "nivel": "★★★★★",
             "description":"Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente."
-        },
-        {
-            "icon":"fa-brands fa-angular",
-            "name":"Angular",
-            "nivel": "★★★★☆",
-            "description":"Angular es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página."
         },
         {
             "icon":"fa-brands fa-bootstrap",
@@ -175,70 +193,22 @@
             "description":"TypeScript es un lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft. Es un superconjunto de JavaScript, que esencialmente añade tipos estáticos y objetos basados en clases."
         },
         {
-            "icon":"ti ti-brand-mysql",
-            "name":"MySQL",
-            "nivel": "★★★★★",
-            "description":"MySQL es un sistema de gestión de bases de datos relacional desarrollado bajo licencia dual: Licencia pública general/Licencia comercial por Oracle Corporation y está considerada como la base de datos"
-        },
-        {
-            "icon":"fa-brands fa-java",
-            "name":"JAVA",
-            "nivel": "★★★★★",
-            "description":"El lenguaje de programación Java la sintaxis deriva en gran medida de C y C++, pero tiene menos utilidades de bajo nivel que cualquiera de ellos. Las aplicaciones de Java son compiladas a bytecode (clase Java), que puede ejecutarse en cualquier máquina virtual Java (JVM) sin importar la arquitectura de la computadora subyacente."
-        },
-        {
-            "icon":"bx bxl-spring-boot",
-            "name":"Spring Boot",
-            "nivel": "★★★★☆",
-            "description":"Java Spring Boot (Spring Boot) es una herramienta que hace que el desarrollo de aplicaciones web y microservicios con Spring Framework sea más rápido y fácil a través de tres funcionalidades principales: Configuración automática."
-        },
-        {
-            "icon":"bx bxs-copyright",
-            "name":"C",
-            "nivel": "★★★★★",
-            "description":"C es un lenguaje de programación de propósito general​ originalmente desarrollado por Dennis Ritchie entre 1969 y 1972 en los Laboratorios Bell, ​ como evolución del anterior lenguaje B, a su vez basado en BCPL.​​​Al igual que B, es un lenguaje orientado a la implementación de sistemas operativos, concretamente Unix."
-        },
-        {
-            "icon":"fa-solid fa-file-excel",
-            "name":"Archivos XML (Excel)",
-            "nivel": "★★★★★",
-            "description":".xml (Extensible Markup Language) es el estándar para el intercambio de datos entre dos sistemas y puede ser leído tanto por humanos como por ordenadores. Un simple editor de texto es suficiente para abrir un archivo .xml, pero puede ser más fácil trabajar con una herramienta profesional."
-        },
-        {
-            "icon":"bx bxl-c-plus-plus",
-            "name":"C++",
-            "nivel": "★★★★★",
-            "description":"C++ es un lenguaje de programación diseñado en 1979 por Bjarne Stroustrup. La intención de su creación fue extender al lenguaje de programación C y añadir mecanismos que permiten la manipulación de objetos. En ese sentido, desde el punto de vista de los lenguajes orientados a objetos, C++ es un lenguaje híbrido."
-        },
-        {
             "icon":"fa-solid fa-robot",
             "name":"Arduino",
             "nivel": "★★★★☆",
             "description":"Arduino es una plataforma de hardware libre, basada en una placa con un microcontrolador y un entorno de desarrollo, diseñada para facilitar el uso de la electrónica en proyectos multidisciplinares."
         },
         {
-            "icon":"fa-brands fa-python",
-            "name":"Python",
-            "nivel": "★★★★★",
-            "description":"Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.​ Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional."
-        },
-        {
-            "icon":"bi bi-nut",
-            "name":"Assembly",
-            "nivel": "★★★★☆",
-            "description":"Assembly es un lenguaje de bajo nivel que se utiliza para programar directamente el hardware de la computadora. Es específico para cada tipo de procesador y permite un control detallado sobre el funcionamiento de la máquina."
+            "icon":"fa-solid fa-code",
+            "name":"Ruby on Rails",
+            "nivel": "★★★☆☆",
+            "description":"Arduino es una plataforma de hardware libre, basada en una placa con un microcontrolador y un entorno de desarrollo, diseñada para facilitar el uso de la electrónica en proyectos multidisciplinares."
         },
         {
             "icon":"bi bi-cpu",
             "name":"Inteligencia Artificial",
             "nivel": "★★★★★",
             "description":"La inteligencia artificial (IA) es la simulación de procesos de inteligencia humana por parte de máquinas, especialmente sistemas informáticos. Estos procesos incluyen el aprendizaje (la adquisición de información y reglas para utilizar la información), el razonamiento (usando las reglas para llegar a conclusiones aproximadas o definitivas) y la autocorrección."
-        },
-        {
-            "icon":"fa-brands fa-php",
-            "name":"PHP",
-            "nivel": "★★☆☆☆",
-            "description":"PHP es un popular lenguaje de programación de código abierto que es especialmente adecuado para el desarrollo web y puede ser incrustado en HTML."
         }
     ],
     "titule": 
