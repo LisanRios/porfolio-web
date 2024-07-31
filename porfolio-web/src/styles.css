@@ -234,3 +234,13 @@ html.dark-mode .foc {
 .foc4 {
     color: #FFF !important;
 }
+
+.foc5 {
+    background-image: url('https://img.icons8.com/?size=100&id=17181&format=png&color=FFFFFF');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+}
