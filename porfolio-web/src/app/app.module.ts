@@ -7,9 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { Page404Component } from './components/page404/page404.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailService } from '../app/service/email.service'; 
 
 @NgModule({
@@ -18,14 +17,14 @@ import { EmailService } from '../app/service/email.service';
     HeaderComponent,
     Page404Component,
     ProjectsComponent,
-    TechnologiesComponent,
-    ContactComponent
-  ],
+    TechnologiesComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [EmailService],
   bootstrap: [AppComponent]

@@ -142,14 +142,23 @@ html.dark-mode .form_input {
     color: #a8a8a8 !important;
 }
 
+.foc3 {
+    background-color: #070066 !important;
+    color: #fff !important;
+}
+
+html.dark-mode .foc3 {
+    filter: invert(100%);
+    background-color: #070066 !important;
+}
+
 html.dark-mode .foc2 {
     filter: invert(100%);
     color: #fff !important;
 }
 
-
 html.dark-mode .fondoDelSwich {
-    filter: invert(100%);
+    filter: invert(0%);
 }
 
 html.dark-mode .checkboxs input {
@@ -206,4 +215,22 @@ html.dark-mode .lineaphotos {
 html.dark-mode .foc {
     filter: invert(100%);
     color: #4d29ff !important;
+}
+
+.navbar {
+    color: #fff;
+    background-color: #070066 !important; 
+}
+
+.logo {
+    background-image: url('favicon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.foc4 {
+    color: #FFF !important;
 }
