@@ -1,6 +1,6 @@
 {
     "nombre": "Lisandro Rios",
-    "age": "20 años",
+    "age": "21 años",
     "foto": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
     "position": "Programador Full Stack",
     "ubication": "Buenos Aires (Argentina)",
@@ -161,7 +161,7 @@
             "link": "https://github.com/algo1unsam/tp-game-24s1-doomies-1",
             "lenguaje": [
                 {
-                    "name": "fa-solid fa-w"
+                    "name": "fa-brands fa-java"
                 }
             ]
         }, 
@@ -187,86 +187,90 @@
         {
             "icon":"fa-brands fa-angular",
             "name":"Angular",
-            "nivel": "★★★★☆",
-            "description":"Angular es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página."
+            "nivel": "★★★★☆"
         },
         {
             "icon":"ti ti-brand-mysql",
             "name":"MySQL",
-            "nivel": "★★★★★",
-            "description":"MySQL es un sistema de gestión de bases de datos relacional desarrollado bajo licencia dual: Licencia pública general/Licencia comercial por Oracle Corporation y está considerada como la base de datos"
+            "nivel": "★★★★★"
         },
         {
             "icon":"fa-brands fa-java",
-            "name":"JAVA + Spring Boot",
-            "nivel": "★★★★★",
-            "description":"El lenguaje de programación Java la sintaxis deriva en gran medida de C y C++, pero tiene menos utilidades de bajo nivel que cualquiera de ellos. Las aplicaciones de Java son compiladas a bytecode (clase Java), que puede ejecutarse en cualquier máquina virtual Java (JVM) sin importar la arquitectura de la computadora subyacente."
+            "name":"Java",
+            "nivel": "★★★★★"
+        },
+        {
+            "icon":"bx bxl-spring-boot",
+            "name":"Spring Boot",
+            "nivel": "★★★★★"
         },
         {
             "icon":"fa-brands fa-react",
             "name":"React",
-            "nivel": "★★★★☆",
-            "description":"React es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página."
+            "nivel": "★★★★☆"
         },
         {
             "icon":"fa-brands fa-python",
             "name":"Python",
-            "nivel": "★★★★★",
-            "description":"Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.​ Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional."
+            "nivel": "★★★★★"
         },
         {
             "icon":"bx bxs-copyright",
             "name":"C",
-            "nivel": "★★★★★",
-            "description":"C es un lenguaje de programación de propósito general​ originalmente desarrollado por Dennis Ritchie entre 1969 y 1972 en los Laboratorios Bell, ​ como evolución del anterior lenguaje B, a su vez basado en BCPL.​​​Al igual que B, es un lenguaje orientado a la implementación de sistemas operativos, concretamente Unix."
+            "nivel": "★★★★★"
         },
         {
             "icon":"bi bi-nut",
             "name":"Assembly",
-            "nivel": "★★★★☆",
-            "description":"Assembly es un lenguaje de bajo nivel que se utiliza para programar directamente el hardware de la computadora. Es específico para cada tipo de procesador y permite un control detallado sobre el funcionamiento de la máquina."
+            "nivel": "★★★★☆"
         },
         {
             "icon":"fa-brands fa-ubuntu",
             "name":"Bash scripts on Unix/Linux",
-            "nivel": "★★★★☆",
-            "description":"GNU Bash o simplemente Bash es una interfaz de usuario de línea de comandos popular, específicamente un shell de Unix; así como un lenguaje de scripting."
+            "nivel": "★★★★☆"
         },
         {
             "icon":"fa-brands fa-git-alt",
             "name":"Git",
-            "nivel": "★★★★★",
-            "description":"Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente."
+            "nivel": "★★★★★"
         },
         {
             "icon":"fa-brands fa-bootstrap",
             "name":"Boolstrap",
-            "nivel": "★★★★★",
-            "description":"Bootstrap es una biblioteca multiplataforma o conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web."
+            "nivel": "★★★★★"
         },
         {
             "icon":"bx bxl-typescript",
             "name":"TypeScript",
-            "nivel": "★★★★☆",
-            "description":"TypeScript es un lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft. Es un superconjunto de JavaScript, que esencialmente añade tipos estáticos y objetos basados en clases."
+            "nivel": "★★★★☆"
         },
         {
             "icon":"fa-solid fa-robot",
             "name":"Arduino",
-            "nivel": "★★★★☆",
-            "description":"Arduino es una plataforma de hardware libre, basada en una placa con un microcontrolador y un entorno de desarrollo, diseñada para facilitar el uso de la electrónica en proyectos multidisciplinares."
+            "nivel": "★★★★☆"
         },
         {
             "icon":"fa-solid fa-code",
             "name":"Ruby on Rails",
-            "nivel": "★★★☆☆",
-            "description":"Arduino es una plataforma de hardware libre, basada en una placa con un microcontrolador y un entorno de desarrollo, diseñada para facilitar el uso de la electrónica en proyectos multidisciplinares."
+            "nivel": "★★★☆☆"
+    
         },
         {
-            "icon":"bi bi-cpu",
-            "name":"Inteligencia Artificial",
-            "nivel": "★★★★★",
-            "description":"La inteligencia artificial (IA) es la simulación de procesos de inteligencia humana por parte de máquinas, especialmente sistemas informáticos. Estos procesos incluyen el aprendizaje (la adquisición de información y reglas para utilizar la información), el razonamiento (usando las reglas para llegar a conclusiones aproximadas o definitivas) y la autocorrección."
+            "icon":" fa-brands fa-js",
+            "name":"Javascript",
+            "nivel": "★★★★☆"
+        },
+        {
+            "icon":"bx bx-wifi",
+            "name":"Redes Informáticas",
+            "nivel": "★★★☆☆"
+
+        },
+        {
+            "icon":"bx bxl-graphql",
+            "name":"GraphQL",
+            "nivel": "★★★★★"
+
         }
     ],
     "titule": 
@@ -291,6 +295,51 @@
             "dateInicio": "03/04/2023",
             "dateFin": "28/9/2023",
             "description": "Oracle Next Education es un programa de educación, empleabilidad e inclusión 100% gratuito, creado para ofrecer formación de calidad a personas que no han contado con oportunidades para continuar sus estudios y desarrollar una carrera profesional."
+        }
+    ],
+    "trabajo": 
+    [
+        {
+            "type": "Programador Full Stack",
+            "name": "Universidad Nacional de San Martín",
+            "dateInicio": "August 2024",
+            "dateFin": "Present",
+            "link": "https://unsam.edu.ar/",
+            "description": [
+              {
+                "punto": "Realicé reuniones con los stakeholders para entender las necesidades de los estudiantes y del personal administrativo en la asignación de aulas y horarios."
+              },
+              {
+                "punto": "Desarrollé la interfaz de usuario utilizando React para crear una experiencia interactiva y dinámica."
+              },
+              {
+                "punto": "Implementé el servidor usando Spring Boot en Java, garantizando la escalabilidad y robustez de la aplicación."
+              },
+              {
+                "punto": "Desarrollé las API REST para la comunicación entre el front-end y la base de datos."
+              },
+              {
+                "punto": "Diseñé y gestioné la base de datos en MySQL, garantizando la integridad de los datos y su adecuada organización."
+              }
+            ]
+          },
+        {
+            "type": "Freelance",
+            "name": "Self-taught",
+            "dateInicio": "February 2022",
+            "dateFin": "August 2024",
+            "link":"https://porfolio-web-fe382.web.app/Inicio",
+            "description": [
+                {
+                    "punto": "Trabajo de forma independiente en el desarrollo de páginas web, servicios, entre otros proyectos."
+                },
+                {
+                    "punto": "Demuestro una fuerte ética de trabajo, profesionalismo y capacidad para desempeñarme eficazmente bajo presión."
+                },
+                {
+                    "punto": "Tomo decisiones acertadas y resuelvo problemas con habilidad, empleando una planificación eficaz para impulsar el crecimiento del negocio de manera eficiente."
+                }
+            ]
         }
     ]
 }

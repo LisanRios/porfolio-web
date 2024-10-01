@@ -7,10 +7,10 @@ import { TechnologiesComponent } from '../components/technologies/technologies.c
 import { Page404Component } from '../components/page404/page404.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'Inicio', pathMatch: 'full'},
-  {path: 'Inicio', component: HeaderComponent},
-  {path: 'Proyectos', component: ProjectsComponent},
-  {path: 'Tecnologias', component: TechnologiesComponent},
+  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
+  {path: 'inicio', component: HeaderComponent},
+  {path: 'trabajos', component: ProjectsComponent},
+  {path: 'tecnologias', component: TechnologiesComponent},
   {path: '**', component: Page404Component},
 ];
 

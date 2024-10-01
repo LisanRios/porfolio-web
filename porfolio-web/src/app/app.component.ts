@@ -1,19 +1,46 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'porfolio-web';
-}
-let previousTitle = document.title;
-
-window.addEventListener('blur', () => {
   previousTitle = document.title;
-  document.title = ' Porfolio web || ¡No te vayas! :(';
-})
-window.addEventListener('focus', () => {
-  document.title = previousTitle;
-})
+
+  constructor(private titleService: Title, private router: Router) {
+    // Cambiar título según la ruta
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      const currentRoute = this.router.url;
+      switch (currentRoute) {
+        case '/inicio':
+          this.titleService.setTitle('Lisandro Rios');
+          break;
+        case '/trabajos':
+          this.titleService.setTitle('Lisandro Rios || Trabajos');
+          break;
+        case '/tecnologias':
+          this.titleService.setTitle('Lisandro Rios || Tecnologías dominadas');
+          break;
+        default:
+          this.titleService.setTitle('Lisandro Rios || Oh no !!');
+          break;
+      }
+    });
+
+    // Cambiar título cuando la ventana pierde o gana el foco
+    window.addEventListener('blur', () => {
+      this.previousTitle = this.titleService.getTitle();
+      this.titleService.setTitle('Lisandro Rios || ¡No te vayas! :(');
+    });
+    window.addEventListener('focus', () => {
+      this.titleService.setTitle(this.previousTitle);
+    });
+  }
+}
