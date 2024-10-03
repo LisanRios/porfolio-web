@@ -304,6 +304,7 @@
             "name": "Universidad Nacional de San Martín",
             "dateInicio": "August 2024",
             "dateFin": "Present",
+            "logo":"https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png",
             "link": "https://unsam.edu.ar/",
             "description": [
               {
@@ -328,7 +329,8 @@
             "name": "Self-taught",
             "dateInicio": "February 2022",
             "dateFin": "August 2024",
-            "link":"https://porfolio-web-fe382.web.app/Inicio",
+            "logo":"https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2018/11/Why-it%E2%80%99s-Awesome-to-be-a-Freelancer-1.png",
+            "link":"https://porfolio-web-fe382.web.app/inicio",
             "description": [
                 {
                     "punto": "Trabajo de forma independiente en el desarrollo de páginas web, servicios, entre otros proyectos."

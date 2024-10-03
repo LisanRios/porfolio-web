@@ -331,6 +331,30 @@ html.dark-mode .foc {
 
 }
 
+@media only screen and (max-width: 330px) {
+  .cartaDeProyecto,
+  .cartaDeTecnologia {
+    padding-top: 45%;
+  }
+
+  .espacio {
+    padding-top: 25%;
+  }
+
+  .foc4 {
+    color: #fff !important;
+    font-size: 15px;
+    padding: 5px;
+  }
+
+  .foc6 {
+    font-size: 15px;
+    padding: 1px;
+  }
+
+}
+
+
 .linea1 {
   height: auto; /* Asegura que la altura del contenedor sea automática */
 }
