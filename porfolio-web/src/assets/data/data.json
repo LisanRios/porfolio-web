@@ -1,347 +1,379 @@
 {
-    "nombre": "Lisandro Rios",
-    "age": "21 años",
-    "foto": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
-    "position": "Programador Full Stack",
-    "ubication": "Buenos Aires (Argentina)",
-    "project": 
-    [
+  "nombre": "Lisandro Gabriel Rios De Morla",
+  "age": "21 años",
+  "foto": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
+  "position": "Programador Full Stack",
+  "ubication": "Buenos Aires (Argentina)",
+  "project": [
+    {
+      "type": "Página Web",
+      "name": "Porfolio Web",
+      "date": "Se Actualiza Constantemente",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
+      "description": "Mi portafolio web es el espacio donde exhibo mis habilidades de programación, tanto en el desarrollo backend como frontend, además de otros numerosos proyectos. A través de este sitio, doy vida a mis creaciones digitales, demostrando mi pasión por la tecnología y mi capacidad para transformar ideas en soluciones funcionales. Si deseas explorar más acerca de mi trabajo, te invito a visitar mi portafolio en este enlace. 🚀",
+      "link": "https://github.com/LisanRios/porfolio-web",
+      "lenguaje": [
         {
-            "type": "Página Web",
-            "name": "Porfolio Web",
-            "date": "Se Actualiza Constantemente",
-            "image": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
-            "description": "Mi portafolio web es el espacio donde exhibo mis habilidades de programación, tanto en el desarrollo backend como frontend, además de otros numerosos proyectos. A través de este sitio, doy vida a mis creaciones digitales, demostrando mi pasión por la tecnología y mi capacidad para transformar ideas en soluciones funcionales. Si deseas explorar más acerca de mi trabajo, te invito a visitar mi portafolio en este enlace. 🚀",            
-            "link": "https://github.com/LisanRios/porfolio-web",
-            "lenguaje": [
-                {
-                    "name": "fa-brands fa-angular"
-                },
-                {
-                    "name": "fa-brands fa-bootstrap"
-                },
-                {
-                    "name": "fa-brands fa-css3-alt"
-                },
-                {
-                    "name": "bx bxl-typescript"
-                },
-                {
-                    "name": "ti ti-brand-mysql"
-                },
-                {
-                    "name": "bx bxl-spring-boot"
-                },
-                {
-                    "name": "fa-brands fa-java"
-                }
-            ]
-        }, 
+          "name": "fa-brands fa-angular"
+        },
         {
-            "type": "Página Web",
-            "name": "Challenge-Alura-Encriptador",
-            "date": "30/04/2023",
-            "image": "https://github.com/LisanRios/Challenge-Alura-Encriptador/blob/main/Captura%20de%20pantalla%202023-12-11%20110241.png?raw=true",
-            "description": "El proyecto encriptador de Alura ONE es un desafío web que permite encriptar y desencriptar texto. Utiliza HTML, CSS y JavaScript, y emplea expresiones regulares para validar la entrada de texto. La aplicación resultante es totalmente responsiva.",            
-            "link": "https://github.com/LisanRios/Challenge-Alura-Encriptador",
-            "lenguaje": [
-                {
-                    "name": "fa-brands fa-html5"
-                },
-                {
-                    "name": "fa-brands fa-css3-alt"
-                },
-                {
-                    "name": "fa-brands fa-js"
-                }
-            ]
-        }, 
+          "name": "fa-brands fa-bootstrap"
+        },
         {
-            "type": "Robótica",
-            "name": "Arduino-Morse",
-            "date": "05/06/2023",
-            "image": "https://github.com/LisanRios/Arduino-Morse/blob/main/358172839_172667199129487_1108238551401241728_n.jpeg?raw=true",
-            "description": "El proyecto se centró en la creación de un dispositivo Arduino utilizando el lenguaje C. Este dispositivo constaba de una placa Arduino Uno equipada con dos botones (representando los caracteres punto y raya en código Morse) y una pantalla que visualizaba el texto escrito en dicho código.",            
-            "link": "https://github.com/LisanRios/Arduino-Morse",
-            "lenguaje": [
-                {
-                    "name": "bx bxs-copyright"
-                },
-                {
-                    "name": "bx bxl-c-plus-plus"
-                },
-                {
-                    "name": "fa-solid fa-robot"
-                }
-            ]
-        }, 
+          "name": "fa-brands fa-css3-alt"
+        },
         {
-            "type": "Código",
-            "name": "Propiedades",
-            "date": "24/11/2023",
-            "image": "https://e1.pxfuel.com/desktop-wallpaper/585/789/desktop-wallpaper-c-programming-language.jpg",
-            "description": "El proyecto se basó en la aplicación del lenguaje de programación C a un problema real de una empresa dedicada al sector inmobiliario. El propósito del proyecto fue crear un sistema informático que permitiera gestionar las propiedades de la empresa de forma eficiente y segura, cumpliendo con todos los requisitos funcionales y no funcionales que se habían establecido previamente. El sistema debía ofrecer funcionalidades como el registro, la búsqueda, la modificación y la eliminación de propiedades, así como la generación de informes y estadísticas.",
-            "link": "https://github.com/LisanRios/Propiedades",
-            "lenguaje": [
-                {
-                    "name": "bx bxs-copyright"
-                },
-                {
-                    "name": "bx bxl-c-plus-plus"
-                },
-                {
-                    "name": "bi bi-filetype-txt"
-                }
-            ]
-        }, 
+          "name": "bx bxl-typescript"
+        },
         {
-            "type": "Videojuego",
-            "name": "Python Invaders",
-            "date": "24/11/2023",
-            "image": "https://github.com/LisanRios/Python-Invaders/blob/main/TP%20PYTHON%20REEVES_RIOS_SALGUERO_NAVARRO/imagenes/inicio.png?raw=true",
-            "description": "El presente proyecto fue realizado en el marco del trabajo integrador final de la asignatura Laboratorio de Informática 2 (Labo 2) de la Universidad Nacional de San Martín (UNSAM). El objetivo del trabajo consistió en desarrollar un videojuego utilizando el lenguaje de programación Python. Para ello, elegimos el desafío de diseñar y construir un juego de nuestra propia creación.",            
-            "link": "https://github.com/LisanRios/Python-Invaders",
-            "lenguaje": [
-                {
-                    "name": "fa-brands fa-python"
-                }
-            ]
-        }, 
+          "name": "ti ti-brand-mysql"
+        },
         {
-            "type": "Videojuego",
-            "name": "Buscawachas",
-            "date": "24/11/2023",
-            "image": "https://raw.githubusercontent.com/LisanRios/Proyecto-Final-SPD/main/test.bmp",
-            "description": "El proyecto “Buscawachas” se llevó a cabo como parte un trabajo integrador final de la cátedra de Sistemas de Procesamiento de Datos (SPD) en la Universidad Nacional de San Martín (UNSAM). Nuestra tarea consistió en desarrollar un videojuego a elección. Optamos por el desafío de diseñar y construir dicho juego utilizando lenguaje ensamblador.",
-            "link": "https://github.com/LisanRios/Proyecto-Final-SPD",
-            "lenguaje": [
-                {
-                    "name": "bi bi-nut"
-                }
-            ]
-        }, 
+          "name": "bx bxl-spring-boot"
+        },
         {
-            "type": "Trabajo De Investigación",
-            "name": "Trabajo Integrador de Redes Neuronales",
-            "date": "31/05/2024",
-            "image": "https://ia-colombia.co/wp-content/uploads/2022/09/shutterstock_587768567.png",
-            "description": "Objetivo del trabajo: Este programa realiza varias tareas relacionadas con la obtención de datos de sitios web, análisis de datos y visualización de grafos utilizando las librerías BeautifulSoup, pandas, NetworkX y Matplotlib.",
-            "link": "https://github.com/LisanRios/Mate-3/tree/main/Trabajo%20Pr%C3%A1ctico%20Integrador%20de%20Matem%C3%A1tica%20III%20Lisandro%20Rios",
-            "lenguaje": [
-                {
-                    "name": "fa-brands fa-python"
-                }, 
-                {
-                    "name": "bx bxl-graphql"
-                }
-            ]
-        }, 
-        {
-            "type": "Trabajo De Investigación",
-            "name": "Prediccion de precio de criptomonedas con Redes Neuronales",
-            "date": "14/06/2024",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFrNNiyIrNNjPslLaMGeyce_BOj_ccmXsy7w&s",
-            "description": "Este trabajo práctico tiene como objetivo desarrollar un análisis de datos y la creación de un modelo predictivo basado en técnicas de regresión. El conjunto de datos elegido es Criptomonedas, Bolsa de Valores y Inflación que se haseleccionado por el cresiente inpacto en la vida diaria y la posibilidad de tarabajar con siencia de datos.",
-            "link": "https://github.com/LisanRios/Mate-3/tree/main/Segundo%20Trabajo%20Pr%C3%A1ctico%20Integrador%20de%20Matem%C3%A1tica%20III%20Lisandro%20Rios",
-            "lenguaje": [
-                {
-                    "name": "fa-brands fa-python"
-                },
-                {
-                    "name": "bx bx-brain"
-                }
-            ]
-        }, 
-        {
-            "type": "Videojuego",
-            "name": "DOOMmies",
-            "date": "08/04/2024",
-            "image": "https://camo.githubusercontent.com/16718b96cadfee43257e54e50022b0f17931ae868019ca0e9b93bd57f1ab89c9/68747470733a2f2f7777772e736f6d6f7378626f782e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032302f30332f64657461696c5f746162315f63617264315f31782e5f43423432303537343634395f2e6a7067",
-            "description": "Este repositorio tiene como objetivo crear un juego en el lenguaje Wollok para la materia Algoritmos 1 de la carrera de Tecnicatura en Programación Informática de la Universidad Nacional de San Martín (UNSAM). El juego está inspirado en el conocido título The Binding of Isaac. Se trata de un juego de acción RPG con fuertes elementos de tipo Roguelike, en el cual los niveles se generan aleatoriamente. Pero a diferencia del mismo, ¡¡¡ÉSTE TIENE LA SKIN DEL DOOM!!!",
-            "link": "https://github.com/algo1unsam/tp-game-24s1-doomies-1",
-            "lenguaje": [
-                {
-                    "name": "fa-brands fa-java"
-                }
-            ]
-        }, 
-        {
-            "type": "Sistema Operativo",
-            "name": "Trabajo practico final de Sistemas Operativos",
-            "date": "10/07/2024",
-            "image": "https://phantom-elmundo.unidadeditorial.es/215c5d4a7810a8ae7cd275c297d0b2a6/crop/168x72/1032x648/resize/828/f/webp/assets/multimedia/imagenes/2021/08/26/16299752237253.jpg",
-            "description": "Dicho trabajo consistia en crear un Sistema Operativo personalizado, cumpliendo varios requisitos especificos.",
-            "link": "https://docs.google.com/document/d/1fesC_05bEUCLHQ8W-qpFERcsFwPBzlCv/edit",
-            "lenguaje": [
-                {
-                    "name": "fa-brands fa-ubuntu"
-                },
-                {
-                    "name": "fa-brands fa-linux"
-                }
-            ]
+          "name": "fa-brands fa-java"
         }
-    ],
-    "tecnology":
-    [
+      ]
+    },
+    {
+      "type": "Página Web",
+      "name": "Challenge-Alura-Encriptador",
+      "date": "30/04/2023",
+      "image": "https://github.com/LisanRios/Challenge-Alura-Encriptador/blob/main/Captura%20de%20pantalla%202023-12-11%20110241.png?raw=true",
+      "description": "El proyecto encriptador de Alura ONE es un desafío web que permite encriptar y desencriptar texto. Utiliza HTML, CSS y JavaScript, y emplea expresiones regulares para validar la entrada de texto. La aplicación resultante es totalmente responsiva.",
+      "link": "https://github.com/LisanRios/Challenge-Alura-Encriptador",
+      "lenguaje": [
         {
-            "icon":"fa-brands fa-angular",
-            "name":"Angular",
-            "nivel": "★★★★☆"
+          "name": "fa-brands fa-html5"
         },
         {
-            "icon":"ti ti-brand-mysql",
-            "name":"MySQL",
-            "nivel": "★★★★★"
+          "name": "fa-brands fa-css3-alt"
         },
         {
-            "icon":"fa-brands fa-java",
-            "name":"Java",
-            "nivel": "★★★★★"
+          "name": "fa-brands fa-js"
+        }
+      ]
+    },
+    {
+      "type": "Robótica",
+      "name": "Arduino-Morse",
+      "date": "05/06/2023",
+      "image": "https://github.com/LisanRios/Arduino-Morse/blob/main/358172839_172667199129487_1108238551401241728_n.jpeg?raw=true",
+      "description": "El proyecto se centró en la creación de un dispositivo Arduino utilizando el lenguaje C. Este dispositivo constaba de una placa Arduino Uno equipada con dos botones (representando los caracteres punto y raya en código Morse) y una pantalla que visualizaba el texto escrito en dicho código.",
+      "link": "https://github.com/LisanRios/Arduino-Morse",
+      "lenguaje": [
+        {
+          "name": "bx bxs-copyright"
         },
         {
-            "icon":"bx bxl-spring-boot",
-            "name":"Spring Boot",
-            "nivel": "★★★★★"
+          "name": "bx bxl-c-plus-plus"
         },
         {
-            "icon":"fa-brands fa-react",
-            "name":"React",
-            "nivel": "★★★★☆"
+          "name": "fa-solid fa-robot"
+        }
+      ]
+    },
+    {
+      "type": "Código",
+      "name": "Propiedades",
+      "date": "24/11/2023",
+      "image": "https://e1.pxfuel.com/desktop-wallpaper/585/789/desktop-wallpaper-c-programming-language.jpg",
+      "description": "El proyecto se basó en la aplicación del lenguaje de programación C a un problema real de una empresa dedicada al sector inmobiliario. El propósito del proyecto fue crear un sistema informático que permitiera gestionar las propiedades de la empresa de forma eficiente y segura, cumpliendo con todos los requisitos funcionales y no funcionales que se habían establecido previamente. El sistema debía ofrecer funcionalidades como el registro, la búsqueda, la modificación y la eliminación de propiedades, así como la generación de informes y estadísticas.",
+      "link": "https://github.com/LisanRios/Propiedades",
+      "lenguaje": [
+        {
+          "name": "bx bxs-copyright"
         },
         {
-            "icon":"fa-brands fa-python",
-            "name":"Python",
-            "nivel": "★★★★★"
+          "name": "bx bxl-c-plus-plus"
         },
         {
-            "icon":"bx bxs-copyright",
-            "name":"C",
-            "nivel": "★★★★★"
+          "name": "bi bi-filetype-txt"
+        }
+      ]
+    },
+    {
+      "type": "Videojuego",
+      "name": "Python Invaders",
+      "date": "24/11/2023",
+      "image": "https://github.com/LisanRios/Python-Invaders/blob/main/TP%20PYTHON%20REEVES_RIOS_SALGUERO_NAVARRO/imagenes/inicio.png?raw=true",
+      "description": "El presente proyecto fue realizado en el marco del trabajo integrador final de la asignatura Laboratorio de Informática 2 (Labo 2) de la Universidad Nacional de San Martín (UNSAM). El objetivo del trabajo consistió en desarrollar un videojuego utilizando el lenguaje de programación Python. Para ello, elegimos el desafío de diseñar y construir un juego de nuestra propia creación.",
+      "link": "https://github.com/LisanRios/Python-Invaders",
+      "lenguaje": [
+        {
+          "name": "fa-brands fa-python"
+        }
+      ]
+    },
+    {
+      "type": "Videojuego",
+      "name": "Buscawachas",
+      "date": "24/11/2023",
+      "image": "https://raw.githubusercontent.com/LisanRios/Proyecto-Final-SPD/main/test.bmp",
+      "description": "El proyecto “Buscawachas” se llevó a cabo como parte un trabajo integrador final de la cátedra de Sistemas de Procesamiento de Datos (SPD) en la Universidad Nacional de San Martín (UNSAM). Nuestra tarea consistió en desarrollar un videojuego a elección. Optamos por el desafío de diseñar y construir dicho juego utilizando lenguaje ensamblador.",
+      "link": "https://github.com/LisanRios/Proyecto-Final-SPD",
+      "lenguaje": [
+        {
+          "name": "bi bi-nut"
+        }
+      ]
+    },
+    {
+      "type": "Trabajo De Investigación",
+      "name": "Trabajo Integrador de Redes Neuronales",
+      "date": "31/05/2024",
+      "image": "https://ia-colombia.co/wp-content/uploads/2022/09/shutterstock_587768567.png",
+      "description": "Objetivo del trabajo: Este programa realiza varias tareas relacionadas con la obtención de datos de sitios web, análisis de datos y visualización de grafos utilizando las librerías BeautifulSoup, pandas, NetworkX y Matplotlib.",
+      "link": "https://github.com/LisanRios/Mate-3/tree/main/Trabajo%20Pr%C3%A1ctico%20Integrador%20de%20Matem%C3%A1tica%20III%20Lisandro%20Rios",
+      "lenguaje": [
+        {
+          "name": "fa-brands fa-python"
         },
         {
-            "icon":"bi bi-nut",
-            "name":"Assembly",
-            "nivel": "★★★★☆"
+          "name": "bx bxl-graphql"
+        }
+      ]
+    },
+    {
+      "type": "Trabajo De Investigación",
+      "name": "Prediccion de precio de criptomonedas con Redes Neuronales",
+      "date": "14/06/2024",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFrNNiyIrNNjPslLaMGeyce_BOj_ccmXsy7w&s",
+      "description": "Este trabajo práctico tiene como objetivo desarrollar un análisis de datos y la creación de un modelo predictivo basado en técnicas de regresión. El conjunto de datos elegido es Criptomonedas, Bolsa de Valores y Inflación que se haseleccionado por el cresiente inpacto en la vida diaria y la posibilidad de tarabajar con siencia de datos.",
+      "link": "https://github.com/LisanRios/Mate-3/tree/main/Segundo%20Trabajo%20Pr%C3%A1ctico%20Integrador%20de%20Matem%C3%A1tica%20III%20Lisandro%20Rios",
+      "lenguaje": [
+        {
+          "name": "fa-brands fa-python"
         },
         {
-            "icon":"fa-brands fa-ubuntu",
-            "name":"Bash scripts on Unix/Linux",
-            "nivel": "★★★★☆"
+          "name": "bx bx-brain"
+        }
+      ]
+    },
+    {
+      "type": "Videojuego",
+      "name": "DOOMmies",
+      "date": "08/04/2024",
+      "image": "https://camo.githubusercontent.com/16718b96cadfee43257e54e50022b0f17931ae868019ca0e9b93bd57f1ab89c9/68747470733a2f2f7777772e736f6d6f7378626f782e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032302f30332f64657461696c5f746162315f63617264315f31782e5f43423432303537343634395f2e6a7067",
+      "description": "Este repositorio tiene como objetivo crear un juego en el lenguaje Wollok para la materia Algoritmos 1 de la carrera de Tecnicatura en Programación Informática de la Universidad Nacional de San Martín (UNSAM). El juego está inspirado en el conocido título The Binding of Isaac. Se trata de un juego de acción RPG con fuertes elementos de tipo Roguelike, en el cual los niveles se generan aleatoriamente. Pero a diferencia del mismo, ¡¡¡ÉSTE TIENE LA SKIN DEL DOOM!!!",
+      "link": "https://github.com/algo1unsam/tp-game-24s1-doomies-1",
+      "lenguaje": [
+        {
+          "name": "fa-brands fa-java"
+        }
+      ]
+    },
+    {
+      "type": "Sistema Operativo",
+      "name": "Trabajo practico final de Sistemas Operativos",
+      "date": "10/07/2024",
+      "image": "https://phantom-elmundo.unidadeditorial.es/215c5d4a7810a8ae7cd275c297d0b2a6/crop/168x72/1032x648/resize/828/f/webp/assets/multimedia/imagenes/2021/08/26/16299752237253.jpg",
+      "description": "Dicho trabajo consistia en crear un Sistema Operativo personalizado, cumpliendo varios requisitos especificos.",
+      "link": "https://docs.google.com/document/d/1fesC_05bEUCLHQ8W-qpFERcsFwPBzlCv/edit",
+      "lenguaje": [
+        {
+          "name": "fa-brands fa-ubuntu"
         },
         {
-            "icon":"fa-brands fa-git-alt",
-            "name":"Git",
-            "nivel": "★★★★★"
+          "name": "fa-brands fa-linux"
+        }
+      ]
+    },
+    {
+      "type": "Pagina Web",
+      "name": "Adivina al futbolista",
+      "date": "29/09/2024",
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQEvre-QJuYNbQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1730723303624?e=1740009600&v=beta&t=p1M5g45vEI9JH7fNawGSug1Rg-qJ3TMGzih-ZOIvXMY",
+      "description": "es un juego de adivinanza interactivo inspirado en Wordle, diseñado para desafiar tus conocimientos de fútbol. Con cada intento, recibes información sobre las características que coinciden con el jugador objetivo, y puedes probar tus habilidades en tres niveles de dificultad.",
+      "link": "https://lisanrios.github.io/TicTacGol/",
+      "lenguaje": [
+        {
+          "name": "fa-brands fa-html5"
         },
         {
-            "icon":"fa-brands fa-bootstrap",
-            "name":"Boolstrap",
-            "nivel": "★★★★★"
+          "name": "fa-brands fa-css3-alt"
         },
         {
-            "icon":"bx bxl-typescript",
-            "name":"TypeScript",
-            "nivel": "★★★★☆"
-        },
-        {
-            "icon":"fa-solid fa-robot",
-            "name":"Arduino",
-            "nivel": "★★★★☆"
-        },
-        {
-            "icon":"fa-solid fa-code",
-            "name":"Ruby on Rails",
-            "nivel": "★★★☆☆"
-    
-        },
-        {
-            "icon":" fa-brands fa-js",
-            "name":"Javascript",
-            "nivel": "★★★★☆"
-        },
-        {
-            "icon":"bx bx-wifi",
-            "name":"Redes Informáticas",
-            "nivel": "★★★☆☆"
+          "name": "fa-brands fa-js"
+        }
+      ]
+    }
+  ],
+  "tecnology": [
+    {
+      "icon": "fa-brands fa-angular",
+      "name": "Angular",
+      "nivel": "★★★★☆"
+    },
+    {
+      "icon": "ti ti-brand-mysql",
+      "name": "MySQL",
+      "nivel": "★★★★★"
+    },
+    {
+      "icon": "fa-brands fa-java",
+      "name": "Java",
+      "nivel": "★★★★★"
+    },
+    {
+      "icon": "bx bxl-spring-boot",
+      "name": "Spring Boot",
+      "nivel": "★★★★★"
+    },
+    {
+      "icon": "fa-brands fa-react",
+      "name": "React",
+      "nivel": "★★★★☆"
+    },
+    {
+      "icon": "fa-brands fa-python",
+      "name": "Python",
+      "nivel": "★★★★★"
+    },
+    {
+      "icon": "bx bxs-copyright",
+      "name": "C",
+      "nivel": "★★★★★"
+    },
+    {
+      "icon": "bi bi-nut",
+      "name": "Assembly",
+      "nivel": "★★★★☆"
+    },
+    {
+      "icon": "fa-brands fa-ubuntu",
+      "name": "Bash scripts on Unix/Linux",
+      "nivel": "★★★★☆"
+    },
+    {
+      "icon": "fa-brands fa-git-alt",
+      "name": "Git",
+      "nivel": "★★★★★"
+    },
+    {
+      "icon": "fa-brands fa-bootstrap",
+      "name": "Boolstrap",
+      "nivel": "★★★★★"
+    },
+    {
+      "icon": "bx bxl-typescript",
+      "name": "TypeScript",
+      "nivel": "★★★★☆"
+    },
+    {
+      "icon": "fa-solid fa-robot",
+      "name": "Arduino",
+      "nivel": "★★★★☆"
+    },
+    {
+      "icon": "fa-solid fa-code",
+      "name": "Ruby on Rails",
+      "nivel": "★★★☆☆"
+    },
+    {
+      "icon": " fa-brands fa-js",
+      "name": "Javascript",
+      "nivel": "★★★★☆"
+    },
+    {
+      "icon": "bx bx-wifi",
+      "name": "Redes Informáticas",
+      "nivel": "★★★☆☆"
+    },
+    {
+      "icon": "bx bxl-graphql",
+      "name": "GraphQL",
+      "nivel": "★★★★★"
+    }
+  ],
+  "titule": [
+    {
+      "type": "Técnico Universitario en Programación Informática",
+      "name": "Universidad Nacional de San Martin (UNSAM)",
+      "dateInicio": "01/02/2022",
+      "dateFin": "En curso",
+      "description": "Capaz de desarrollar proyectos de mediana envergadura, determinar las  necesidades  informáticas  de  empresas  de  tamaño  medio, solucionar problemas informáticos, trabajar de manera independiente en proyectos acotados a las necesidades de la pequeña y mediana industria, y colaborar en temas informáticos con profesionales cuando los  proyectos  sean  de  mayor  envergadura.  El  egresado  de  esta tecnicatura adquirirá las herramientas necesarias para comprender y utilizar eficientemente las nuevas tecnologías de programación en la resolución de problemas."
+    },
+    {
+      "type": "Programador Web Full Stack",
+      "name": "Argentina Programa 4.0",
+      "dateInicio": "01/10/2022",
+      "dateFin": "30/05/2023",
+      "description": "Se trata de un programa nacional y federal que tiene como objetivo capacitar  a  personas  en  lenguajes  y  conocimientos  sobre programación,  testing  y  habilidades  digitales  para  potenciar  la empleabilidad  en  el  sector  del  software  y  la  tecnología."
+    },
+    {
+      "type": "ONE",
+      "name": "Oracle Next Education",
+      "dateInicio": "03/04/2023",
+      "dateFin": "28/9/2023",
+      "description": "Oracle Next Education es un programa de educación, empleabilidad e inclusión 100% gratuito, creado para ofrecer formación de calidad a personas que no han contado con oportunidades para continuar sus estudios y desarrollar una carrera profesional."
+    }
+  ],
 
+  "trabajo": [
+    {
+      "type": "Técnico en Mantenimiento",
+      "name": "Banco de la Nación Argentina",
+      "dateInicio": "Octubre 2024",
+      "dateFin": "Presente",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png",
+      "link": "https://www.bna.com.ar/",
+      "description": [
+        {
+          "punto": "Encargado de garantizar el correcto funcionamiento de cajeros automáticos, terminales bancarias y equipos tecnológicos mediante mantenimientos preventivos y correctivos."
         },
         {
-            "icon":"bx bxl-graphql",
-            "name":"GraphQL",
-            "nivel": "★★★★★"
-
-        }
-    ],
-    "titule": 
-    [
-        {
-            "type": "Técnico Universitario en Programación Informática",
-            "name": "Universidad Nacional de San Martin (UNSAM)",
-            "dateInicio": "01/02/2022",
-            "dateFin": "En curso",
-            "description": "Capaz de desarrollar proyectos de mediana envergadura, determinar las  necesidades  informáticas  de  empresas  de  tamaño  medio, solucionar problemas informáticos, trabajar de manera independiente en proyectos acotados a las necesidades de la pequeña y mediana industria, y colaborar en temas informáticos con profesionales cuando los  proyectos  sean  de  mayor  envergadura.  El  egresado  de  esta tecnicatura adquirirá las herramientas necesarias para comprender y utilizar eficientemente las nuevas tecnologías de programación en la resolución de problemas."
+          "punto": "Supervisé y mantuve la infraestructura eléctrica y tecnológica en las sucursales bancarias, asegurando el cumplimiento de los estándares técnicos."
         },
         {
-            "type": "Programador Web Full Stack",
-            "name": "Argentina Programa 4.0",
-            "dateInicio": "01/10/2022",
-            "dateFin": "30/05/2023",
-            "description": "Se trata de un programa nacional y federal que tiene como objetivo capacitar  a  personas  en  lenguajes  y  conocimientos  sobre programación,  testing  y  habilidades  digitales  para  potenciar  la empleabilidad  en  el  sector  del  software  y  la  tecnología."
+          "punto": "Resolví incidencias técnicas de manera eficiente para minimizar interrupciones en los servicios operativos."
+        }
+      ]
+    },
+    {
+      "type": "Programador Full Stack",
+      "name": "Universidad Nacional de San Martín",
+      "dateInicio": "Agosto 2024",
+      "dateFin": "Presente",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png",
+      "link": "https://unsam.edu.ar/",
+      "description": [
+        {
+          "punto": "Realicé reuniones con los stakeholders para entender las necesidades de los estudiantes y del personal administrativo en la asignación de aulas y horarios."
         },
         {
-            "type": "ONE",
-            "name": "Oracle Next Education",
-            "dateInicio": "03/04/2023",
-            "dateFin": "28/9/2023",
-            "description": "Oracle Next Education es un programa de educación, empleabilidad e inclusión 100% gratuito, creado para ofrecer formación de calidad a personas que no han contado con oportunidades para continuar sus estudios y desarrollar una carrera profesional."
-        }
-    ],
-    "trabajo": 
-    [
+          "punto": "Desarrollé la interfaz de usuario utilizando React para crear una experiencia interactiva y dinámica."
+        },
         {
-            "type": "Programador Full Stack",
-            "name": "Universidad Nacional de San Martín",
-            "dateInicio": "August 2024",
-            "dateFin": "Present",
-            "logo":"https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png",
-            "link": "https://unsam.edu.ar/",
-            "description": [
-              {
-                "punto": "Realicé reuniones con los stakeholders para entender las necesidades de los estudiantes y del personal administrativo en la asignación de aulas y horarios."
-              },
-              {
-                "punto": "Desarrollé la interfaz de usuario utilizando React para crear una experiencia interactiva y dinámica."
-              },
-              {
-                "punto": "Implementé el servidor usando Spring Boot en Java, garantizando la escalabilidad y robustez de la aplicación."
-              },
-              {
-                "punto": "Desarrollé las API REST para la comunicación entre el front-end y la base de datos."
-              },
-              {
-                "punto": "Diseñé y gestioné la base de datos en MySQL, garantizando la integridad de los datos y su adecuada organización."
-              }
-            ]
-          },
+          "punto": "Implementé el servidor usando Spring Boot en Java, garantizando la escalabilidad y robustez de la aplicación."
+        },
         {
-            "type": "Freelance",
-            "name": "Self-taught",
-            "dateInicio": "February 2022",
-            "dateFin": "August 2024",
-            "logo":"https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2018/11/Why-it%E2%80%99s-Awesome-to-be-a-Freelancer-1.png",
-            "link":"https://porfolio-web-fe382.web.app/inicio",
-            "description": [
-                {
-                    "punto": "Trabajo de forma independiente en el desarrollo de páginas web, servicios, entre otros proyectos."
-                },
-                {
-                    "punto": "Demuestro una fuerte ética de trabajo, profesionalismo y capacidad para desempeñarme eficazmente bajo presión."
-                },
-                {
-                    "punto": "Tomo decisiones acertadas y resuelvo problemas con habilidad, empleando una planificación eficaz para impulsar el crecimiento del negocio de manera eficiente."
-                }
-            ]
+          "punto": "Desarrollé las API REST para la comunicación entre el front-end y la base de datos."
+        },
+        {
+          "punto": "Diseñé y gestioné la base de datos en MySQL, garantizando la integridad de los datos y su adecuada organización."
         }
-    ]
+      ]
+    },
+    {
+      "type": "Freelance",
+      "name": "Self-taught",
+      "dateInicio": "Febrero 2022",
+      "dateFin": "Agosto 2024",
+      "logo": "https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2018/11/Why-it%E2%80%99s-Awesome-to-be-a-Freelancer-1.png",
+      "link": "https://porfolio-web-fe382.web.app/inicio",
+      "description": [
+        {
+          "punto": "Trabajo de forma independiente en el desarrollo de páginas web, servicios, entre otros proyectos."
+        },
+        {
+          "punto": "Demuestro una fuerte ética de trabajo, profesionalismo y capacidad para desempeñarme eficazmente bajo presión."
+        },
+        {
+          "punto": "Tomo decisiones acertadas y resuelvo problemas con habilidad, empleando una planificación eficaz para impulsar el crecimiento del negocio de manera eficiente."
+        }
+      ]
+    }
+  ]
 }
