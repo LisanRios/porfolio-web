@@ -139,7 +139,7 @@
       "type": "Trabajo De Investigación",
       "name": "Prediccion de precio de criptomonedas con Redes Neuronales",
       "date": "14/06/2024",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFrNNiyIrNNjPslLaMGeyce_BOj_ccmXsy7w&s",
+      "image": "https://github.com/algo1unsam/tp-game-24s1-doomies-1/blob/master/assets/capturas/3.png?raw=true",
       "description": "Este trabajo práctico tiene como objetivo desarrollar un análisis de datos y la creación de un modelo predictivo basado en técnicas de regresión. El conjunto de datos elegido es Criptomonedas, Bolsa de Valores y Inflación que se haseleccionado por el cresiente inpacto en la vida diaria y la posibilidad de tarabajar con siencia de datos.",
       "link": "https://github.com/LisanRios/Mate-3/tree/main/Segundo%20Trabajo%20Pr%C3%A1ctico%20Integrador%20de%20Matem%C3%A1tica%20III%20Lisandro%20Rios",
       "lenguaje": [
@@ -155,7 +155,7 @@
       "type": "Videojuego",
       "name": "DOOMmies",
       "date": "08/04/2024",
-      "image": "https://camo.githubusercontent.com/16718b96cadfee43257e54e50022b0f17931ae868019ca0e9b93bd57f1ab89c9/68747470733a2f2f7777772e736f6d6f7378626f782e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032302f30332f64657461696c5f746162315f63617264315f31782e5f43423432303537343634395f2e6a7067",
+      "image": "https://raw.githubusercontent.com/algo1unsam/tp-game-24s1-doomies-1/refs/heads/master/assets/capturas/3.png?token=GHSAT0AAAAAAC55PUIOFVEI7YJHLEJEHUFSZ4WKN7Q",
       "description": "Este repositorio tiene como objetivo crear un juego en el lenguaje Wollok para la materia Algoritmos 1 de la carrera de Tecnicatura en Programación Informática de la Universidad Nacional de San Martín (UNSAM). El juego está inspirado en el conocido título The Binding of Isaac. Se trata de un juego de acción RPG con fuertes elementos de tipo Roguelike, en el cual los niveles se generan aleatoriamente. Pero a diferencia del mismo, ¡¡¡ÉSTE TIENE LA SKIN DEL DOOM!!!",
       "link": "https://github.com/algo1unsam/tp-game-24s1-doomies-1",
       "lenguaje": [
