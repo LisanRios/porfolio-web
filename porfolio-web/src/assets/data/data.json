@@ -1,5 +1,5 @@
 {
-  "nombre": "Lisandro Gabriel Rios De Morla",
+  "nombre": "Lisandro 👋",
   "age": "21 años",
   "foto": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
   "position": "Programador Full Stack",
@@ -139,7 +139,7 @@
       "type": "Trabajo De Investigación",
       "name": "Prediccion de precio de criptomonedas con Redes Neuronales",
       "date": "14/06/2024",
-      "image": "https://github.com/algo1unsam/tp-game-24s1-doomies-1/blob/master/assets/capturas/3.png?raw=true",
+      "image": "https://i.ytimg.com/vi/ACe6GGg064w/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCHaET-P2EpE6n0odjZWyBqkLo2og",
       "description": "Este trabajo práctico tiene como objetivo desarrollar un análisis de datos y la creación de un modelo predictivo basado en técnicas de regresión. El conjunto de datos elegido es Criptomonedas, Bolsa de Valores y Inflación que se haseleccionado por el cresiente inpacto en la vida diaria y la posibilidad de tarabajar con siencia de datos.",
       "link": "https://github.com/LisanRios/Mate-3/tree/main/Segundo%20Trabajo%20Pr%C3%A1ctico%20Integrador%20de%20Matem%C3%A1tica%20III%20Lisandro%20Rios",
       "lenguaje": [
@@ -155,7 +155,7 @@
       "type": "Videojuego",
       "name": "DOOMmies",
       "date": "08/04/2024",
-      "image": "https://raw.githubusercontent.com/algo1unsam/tp-game-24s1-doomies-1/refs/heads/master/assets/capturas/3.png?token=GHSAT0AAAAAAC55PUIOFVEI7YJHLEJEHUFSZ4WKN7Q",
+      "image": "https://preview.redd.it/bf1hn9w2v9ae1.jpeg?width=1080&crop=smart&auto=webp&s=36a28ebe1ecc1ce2f6fd1945bd8edb58ea354104",
       "description": "Este repositorio tiene como objetivo crear un juego en el lenguaje Wollok para la materia Algoritmos 1 de la carrera de Tecnicatura en Programación Informática de la Universidad Nacional de San Martín (UNSAM). El juego está inspirado en el conocido título The Binding of Isaac. Se trata de un juego de acción RPG con fuertes elementos de tipo Roguelike, en el cual los niveles se generan aleatoriamente. Pero a diferencia del mismo, ¡¡¡ÉSTE TIENE LA SKIN DEL DOOM!!!",
       "link": "https://github.com/algo1unsam/tp-game-24s1-doomies-1",
       "lenguaje": [
@@ -204,7 +204,7 @@
     {
       "icon": "fa-brands fa-angular",
       "name": "Angular",
-      "nivel": "★★★★☆"
+      "nivel": "★★★★★"
     },
     {
       "icon": "ti ti-brand-mysql",
@@ -214,12 +214,12 @@
     {
       "icon": "fa-brands fa-java",
       "name": "Java",
-      "nivel": "★★★★★"
+      "nivel": "★★★★☆"
     },
     {
       "icon": "bx bxl-spring-boot",
       "name": "Spring Boot",
-      "nivel": "★★★★★"
+      "nivel": "★★★★☆"
     },
     {
       "icon": "fa-brands fa-react",
@@ -233,18 +233,13 @@
     },
     {
       "icon": "bx bxs-copyright",
-      "name": "C",
+      "name": "C / C++",
       "nivel": "★★★★★"
     },
     {
       "icon": "bi bi-nut",
       "name": "Assembly",
-      "nivel": "★★★★☆"
-    },
-    {
-      "icon": "fa-brands fa-ubuntu",
-      "name": "Bash scripts on Unix/Linux",
-      "nivel": "★★★★☆"
+      "nivel": "★★☆☆☆"
     },
     {
       "icon": "fa-brands fa-git-alt",
@@ -262,29 +257,9 @@
       "nivel": "★★★★☆"
     },
     {
-      "icon": "fa-solid fa-robot",
-      "name": "Arduino",
-      "nivel": "★★★★☆"
-    },
-    {
-      "icon": "fa-solid fa-code",
-      "name": "Ruby on Rails",
-      "nivel": "★★★☆☆"
-    },
-    {
       "icon": " fa-brands fa-js",
       "name": "Javascript",
       "nivel": "★★★★☆"
-    },
-    {
-      "icon": "bx bx-wifi",
-      "name": "Redes Informáticas",
-      "nivel": "★★★☆☆"
-    },
-    {
-      "icon": "bx bxl-graphql",
-      "name": "GraphQL",
-      "nivel": "★★★★★"
     }
   ],
   "titule": [
@@ -312,6 +287,31 @@
   ],
 
   "trabajo": [
+    {
+      "type": "Programador Full Stack",
+      "name": "Municipalidad de General San Martín",
+      "dateInicio": "Marzo 2025",
+      "dateFin": "Presente",
+      "logo": "https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png",
+      "link": "https://sanmartin.gob.ar/",
+      "description": [
+          {
+            "punto": "Desarrollé la interfaz de usuario utilizando React y Angular para mejorar la experiencia del usuario con un diseño responsivo y atractivo."
+          },
+          {
+            "punto": "Implementé el servidor utilizando Spring Boot en Java, asegurando un backend robusto y escalable."
+          },
+          {
+            "punto": "Diseñé y gestioné la base de datos en MySQL, optimizando las consultas y garantizando la integridad de los datos."
+          },
+          {
+            "punto": "Desarrollé y documenté las API REST y GraphQL para facilitar la comunicación eficiente entre el front-end y el back-end."
+          },
+          {
+            "punto": "Desplegué la aplicación en Railway, configurando entornos de desarrollo, pruebas y producción para asegurar una implementación estable."
+          }        
+      ]
+    },
     {
       "type": "Operador Técnico",
       "name": "Banco de la Nación Argentina",

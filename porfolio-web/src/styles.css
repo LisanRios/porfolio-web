@@ -4,13 +4,22 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #070066;
+  background-color: #040137;
   border-radius: 15px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
   background-color: #040033;
   border-radius: 30px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Se mueve solo la mitad del ancho del contenedor */
+  }
 }
 
 li {
@@ -24,6 +33,7 @@ p {
   color: #160f29 !important;
 }
 
+
 .iconoDeBarras {
   margin: 30px !important;
   padding: auto !important;
@@ -36,18 +46,18 @@ p {
 }
 
 .miFoto img {
-  margin: 30px;
   width: 170px !important;
   height: 170px !important;
   border-radius: 100% !important;
+  border: #040033 5px solid !important;
+  margin: 30px !important;
 }
 
 .laLinea {
-  margin-top: 25px !important;
-  margin-bottom: 50px !important;
-  background-color: #fff !important;
-  color: #160f29 !important;
-  text-align: center !important;
+  overflow: hidden; /* Oculta el contenido que sale de la pantalla */
+  white-space: nowrap;
+  background-color: #ffffff;
+  padding: 20px 0;
 }
 
 .misProyectosTitulo {
@@ -109,7 +119,7 @@ footer li {
 }
 
 .nro4 {
-  background-color: #070066;
+  background-color: #040137;
 }
 
 html.dark-mode {
@@ -138,13 +148,13 @@ html.dark-mode .form_input {
 }
 
 .foc3 {
-  background-color: #070066 !important;
+  background-color: #040137 !important;
   color: #fff !important;
 }
 
 html.dark-mode .foc3 {
   filter: invert(100%);
-  background-color: #070066 !important;
+  background-color: #040137 !important;
 }
 
 html.dark-mode .foc2 {
@@ -187,11 +197,11 @@ a {
 }
 
 .lineaphotos {
-  background-color: #ffffff;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px; /* Espacio entre imágenes */
+  align-items: center;
+  gap: 20px;
+  width: max-content; /* Asegura que el contenido se pueda desplazar */
+  animation: scroll 30s linear infinite; /* Ajusta la velocidad aquí */
 }
 
 .photos {
@@ -205,16 +215,17 @@ a {
 .photos {
   max-width: 200px;
   height: auto;
+  object-fit: contain;
 }
 
 html.dark-mode .photos {
   filter: invert(0%);
-  background-color: #070066 !important;
+  background-color: #040137 !important;
 }
 
 html.dark-mode .lineaphotos {
   filter: invert(0%);
-  background-color: #070066 !important;
+  background-color: #040137 !important;
 }
 
 html.dark-mode .foc {
@@ -224,7 +235,7 @@ html.dark-mode .foc {
 
 .navbar {
   color: #fff;
-  background-color: #070066 !important;
+  background-color: #040137 !important;
 }
 
 .logo {
@@ -365,4 +376,187 @@ html.dark-mode .foc {
 
 .feature {
   margin-top: 15px;
+}
+
+/* Variables */
+:root {
+  --primary-color: #040033;
+  --text-color: #333;
+  --background-color: #f5f5f5;
+  --card-background: #ffffff;
+  --spacing-unit: 1rem;
+}
+
+/* Global Styles */
+.portfolio-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--background-color), #e0e0e0); /* darken($background-color, 5%) */
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
+}
+
+/* Section Styles */
+section {
+  padding: calc(var(--spacing-unit) * 4) var(--spacing-unit);
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  color: var(--text-color);
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-section .profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto calc(var(--spacing-unit) * 2); /* Asegura el centrado */
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita que la imagen se deforme */
+  display: block;
+}
+
+.profile-image img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%; /* Evita que la imagen se salga del contenedor */
+  height: auto;
+}
+
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-unit);
+  color: var(--text-color);
+}
+
+.hero-section .subtitle {
+  max-width: 600px;
+  margin: 0 auto calc(var(--spacing-unit) * 2);
+  color: rgba(51, 51, 51, 0.8); /* lighten($text-color, 20%) */
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: calc(var(--spacing-unit) * 2);
+  padding: 0 var(--spacing-unit);
+}
+
+.skills-grid mat-card {
+  padding: calc(var(--spacing-unit) * 2);
+}
+
+.skills-grid mat-card h3 {
+  margin-bottom: var(--spacing-unit);
+  color: var(--text-color);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-unit);
+}
+
+.skill-tags .skill-tag {
+  background-color: rgba(33, 150, 243, 0.1); /* rgba($primary-color, 0.1) */
+  color: var(--primary-color);
+  padding: calc(var(--spacing-unit) * 0.5) var(--spacing-unit);
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: calc(var(--spacing-unit) * 2);
+  padding: 0 var(--spacing-unit);
+}
+
+.project-card {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: var(--spacing-unit) 0;
+  color: var(--text-color);
+}
+
+.project-card p {
+  margin-bottom: var(--spacing-unit);
+  color: rgba(51, 51, 51, 0.8); /* lighten($text-color, 20%) */
+}
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  background-color: #e0e0e0; /* darken($background-color, 2%) */
+}
+
+.contact-section .social-links {
+  display: flex;
+  gap: var(--spacing-unit);
+  justify-content: center;
+  margin-top: calc(var(--spacing-unit) * 2);
+}
+
+/* Button Groups */
+.button-group {
+  display: flex;
+  gap: var(--spacing-unit);
+  justify-content: center;
+  margin-top: var(--spacing-unit);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
 }

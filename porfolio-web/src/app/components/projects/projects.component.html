@@ -1,4 +1,4 @@
-<div class="container pt-5">
+<div class="container ">
   <h3 class="pb-2 cartaDeProyecto"><i>Trabajos</i></h3>
   <ul>
     <li class="linea1 list-group-item p-2" *ngFor="let trabajos of trabajosList">
@@ -59,8 +59,9 @@
               <h2 class="card-text mb-auto p-2" class="{{leng.name}}"></h2>
             </li>
           </ul>
+          
           <a [href]="project.link" class="icon-link gap-1 icon-link-hover" target="_blank">
-            Ver código
+            Ver código  
             <svg class="bi">
               <use xlink:href="#chevron-right"></use>
             </svg>

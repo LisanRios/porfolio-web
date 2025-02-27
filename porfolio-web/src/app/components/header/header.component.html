@@ -1,65 +1,68 @@
 <div class="container">
-  <div class="espacio"></div>
-  <div class="row tituloPrincipal pt-5">
-    <div class="col-md-12">
-      <div class="text-center panel panel-default tituloPresentacion">
-        <h1 class="foc2 pt-5">
-          Hola, mi nombre es {{ miPorfolio.nombre }}.
-        </h1>
+
+  <section class="hero-section">
+    <h2>
+      Hola, soy {{ miPorfolio.nombre }}
+    </h2>
+    <div class="content-wrapper">
+      <div class="row justify-content-center"> 
+        <div class="profile-image col-md-4 col-10 text-center miFoto"> 
+          <img
+            class="  "
+            [src]="miPorfolio.foto"
+            alt="Foto de perfil"
+          />
+        </div>
+      </div>
+
+
+      <h1>{{ miPorfolio.position }}</h1>
+      <p class="subtitle">
+        Especializado en crear experiencias web modernas y atractivas con las últimas tecnologías
+      </p>
+  
+      <div class="button-group">
+        <button type="button" class="btn btn-dark border-bottom">
+          <a class="foc4" href="mailto:rios.lisandro369@gmail.com" target="_blank">
+            <i class="fa-regular fa-envelope"></i> Contactar
+          </a>
+        </button>
+  
+        <button type="button" class="btn btn-dark border-bottom">
+          <a class="foc4 foc6" href="https://github.com/LisanRios" target="_blank">
+            <i class="bi bi-github"></i> Ver Proyectos
+          </a>
+        </button>
       </div>
     </div>
-  </div>
+  </section>
+  
 
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="miFoto col-md-4 text-center">
-      <img
-        class="redorounded-circle"
-        [src]="miPorfolio.foto"
-        class="rounded mx-auto d-block"
-        alt=""
-      />
-    </div>
-    <div class="col-md-4"></div>
+
+</div>
+
+<div class="laLinea">
+  <div class="lineaphotos">
+    <img class="photos" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png" alt="" />
+    <img class="photos" src="https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900" alt="" />
+    <img class="photos" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png" alt="" />
+    <img class="photos" src="https://www.argentina.gob.ar/sites/default/files/min_economia.png" alt="" />
+    <img class="photos" src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png" alt="" />
+    <img class="photos" src="https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png" alt="" />
+    <img class="photos" src="https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png" alt="" />
+
+    <!-- 🔁 Se duplican las mismas imágenes para que la animación parezca infinita -->
+    <img class="photos" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png" alt="" />
+    <img class="photos" src="https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900" alt="" />
+    <img class="photos" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png" alt="" />
+    <img class="photos" src="https://www.argentina.gob.ar/sites/default/files/min_economia.png" alt="" />
+    <img class="photos" src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png" alt="" />
+    <img class="photos" src="https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png" alt="" />
+    <img class="photos" src="https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png" alt="" />
   </div>
 </div>
-<div class="laLinea">
-  <h2>{{ miPorfolio.position }}</h2>
-</div>
-<div class="laLinea">
-    <div class="text-center lineaphotos">
-      <img
-        class="photos"
-        src="https://todocodeacademy.com/wp-content/uploads/2020/12/cropped-LogoConSombras-sinfondo-166x38.png"
-        alt=""
-      />
-      <img
-        class="photos"
-        src="https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900"
-        alt=""
-      />
-      <img
-        class="photos"
-        src="https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png"
-        alt=""
-      />
-      <img
-        class="photos"
-        src="https://www.argentina.gob.ar/sites/default/files/min_economia.png"
-        alt=""
-      />
-      <img
-        class="photos"
-        src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png"
-        alt=""
-      />
-      <img
-        class="photos"
-        src="https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png"
-        alt=""
-      />
-    </div>
-  </div>
+
+
 
 <div class="container">
   <h3 class="pb-2"><i class="foc2">Educación y Formacion</i></h3>
@@ -84,16 +87,6 @@
 <div class="container">
     <div class="row container_textoDeMiVida">
         <h3 class="pt-5"><i class="foc2">Sobre mi</i></h3>
-      <div class="col-md-6">
-        <p class="foc2">
-          Vivo en {{ miPorfolio.ubication }}, tengo {{ miPorfolio.age }}. Desde
-          siempre, he sentido un fuerte interés por el fascinante mundo de la
-          tecnología y su constante evolución. Esta pasión me llevó a elegir la
-          carrera de programador como mi camino profesional, y estoy comprometido
-          a seguir perfeccionándome en esta área en el futuro.
-        </p>
-      </div>
-      <div class="col-md-6">
         <p class="foc2">
           Me destaco por ser una persona responsable, dedicada y orientada a la
           mejora continua. Mi ética de trabajo se refleja en el constante esfuerzo
@@ -104,4 +97,6 @@
         </p>
       </div>
     </div>
-  </div>
+
+
+  
