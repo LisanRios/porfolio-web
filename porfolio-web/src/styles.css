@@ -79,33 +79,6 @@ footer li {
   color: #fff !important;
 }
 
-.form {
-  min-width: 400px !important;
-  flex: 1 !important;
-  text-align: center !important;
-  padding: 30px !important;
-  order: 5 !important;
-}
-
-.form_input {
-  width: 100% !important;
-  padding: 7px !important;
-  margin: 6px 0 !important;
-  border: none !important;
-  border-bottom: 3px solid #4d29ff !important;
-  background: transparent !important;
-  color: #160f29 !important;
-}
-
-.form_input:focus {
-  background: linear-gradient(to bottom, transparent, #a8a8a8) !important;
-  outline: none !important;
-}
-
-.form_section textarea {
-  min-height: 140px !important;
-  resize: none !important;
-}
 
 .button {
   background-color: #4d29ff !important;
@@ -177,12 +150,6 @@ html.dark-mode .checkboxs input {
   padding-top: 5px;
 }
 
-html.dark-mode .form_input:focus {
-  filter: invert(100%);
-  background: linear-gradient(to bottom, transparent, #000000) !important;
-  outline: none !important;
-}
-
 html.dark-mode .advertencia {
   filter: invert(100%);
 }
@@ -204,6 +171,10 @@ a {
   animation: scroll 30s linear infinite; /* Ajusta la velocidad aquí */
 }
 
+.yo {
+  color: #040033 !important;
+}
+
 .photos {
   display: inline-block;
   margin: 10px;
@@ -220,18 +191,25 @@ a {
 
 html.dark-mode .photos {
   filter: invert(0%);
-  background-color: #040137 !important;
+  background-color: #ffffff !important;
 }
 
 html.dark-mode .lineaphotos {
   filter: invert(0%);
-  background-color: #040137 !important;
+  background-color: #ffffff !important;
 }
 
-html.dark-mode .foc {
-  filter: invert(100%);
-  color: #4d29ff !important;
+html.dark-mode .photo {
+  filter: invert(0%);
+  background-color: #ffffff !important;
 }
+
+.photo img {
+  background-color: white;
+  padding: 10px; /* Para que el fondo blanco se vea mejor */
+  border-radius: 5px; /* Opcional: bordes redondeados */
+}
+
 
 .navbar {
   color: #fff;

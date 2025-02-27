@@ -1,11 +1,11 @@
-<div class="container ">
-  <h3 class="pb-2 cartaDeProyecto"><i>Trabajos</i></h3>
+<div class="container">
+  <h2 class="pb-2 foc2 cartaDeProyecto">Trabajos</h2>
   <ul>
     <li class="linea1 list-group-item p-2" *ngFor="let trabajos of trabajosList">
       <div class="col-md-12">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <!-- Columna para el logo de la empresa (Imagen a la izquierda) -->
-          <div class="col-auto p-4 d-none d-lg-block">
+          <div class="photo col-auto p-4 d-none d-lg-block">
             <img
               src="{{ trabajos.logo }}"
               alt="Logo de la empresa"
@@ -16,56 +16,63 @@
           </div>
 
           <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary-emphasis">
+            <strong class="foc2 d-inline-block mb-2 text-primary-emphasis">
               {{ trabajos.name }}
             </strong>
-            <h3 class="mb-0">{{ trabajos.type }}</h3>
-            <div class="mb-1 text-body-secondary">
+            <h3 class="mb-0 foc2">{{ trabajos.type }}</h3>
+            <div class="foc2 mb-1 text-body-secondary">
               {{ trabajos.dateInicio }} - {{ trabajos.dateFin }}
             </div>
             <div *ngFor="let punto of trabajos.description">
-              <p class="card-text mb-auto">{{ punto.punto }}</p>
+              <p class="foc2 card-text mb-auto">{{ punto.punto }}</p>
             </div>
             <ul class="d-flex flex-wrap">
               <li class="linea1 list-group-item p-2" *ngFor="let leng of trabajos.technologies">
-                <h2 class="card-text mb-auto p-2 {{leng.icon}}"></h2>
+                <h2 class="foc2 card-text mb-auto p-2 {{leng.icon}}"></h2>
               </li>
             </ul>
-            <a [href]="trabajos.link" class="icon-link gap-1 icon-link-hover" target="_blank">
-              Saber más
-              <svg class="bi">
-                <use xlink:href="#chevron-right"></use>
-              </svg>
-            </a>
+            <div class="row">
+              <div class="col-md-6">
+                <a [href]="trabajos.link" class="btn btn-dark mt-3 col-md-3" target="_blank">
+                  🔗 Saber más
+                </a>
+              </div>
+              <div class="col-md-6"></div>
+            </div>
+            
           </div>
         </div>
       </div>
     </li>
   </ul>
 
-  <h3 class="p-2 "><i>Mis Proyectos</i></h3>
+  <h2 class="p-2 foc2">Mis Proyectos</h2>
   <div class="row pb-5">
     <li class="linea1 list-group-item p-2 col-md-12" *ngFor="let project of projectList">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary-emphasis">
+          <strong class="foc2 d-inline-block mb-2 text-primary-emphasis">
             {{ project.type }}
           </strong>
-          <h3 class="mb-0">{{ project.name }}</h3>
-          <div class="mb-1 text-body-secondary">{{ project.date }}</div>
-          <p class="card-text mb-auto">{{ project.description }}</p>
+          <h3 class="mb-0 foc2">{{ project.name }}</h3>
+          <div class="mb-1 foc2 text-body-secondary">{{ project.date }}</div>
+          <p class="card-text mb-auto foc2">{{ project.description }}</p>
           <ul class="d-flex flex-wrap">
             <li class="linea1 list-group-item p-2" *ngFor="let leng of project.lenguaje">
-              <h2 class="card-text mb-auto p-2" class="{{leng.name}}"></h2>
+              <h2 class="card-text mb-auto p-2" class="foc2 {{leng.name}}"></h2>
             </li>
           </ul>
           
-          <a [href]="project.link" class="icon-link gap-1 icon-link-hover" target="_blank">
-            Ver código  
-            <svg class="bi">
-              <use xlink:href="#chevron-right"></use>
-            </svg>
-          </a>
+          <div class="row">
+            <div class="col-md-6">
+              <a [href]="project.link" class="btn btn-dark mt-3" target="_blank"> 
+                <i class="fab fa-github"></i> Ver código  
+              </a>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+
+          
         </div>
         <div class="col-auto p-4 d-none d-lg-block">
           <img

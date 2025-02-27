@@ -1,5 +1,5 @@
 {
-  "nombre": "Lisandro 👋",
+  "nombre": "Lisandro",
   "age": "21 años",
   "foto": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
   "position": "Programador Full Stack",
@@ -184,8 +184,8 @@
       "type": "Pagina Web",
       "name": "Adivina al futbolista",
       "date": "29/09/2024",
-      "image": "https://media.licdn.com/dms/image/v2/D4D22AQEvre-QJuYNbQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1730723303624?e=1740009600&v=beta&t=p1M5g45vEI9JH7fNawGSug1Rg-qJ3TMGzih-ZOIvXMY",
-      "description": "es un juego de adivinanza interactivo inspirado en Wordle, diseñado para desafiar tus conocimientos de fútbol. Con cada intento, recibes información sobre las características que coinciden con el jugador objetivo, y puedes probar tus habilidades en tres niveles de dificultad.",
+      "image": "https://st2.depositphotos.com/1017228/9939/i/450/depositphotos_99390846-stock-photo-porptrait-of-a-pensive-casual.jpg",
+      "description": "Es un juego de adivinanza interactivo inspirado en Wordle, diseñado para desafiar tus conocimientos de fútbol. Con cada intento, recibes información sobre las características que coinciden con el jugador objetivo, y puedes probar tus habilidades en tres niveles de dificultad.",
       "link": "https://lisanrios.github.io/TicTacGol/",
       "lenguaje": [
         {
@@ -196,6 +196,47 @@
         },
         {
           "name": "fa-brands fa-js"
+        }
+      ]
+    },
+    {
+      "type": "Pagina Web",
+      "name": "TornaviApp - Tornamap",
+      "date": "01/09/2024",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png",
+      "description": "El principal objetivo de esta aplicación es ofrecer un mapa detallado de las aulas, permitiendo a los estudiantes acceder a la información necesaria para saber a dónde deben dirigirse en función de las asignaturas, profesores y carreras.",
+      "link": "https://github.com/agusnarvaez/tornamap-backend",
+      "lenguaje": [
+        {
+          "name": "fa-brands fa-react"
+        },
+        {
+          "name": "fa-brands fa-java"
+        },
+        {
+          "name": "ti ti-brand-mysql"
+        }
+      ]
+    },
+    {
+      "type": "Pagina Web",
+      "name": "Microservicios UNSAM",
+      "date": "29/09/2024",
+      "image": "https://www.arrobasolutions.com/wp-content/uploads/2021/10/Arquitectura-de-microservicios-que-es-y-cuales-son-sus-ventajas.jpg",
+      "description": "es un juego de adivinanza interactivo inspirado en Wordle, diseñado para desafiar tus conocimientos de fútbol. Con cada intento, recibes información sobre las características que coinciden con el jugador objetivo, y puedes probar tus habilidades en tres niveles de dificultad.",
+      "link": "https://github.com/LisanRios",
+      "lenguaje": [
+        {
+          "name": "fa-brands fa-react"
+        },
+        {
+          "name": "fa-brands fa-laravel"
+        },
+        {
+          "name": "fa-brands fa-docker"
+        },
+        {
+          "name": "ti ti-brand-mysql"
         }
       ]
     }
@@ -278,18 +319,25 @@
       "description": "Se trata de un programa nacional y federal que tiene como objetivo capacitar  a  personas  en  lenguajes  y  conocimientos  sobre programación,  testing  y  habilidades  digitales  para  potenciar  la empleabilidad  en  el  sector  del  software  y  la  tecnología."
     },
     {
-      "type": "ONE",
+      "type": "Programador BackEnd",
       "name": "Oracle Next Education",
       "dateInicio": "03/04/2023",
-      "dateFin": "28/9/2023",
+      "dateFin": "28/09/2023",
       "description": "Oracle Next Education es un programa de educación, empleabilidad e inclusión 100% gratuito, creado para ofrecer formación de calidad a personas que no han contado con oportunidades para continuar sus estudios y desarrollar una carrera profesional."
+    },
+    {
+      "type": "Programador React Js",
+      "name": "Talento Tech",
+      "dateInicio": "26/03/2025",
+      "dateFin": "26/07/2025",
+      "description": "El programa ofrece una formación integral a través de una metodología innovadora y práctica, con el objetivo de potenciar la oferta IT, trabajando para que los conocimientos y competencias adquiridos respondan a las demandas del sector productivo."
     }
   ],
 
   "trabajo": [
     {
       "type": "Programador Full Stack",
-      "name": "Municipalidad de General San Martín",
+      "name": "Municipalidad de San Martín",
       "dateInicio": "Marzo 2025",
       "dateFin": "Presente",
       "logo": "https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png",
@@ -316,7 +364,7 @@
       "type": "Operador Técnico",
       "name": "Banco de la Nación Argentina",
       "dateInicio": "Octubre 2024",
-      "dateFin": "Presente",
+      "dateFin": "Marzo 2025",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png",
       "link": "https://www.bna.com.ar/",
       "description": [
