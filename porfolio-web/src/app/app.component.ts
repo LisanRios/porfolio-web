@@ -20,7 +20,7 @@ export class AppComponent {
       const currentRoute = this.router.url;
       switch (currentRoute) {
         case '/inicio':
-          this.titleService.setTitle('Lisandro Rios');
+          this.titleService.setTitle('Lisandro Rios || Porfolio Web');
           break;
         case '/trabajos':
           this.titleService.setTitle('Lisandro Rios || Trabajos');
