@@ -1,0 +1,234 @@
+<section class="container admin-page" aria-labelledby="admin-title">
+  <div class="admin-shell">
+    <header class="admin-header">
+      <p class="admin-eyebrow">Acceso privado</p>
+      <h1 id="admin-title" class="foc2">Login administrativo</h1>
+      <p class="admin-copy foc2">
+        Acceso reservado para las cuentas autorizadas del proyecto.
+      </p>
+    </header>
+
+    <ng-container *ngIf="user$ | async as user; else loginState">
+      <div class="admin-session" aria-live="polite">
+        <img
+          *ngIf="user.picture"
+          [src]="user.picture"
+          alt="Foto del administrador"
+        />
+        <div>
+          <strong>{{ user.name || 'Administrador' }}</strong>
+          <span>Sesión administrativa activa</span>
+        </div>
+        <button type="button" class="btn btn-outline-dark" (click)="signOut()">
+          Cerrar sesión
+        </button>
+      </div>
+
+      <div class="admin-grid">
+        <article class="admin-card">
+          <h2>Datos del portfolio</h2>
+          <p>
+            Las escrituras quedan reservadas para la API segura del proyecto.
+          </p>
+          <button type="button" class="btn btn-dark" (click)="loadPortfolio()">
+            Cargar datos
+          </button>
+        </article>
+
+        <article class="admin-card">
+          <h2>CV ATS</h2>
+          <p>
+            Genera el PDF desde la misma fuente de datos para mantener portfolio
+            y curriculum sincronizados.
+          </p>
+          <button type="button" class="btn btn-dark" (click)="generateCv()">
+            Generar PDF
+          </button>
+        </article>
+      </div>
+
+      <p *ngIf="statusMessage" class="admin-status foc2" aria-live="polite">
+        {{ statusMessage }}
+      </p>
+
+      <section *ngIf="portfolio" class="admin-preview" aria-labelledby="preview-title">
+        <h2 id="preview-title">Resumen cargado</h2>
+        <dl>
+          <div>
+            <dt>Proyectos</dt>
+            <dd>{{ portfolio.project.length }}</dd>
+          </div>
+          <div>
+            <dt>Tecnologías</dt>
+            <dd>{{ portfolio.tecnology.length }}</dd>
+          </div>
+          <div>
+            <dt>Experiencias</dt>
+            <dd>{{ portfolio.trabajo.length }}</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="admin-editor" aria-labelledby="project-editor-title">
+        <div class="admin-editor-heading">
+          <div>
+            <h2 id="project-editor-title">
+              {{ editingProjectId ? 'Editar proyecto' : 'Nuevo proyecto' }}
+            </h2>
+            <p>Los cambios se guardan en Google Sheets mediante la API segura.</p>
+          </div>
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            (click)="resetProjectForm()"
+            *ngIf="editingProjectId"
+          >
+            Cancelar edición
+          </button>
+        </div>
+
+        <form class="project-form" (ngSubmit)="saveProject()" #projectEditor="ngForm">
+          <label>
+            ID
+            <input
+              class="form-control"
+              name="id"
+              [(ngModel)]="projectForm.id"
+              [disabled]="!!editingProjectId"
+              placeholder="portfolio-web"
+            />
+          </label>
+
+          <label>
+            Tipo
+            <input
+              class="form-control"
+              name="type"
+              [(ngModel)]="projectForm.type"
+              required
+              placeholder="Página Web"
+            />
+          </label>
+
+          <label>
+            Nombre
+            <input
+              class="form-control"
+              name="name"
+              [(ngModel)]="projectForm.name"
+              required
+              placeholder="Portfolio Web"
+            />
+          </label>
+
+          <label>
+            Fecha
+            <input
+              class="form-control"
+              name="date"
+              [(ngModel)]="projectForm.date"
+              required
+              placeholder="2026"
+            />
+          </label>
+
+          <label class="project-form-wide">
+            Imagen
+            <input
+              class="form-control"
+              name="image"
+              [(ngModel)]="projectForm.image"
+              required
+              placeholder="https://..."
+            />
+          </label>
+
+          <label class="project-form-wide">
+            Link
+            <input
+              class="form-control"
+              name="link"
+              [(ngModel)]="projectForm.link"
+              required
+              placeholder="https://github.com/..."
+            />
+          </label>
+
+          <label class="project-form-wide">
+            Iconos
+            <input
+              class="form-control"
+              name="languageText"
+              [(ngModel)]="languageText"
+              placeholder="fa-brands fa-angular, fa-brands fa-css3-alt"
+            />
+          </label>
+
+          <label class="project-form-wide">
+            Descripción
+            <textarea
+              class="form-control"
+              name="description"
+              [(ngModel)]="projectForm.description"
+              required
+              rows="4"
+            ></textarea>
+          </label>
+
+          <button
+            type="submit"
+            class="btn btn-dark project-form-action"
+            [disabled]="projectEditor.invalid || isSavingProject"
+          >
+            {{ editingProjectId ? 'Guardar cambios' : 'Crear proyecto' }}
+          </button>
+        </form>
+      </section>
+
+      <section
+        *ngIf="portfolio as loadedPortfolio"
+        class="admin-project-list"
+        aria-labelledby="project-list-title"
+      >
+        <h2 id="project-list-title">Proyectos cargados</h2>
+        <div
+          class="admin-project-row"
+          *ngFor="let project of loadedPortfolio.project; trackBy: trackProject"
+        >
+          <div>
+            <strong>{{ project.name }}</strong>
+            <span>{{ project.type }} &middot; {{ project.date }}</span>
+          </div>
+          <div class="admin-project-actions">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              (click)="editProject(project)"
+            >
+              Editar
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              (click)="deleteProject(project)"
+            >
+              Desactivar
+            </button>
+          </div>
+        </div>
+      </section>
+    </ng-container>
+
+    <ng-template #loginState>
+      <div class="admin-login">
+        <div *ngIf="isAuthConfigured; else missingGoogleConfig" #googleButton></div>
+
+        <ng-template #missingGoogleConfig>
+          <p class="admin-warning">
+            El acceso administrativo no está disponible en este entorno.
+          </p>
+        </ng-template>
+      </div>
+    </ng-template>
+  </div>
+</section>

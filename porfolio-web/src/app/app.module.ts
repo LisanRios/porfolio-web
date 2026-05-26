@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { Page404Component } from './components/page404/page404.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailService } from '../app/service/email.service'; 
@@ -17,7 +18,8 @@ import { EmailService } from '../app/service/email.service';
     HeaderComponent,
     Page404Component,
     ProjectsComponent,
-    TechnologiesComponent
+    TechnologiesComponent,
+    AdminComponent
     ],
   imports: [
     BrowserModule,

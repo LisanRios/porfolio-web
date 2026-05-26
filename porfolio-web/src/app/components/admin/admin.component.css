@@ -1,0 +1,184 @@
+.admin-page {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.admin-shell {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  margin-bottom: 2rem;
+}
+
+.admin-eyebrow {
+  margin-bottom: 0.5rem;
+  color: #4d29ff !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.admin-login,
+.admin-session,
+.admin-card,
+.admin-preview,
+.admin-editor,
+.admin-project-list {
+  border: 1px solid #d9d9e3;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 1.25rem;
+}
+
+.admin-login {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+.admin-session {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-session img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.admin-session div {
+  display: grid;
+  gap: 0.15rem;
+  margin-right: auto;
+}
+
+.admin-session span,
+.admin-warning,
+.admin-card p {
+  color: #4f4f5f;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-card h2,
+.admin-preview h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.admin-card p {
+  margin: 0;
+}
+
+.admin-status {
+  margin: 1.5rem 0 0;
+}
+
+.admin-preview {
+  margin-top: 1.5rem;
+}
+
+.admin-editor,
+.admin-project-list {
+  margin-top: 1.5rem;
+}
+
+.admin-editor-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-editor-heading h2,
+.admin-project-list h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.admin-editor-heading p {
+  margin: 0.25rem 0 0;
+  color: #4f4f5f;
+}
+
+.project-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: #160f29;
+  font-weight: 600;
+}
+
+.project-form-wide,
+.project-form-action {
+  grid-column: 1 / -1;
+}
+
+.project-form-action {
+  justify-self: start;
+}
+
+.admin-project-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid #ececf2;
+  padding: 1rem 0;
+}
+
+.admin-project-row:first-of-type {
+  border-top: 0;
+}
+
+.admin-project-row div:first-child {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.admin-project-row span {
+  color: #4f4f5f;
+}
+
+.admin-project-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding-top: 4rem;
+  }
+
+  .admin-session,
+  .admin-grid,
+  .project-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-session {
+    display: grid;
+  }
+
+  .admin-editor-heading,
+  .admin-project-row,
+  .admin-project-actions {
+    display: grid;
+  }
+}

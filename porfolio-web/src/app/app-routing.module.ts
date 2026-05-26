@@ -4,12 +4,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 import { Page404Component } from './components/page404/page404.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
   {path: 'inicio', component: HeaderComponent},
   {path: 'trabajos', component: ProjectsComponent},
   {path: 'tecnologias', component: TechnologiesComponent},
+  {path: 'admin', component: AdminComponent},
   {path: '**', component: Page404Component},
 ];
 

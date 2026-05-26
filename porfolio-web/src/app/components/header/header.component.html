@@ -1,154 +1,266 @@
-<div class="container">
-  <section class="hero-section">
-    <h2 class="foc2">Hola, soy {{ miPorfolio.nombre }} 👋</h2>
-    <div class="content-wrapper">
-      <div class="row justify-content-center">
-        <div class="profile-image col-md-4 col-10 text-center miFoto">
-          <img class="  " [src]="miPorfolio.foto" alt="Foto de perfil" />
+<ng-container *ngIf="portfolio$ | async as portfolio">
+  <section class="container" aria-labelledby="hero-title">
+    <div class="hero-section">
+      <p class="foc2 hero-kicker">Hola, soy {{ portfolio.nombre }}</p>
+      <div class="content-wrapper">
+        <div class="row justify-content-center">
+          <div class="profile-image col-md-4 col-10 text-center miFoto">
+            <img [src]="portfolio.foto" alt="Foto de perfil de Lisandro Rios" />
+          </div>
         </div>
-      </div>
 
-      <h1 class="title foc2">{{ miPorfolio.position }}</h1>
-      <p class="subtitle foc2">
-        Especializado en crear experiencias web modernas y atractivas con las
-        últimas tecnologías
-      </p>
+        <h1 id="hero-title" class="title foc2">{{ portfolio.position }}</h1>
+        <p class="subtitle foc2">
+          Especializado en crear experiencias web modernas, accesibles y
+          orientadas a producto.
+        </p>
 
-      <div class="button-group">
-        <button type="button" class="btn btn-dark border-bottom">
+        <div class="button-group">
           <a
-            class="foc4"
+            class="btn btn-dark border-bottom foc4"
             href="mailto:rios.lisandro369@gmail.com"
-            target="_blank"
           >
-            <i class="fa-regular fa-envelope"></i> Contactar
+            <i class="fa-regular fa-envelope" aria-hidden="true"></i> Contactar
           </a>
-        </button>
 
-        <button type="button" class="btn btn-dark border-bottom">
           <a
-            class="foc4 foc6"
+            class="btn btn-dark border-bottom foc4 foc6"
             href="https://github.com/LisanRios"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            <i class="bi bi-github"></i> Ver Proyectos
+            <i class="bi bi-github" aria-hidden="true"></i> Ver Proyectos
           </a>
-        </button>
+        </div>
       </div>
     </div>
   </section>
-</div>
 
-<div class="laLinea">
-  <div class="lineaphotos">
-    <img
-      class="photos"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://www.argentina.gob.ar/sites/default/files/min_economia.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png"
-      alt=""
-    />
+  <section class="laLinea" aria-label="Instituciones y organizaciones">
+    <div class="lineaphotos">
+      <img
+        class="photos"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png"
+        alt="Banco de la Nacion Argentina"
+      />
+      <img
+        class="photos"
+        src="https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900"
+        alt="Argentina Programa"
+      />
+      <img
+        class="photos"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png"
+        alt="INTI"
+      />
+      <img
+        class="photos"
+        src="https://www.argentina.gob.ar/sites/default/files/min_economia.png"
+        alt="Ministerio de Economia"
+      />
+      <img
+        class="photos"
+        src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png"
+        alt="UNSAM"
+      />
+      <img
+        class="photos"
+        src="https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png"
+        alt="Alura Oracle ONE"
+      />
+      <img
+        class="photos"
+        src="https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png"
+        alt="Municipalidad de San Martin"
+      />
 
-    <!-- 🔁 Se duplican las mismas imágenes para que la animación parezca infinita -->
-    <img
-      class="photos"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://www.argentina.gob.ar/sites/default/files/min_economia.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png"
-      alt=""
-    />
-    <img
-      class="photos"
-      src="https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png"
-      alt=""
-    />
-  </div>
-</div>
-
-<div class="container">
-  <h2 class="pb-2 pt-5 foc2">Educación y Formacion</h2>
-  <p class="foc2">
-    Mi formación académica completa está en mi
-    <a
-      href="https://www.linkedin.com/in/lisandro-rios-a2882b252/"
-      target="_blank"
-      >Linkedin</a
-    >. A continuación, les dejo mis títulos más importantes.
-  </p>
-  <li
-    class="linea1 list-group-item"
-    *ngFor="let titulos of tituleList"
-  >
-    <div class="bg-body-tertiary p-5 rounded">
-      <h3 class="foc2">{{ titulos.type }}</h3>
-      <h4 class="foc2">{{ titulos.name }}</h4>
-      <h5 class="foc2">{{ titulos.dateInicio }} - {{ titulos.dateFin }}</h5>
-      <p class="lead foc2">{{ titulos.description }}</p>
+      <img
+        class="photos"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="photos"
+        src="https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="photos"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="photos"
+        src="https://www.argentina.gob.ar/sites/default/files/min_economia.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="photos"
+        src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="photos"
+        src="https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="photos"
+        src="https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png"
+        alt=""
+        aria-hidden="true"
+      />
     </div>
-  </li>
-</div>
+  </section>
 
-<div class="container">
-  <div class="row container_textoDeMiVida">
-    <h3 class="pt-5 foc2">Sobre mi</h3>
+  <section class="container" aria-labelledby="education-title">
+    <div class="admin-inline-toolbar pb-2 pt-5">
+      <h2 id="education-title" class="foc2">Educación y formación</h2>
+      <button
+        *ngIf="isAdmin$ | async"
+        type="button"
+        class="admin-icon-button"
+        title="Agregar formación"
+        aria-label="Agregar formación"
+        (click)="startCreateEducation()"
+      >
+        <i class="bi bi-plus-lg" aria-hidden="true"></i>
+      </button>
+    </div>
     <p class="foc2">
-      Me destaco por ser una persona responsable, dedicada y orientada a la
-      mejora continua. Mi ética de trabajo se refleja en el constante esfuerzo
-      que realizo para elevar mis habilidades y conocimientos. Estoy convencido
-      de que mi entusiasmo por la tecnología y mi compromiso con el crecimiento
-      profesional serán activos valiosos para el equipo en el que pueda
-      contribuir.
+      Mi formación académica completa está en mi
+      <a
+        href="https://www.linkedin.com/in/lisandro-rios-a2882b252/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Linkedin</a
+      >. A continuación, dejo mis títulos más importantes.
     </p>
-  </div>
-</div>
+
+    <form
+      *ngIf="showEducationForm"
+      class="admin-inline-form"
+      (ngSubmit)="saveEducation()"
+      #educationEditor="ngForm"
+    >
+      <label>
+        ID
+        <input
+          class="form-control"
+          name="educationId"
+          [(ngModel)]="educationForm.id"
+          [disabled]="!!editingEducationId"
+          placeholder="unsam-programacion"
+        />
+      </label>
+      <label>
+        Título
+        <input
+          class="form-control"
+          name="educationType"
+          [(ngModel)]="educationForm.type"
+          required
+        />
+      </label>
+      <label>
+        Institución
+        <input
+          class="form-control"
+          name="educationName"
+          [(ngModel)]="educationForm.name"
+          required
+        />
+      </label>
+      <label>
+        Inicio
+        <input
+          class="form-control"
+          name="educationStart"
+          [(ngModel)]="educationForm.dateInicio"
+          required
+        />
+      </label>
+      <label>
+        Fin
+        <input
+          class="form-control"
+          name="educationEnd"
+          [(ngModel)]="educationForm.dateFin"
+          required
+        />
+      </label>
+      <label class="wide">
+        Descripción
+        <textarea
+          class="form-control"
+          name="educationDescription"
+          [(ngModel)]="educationForm.description"
+          required
+          rows="4"
+        ></textarea>
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-dark" [disabled]="educationEditor.invalid">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="closeEducationForm()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+    <p *ngIf="educationStatus" class="foc2" aria-live="polite">{{ educationStatus }}</p>
+
+    <ul class="p-0">
+      <li
+        class="linea1 list-group-item"
+        *ngFor="let titulos of portfolio.titule; trackBy: trackEducation"
+      >
+        <article class="bg-body-tertiary p-5 rounded admin-editable-card">
+          <div *ngIf="isAdmin$ | async" class="admin-card-actions">
+            <button
+              type="button"
+              class="admin-icon-button"
+              title="Editar formación"
+              aria-label="Editar formación"
+              (click)="startEditEducation(titulos)"
+            >
+              <i class="bi bi-pencil" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="admin-icon-button delete"
+              title="Eliminar formación"
+              aria-label="Eliminar formación"
+              (click)="deleteEducation(titulos)"
+            >
+              <i class="bi bi-trash" aria-hidden="true"></i>
+            </button>
+          </div>
+          <h3 class="foc2">{{ titulos.type }}</h3>
+          <h4 class="foc2">{{ titulos.name }}</h4>
+          <p class="foc2">{{ titulos.dateInicio }} - {{ titulos.dateFin }}</p>
+          <p class="lead foc2">{{ titulos.description }}</p>
+        </article>
+      </li>
+    </ul>
+  </section>
+
+  <section class="container" aria-labelledby="about-title">
+    <div class="row container_textoDeMiVida">
+      <h2 id="about-title" class="pt-5 foc2">Sobre mi</h2>
+      <p class="foc2">
+        Me destaco por ser una persona responsable, dedicada y orientada a la
+        mejora continua. Mi ética de trabajo se refleja en el esfuerzo constante
+        por elevar mis habilidades y conocimientos. Mi entusiasmo por la
+        tecnología y mi compromiso con el crecimiento profesional son activos
+        que busco aportar a cada equipo.
+      </p>
+    </div>
+  </section>
+</ng-container>

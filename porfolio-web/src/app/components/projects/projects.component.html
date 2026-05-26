@@ -1,89 +1,215 @@
-<div class="container">
-  <h2 class="pb-2 foc2 cartaDeProyecto">Trabajos</h2>
-  <ul>
-    <li class="linea1 list-group-item p-2" *ngFor="let trabajos of trabajosList">
-      <div class="col-md-12">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <!-- Columna para el logo de la empresa (Imagen a la izquierda) -->
+<ng-container *ngIf="portfolio$ | async as portfolio">
+  <section class="container" aria-labelledby="work-title">
+    <div class="admin-inline-toolbar cartaDeProyecto pb-2">
+      <h1 id="work-title" class="foc2">Trabajos</h1>
+      <button
+        *ngIf="isAdmin$ | async"
+        type="button"
+        class="admin-icon-button"
+        title="Agregar trabajo"
+        aria-label="Agregar trabajo"
+        (click)="startCreateWork()"
+      >
+        <i class="bi bi-plus-lg" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <form
+      *ngIf="showWorkForm"
+      class="admin-inline-form"
+      (ngSubmit)="saveWork()"
+      #workEditor="ngForm"
+    >
+      <label>
+        ID
+        <input
+          class="form-control"
+          name="workId"
+          [(ngModel)]="workForm.id"
+          [disabled]="!!editingWorkId"
+          placeholder="municipalidad-fullstack"
+        />
+      </label>
+      <label>
+        Puesto
+        <input class="form-control" name="workType" [(ngModel)]="workForm.type" required />
+      </label>
+      <label>
+        Organización
+        <input class="form-control" name="workName" [(ngModel)]="workForm.name" required />
+      </label>
+      <label>
+        Inicio
+        <input
+          class="form-control"
+          name="workStart"
+          [(ngModel)]="workForm.dateInicio"
+          required
+        />
+      </label>
+      <label>
+        Fin
+        <input class="form-control" name="workEnd" [(ngModel)]="workForm.dateFin" required />
+      </label>
+      <label>
+        Logo
+        <input class="form-control" name="workLogo" [(ngModel)]="workForm.logo" required />
+      </label>
+      <label class="wide">
+        Link
+        <input class="form-control" name="workLink" [(ngModel)]="workForm.link" required />
+      </label>
+      <label class="wide">
+        Iconos
+        <input
+          class="form-control"
+          name="workTech"
+          [(ngModel)]="workTechnologyText"
+          placeholder="fa-brands fa-angular, fa-brands fa-java"
+        />
+      </label>
+      <label class="wide">
+        Descripción, un punto por línea
+        <textarea
+          class="form-control"
+          name="workDescription"
+          [(ngModel)]="workDescriptionText"
+          required
+          rows="5"
+        ></textarea>
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-dark" [disabled]="workEditor.invalid">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="closeWorkForm()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+    <p *ngIf="workStatus" class="foc2" aria-live="polite">{{ workStatus }}</p>
+
+    <ul class="p-0">
+      <li
+        class="linea1 list-group-item p-2"
+        *ngFor="let trabajo of portfolio.trabajo; trackBy: trackWork"
+      >
+        <article
+          class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 admin-editable-card"
+        >
+          <div *ngIf="isAdmin$ | async" class="admin-card-actions">
+            <button
+              type="button"
+              class="admin-icon-button"
+              title="Editar trabajo"
+              aria-label="Editar trabajo"
+              (click)="startEditWork(trabajo)"
+            >
+              <i class="bi bi-pencil" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="admin-icon-button delete"
+              title="Eliminar trabajo"
+              aria-label="Eliminar trabajo"
+              (click)="deleteWork(trabajo)"
+            >
+              <i class="bi bi-trash" aria-hidden="true"></i>
+            </button>
+          </div>
           <div class="photo col-auto p-4 d-none d-lg-block">
             <img
-              src="{{ trabajos.logo }}"
-              alt="Logo de la empresa"
+              [src]="trabajo.logo"
+              [alt]="'Logo de ' + trabajo.name"
               width="100"
               height="100"
+              loading="lazy"
               style="object-fit: contain"
             />
           </div>
 
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="foc2 d-inline-block mb-2 text-primary-emphasis">
-              {{ trabajos.name }}
+              {{ trabajo.name }}
             </strong>
-            <h3 class="mb-0 foc2">{{ trabajos.type }}</h3>
-            <div class="foc2 mb-1 text-body-secondary">
-              {{ trabajos.dateInicio }} - {{ trabajos.dateFin }}
-            </div>
-            <div *ngFor="let punto of trabajos.description">
-              <p class="foc2 card-text mb-auto">{{ punto.punto }}</p>
-            </div>
-            <ul class="d-flex flex-wrap">
-              <li class="linea1 list-group-item p-2" *ngFor="let leng of trabajos.technologies">
-                <h2 class="foc2 card-text mb-auto p-2 {{leng.icon}}"></h2>
+            <h2 class="mb-0 foc2">{{ trabajo.type }}</h2>
+            <p class="foc2 mb-1 text-body-secondary">
+              {{ trabajo.dateInicio }} - {{ trabajo.dateFin }}
+            </p>
+            <ul class="p-0">
+              <li *ngFor="let punto of trabajo.description">
+                <p class="foc2 card-text mb-auto">{{ punto.punto }}</p>
               </li>
             </ul>
-            <div class="row">
-              <div class="col-md-6">
-                <a [href]="trabajos.link" class="btn btn-dark mt-3 col-md-3" target="_blank">
-                  🔗 Saber más
-                </a>
-              </div>
-              <div class="col-md-6"></div>
-            </div>
-            
+            <ul class="d-flex flex-wrap p-0" *ngIf="trabajo.technologies?.length">
+              <li
+                class="linea1 list-group-item p-2"
+                *ngFor="let leng of trabajo.technologies"
+              >
+                <i class="foc2 card-text mb-auto p-2 {{ leng.icon }}" aria-hidden="true"></i>
+              </li>
+            </ul>
+            <a
+              [href]="trabajo.link"
+              class="btn btn-dark mt-3 align-self-start"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Saber más
+            </a>
           </div>
-        </div>
-      </div>
-    </li>
-  </ul>
+        </article>
+      </li>
+    </ul>
+  </section>
 
-  <h2 class="p-2 foc2">Mis Proyectos</h2>
-  <div class="row pb-5">
-    <li class="linea1 list-group-item p-2 col-md-12" *ngFor="let project of projectList">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="foc2 d-inline-block mb-2 text-primary-emphasis">
-            {{ project.type }}
-          </strong>
-          <h3 class="mb-0 foc2">{{ project.name }}</h3>
-          <div class="mb-1 foc2 text-body-secondary">{{ project.date }}</div>
-          <p class="card-text mb-auto foc2">{{ project.description }}</p>
-          <ul class="d-flex flex-wrap">
-            <li class="linea1 list-group-item p-2" *ngFor="let leng of project.lenguaje">
-              <h2 class="card-text mb-auto p-2" class="foc2 {{leng.name}}"></h2>
-            </li>
-          </ul>
-          
-          <div class="row">
-            <div class="col-md-6">
-              <a [href]="project.link" class="btn btn-dark mt-3" target="_blank"> 
-                <i class="fab fa-github"></i> Ver código  
-              </a>
-            </div>
-            <div class="col-md-6"></div>
+  <section class="container" aria-labelledby="projects-title">
+    <h2 id="projects-title" class="p-2 foc2">Mis Proyectos</h2>
+    <ul class="row pb-5 p-0">
+      <li
+        class="linea1 list-group-item p-2 col-md-12"
+        *ngFor="let project of portfolio.project"
+      >
+        <article
+          class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+        >
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="foc2 d-inline-block mb-2 text-primary-emphasis">
+              {{ project.type }}
+            </strong>
+            <h3 class="mb-0 foc2">{{ project.name }}</h3>
+            <p class="mb-1 foc2 text-body-secondary">{{ project.date }}</p>
+            <p class="card-text mb-auto foc2">{{ project.description }}</p>
+            <ul class="d-flex flex-wrap p-0">
+              <li
+              class="linea1 list-group-item p-2"
+              *ngFor="let leng of project.lenguaje"
+            >
+              <i class="foc2 card-text mb-auto p-2 {{ leng.name }}" aria-hidden="true"></i>
+              </li>
+            </ul>
+
+            <a
+              [href]="project.link"
+              class="btn btn-dark mt-3 align-self-start"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-github" aria-hidden="true"></i> Ver código
+            </a>
           </div>
-
-          
-        </div>
-        <div class="col-auto p-4 d-none d-lg-block">
-          <img
-            src="{{ project.image }}"
-            alt="Project image"
-            width="200"
-            height="250"
-            style="object-fit: contain"
-          />
-        </div>
-      </div>
-    </li>
-  </div>
-</div>
+          <div class="col-auto p-4 d-none d-lg-block">
+            <img
+              [src]="project.image"
+              [alt]="'Imagen del proyecto ' + project.name"
+              width="200"
+              height="250"
+              loading="lazy"
+              style="object-fit: contain"
+            />
+          </div>
+        </article>
+      </li>
+    </ul>
+  </section>
+</ng-container>

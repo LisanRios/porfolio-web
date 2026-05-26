@@ -538,3 +538,92 @@ section h2 {
   }
 
 }
+
+.admin-inline-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.admin-inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.admin-icon-button {
+  display: inline-grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #d9d9e3;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #160f29;
+}
+
+.admin-icon-button:hover {
+  background-color: #f4f4f8;
+}
+
+.admin-icon-button.delete {
+  color: #b42318;
+}
+
+.admin-inline-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #d9d9e3;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.admin-inline-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: #160f29;
+  font-weight: 600;
+}
+
+.admin-inline-form .wide,
+.admin-inline-form .form-actions {
+  grid-column: 1 / -1;
+}
+
+.admin-inline-form .form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-editable-card {
+  position: relative;
+}
+
+.admin-card-actions {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .admin-inline-toolbar,
+  .admin-inline-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-inline-toolbar,
+  .admin-inline-form .form-actions {
+    display: grid;
+  }
+
+  .admin-card-actions {
+    position: static;
+    margin-bottom: 1rem;
+  }
+}

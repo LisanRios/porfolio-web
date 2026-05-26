@@ -1,25 +1,115 @@
-
-<div class="container "> 
-    <h2 class="pb-2 cartaDeTecnologia foc2">Tecnologías Dominadas</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
-      <li class="linea1 list-group-item p-2" *ngFor="let Tecnologia of tecnologyList">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <!-- Icono primero -->
-            <h3 class="mb-0 foc2 text-center">
-              <i class="{{Tecnologia.icon}}"></i>
-            </h3>
-            <!-- Nombre segundo -->
-            <div class="feature col text-center">
-              <p class="fs-2 text-body-emphasis foc2">{{Tecnologia.name}}</p>
-            </div>
-            <!-- Nivel tercero -->
-            <p class="card-text mb-auto foc2 text-center">{{Tecnologia.nivel}}</p>
-          </div>
-          <div class="col-auto d-none d-lg-block"></div> 
-        </div>
-      </li>
+<ng-container *ngIf="portfolio$ | async as portfolio">
+  <section class="container" aria-labelledby="technologies-title">
+    <div class="admin-inline-toolbar cartaDeTecnologia pb-2">
+      <h1 id="technologies-title" class="foc2">Tecnologías dominadas</h1>
+      <button
+        *ngIf="isAdmin$ | async"
+        type="button"
+        class="admin-icon-button"
+        title="Agregar tecnología"
+        aria-label="Agregar tecnología"
+        (click)="startCreateTechnology()"
+      >
+        <i class="bi bi-plus-lg" aria-hidden="true"></i>
+      </button>
     </div>
-  </div>
-  
-  
+
+    <form
+      *ngIf="showTechnologyForm"
+      class="admin-inline-form"
+      (ngSubmit)="saveTechnology()"
+      #technologyEditor="ngForm"
+    >
+      <label>
+        ID
+        <input
+          class="form-control"
+          name="technologyId"
+          [(ngModel)]="technologyForm.id"
+          [disabled]="!!editingTechnologyId"
+          placeholder="angular"
+        />
+      </label>
+      <label>
+        Nombre
+        <input
+          class="form-control"
+          name="technologyName"
+          [(ngModel)]="technologyForm.name"
+          required
+        />
+      </label>
+      <label>
+        Ícono
+        <input
+          class="form-control"
+          name="technologyIcon"
+          [(ngModel)]="technologyForm.icon"
+          required
+          placeholder="fa-brands fa-angular"
+        />
+      </label>
+      <label>
+        Nivel
+        <input
+          class="form-control"
+          name="technologyLevel"
+          [(ngModel)]="technologyForm.nivel"
+          required
+          placeholder="★★★★★"
+        />
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-dark" [disabled]="technologyEditor.invalid">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="closeTechnologyForm()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+    <p *ngIf="technologyStatus" class="foc2" aria-live="polite">{{ technologyStatus }}</p>
+
+    <ul class="row g-4 py-5 row-cols-1 row-cols-lg-4 p-0">
+      <li
+        class="linea1 list-group-item p-2"
+        *ngFor="let tecnologia of portfolio.tecnology; trackBy: trackTechnology"
+      >
+        <article
+          class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm admin-editable-card"
+        >
+          <div *ngIf="isAdmin$ | async" class="admin-card-actions">
+            <button
+              type="button"
+              class="admin-icon-button"
+              title="Editar tecnología"
+              aria-label="Editar tecnología"
+              (click)="startEditTechnology(tecnologia)"
+            >
+              <i class="bi bi-pencil" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="admin-icon-button delete"
+              title="Eliminar tecnología"
+              aria-label="Eliminar tecnología"
+              (click)="deleteTechnology(tecnologia)"
+            >
+              <i class="bi bi-trash" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="col p-4 d-flex flex-column position-static">
+            <h2 class="mb-0 foc2 text-center">
+              <i class="{{ tecnologia.icon }}" aria-hidden="true"></i>
+              <span class="visually-hidden">{{ tecnologia.name }}</span>
+            </h2>
+            <div class="feature col text-center">
+              <p class="fs-2 text-body-emphasis foc2">{{ tecnologia.name }}</p>
+            </div>
+            <p class="card-text mb-auto foc2 text-center">{{ tecnologia.nivel }}</p>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </section>
+</ng-container>
