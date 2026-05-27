@@ -15,6 +15,7 @@ import { PorfolioService } from '../../service/porfolio.service';
 
 @Component({
   selector: 'app-header',
+  standalone: false,
   templateUrl: './header.component.html', 
   styleUrl: './header.component.css'
 })

@@ -7,6 +7,7 @@ import { PorfolioService } from '../../service/porfolio.service';
 
 @Component({
   selector: 'app-technologies',
+  standalone: false,
   templateUrl: './technologies.component.html',
   styleUrl: './technologies.component.css'
 })

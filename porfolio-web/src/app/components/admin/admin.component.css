@@ -1,6 +1,5 @@
 .admin-page {
-  padding-top: 6rem;
-  padding-bottom: 4rem;
+  padding: 6rem 0 4rem;
 }
 
 .admin-shell {
@@ -71,7 +70,9 @@
 }
 
 .admin-card h2,
-.admin-preview h2 {
+.admin-preview h2,
+.admin-editor-heading h2,
+.admin-project-list h2 {
   margin: 0;
   font-size: 1.25rem;
 }
@@ -84,10 +85,7 @@
   margin: 1.5rem 0 0;
 }
 
-.admin-preview {
-  margin-top: 1.5rem;
-}
-
+.admin-preview,
 .admin-editor,
 .admin-project-list {
   margin-top: 1.5rem;
@@ -99,12 +97,6 @@
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1rem;
-}
-
-.admin-editor-heading h2,
-.admin-project-list h2 {
-  margin: 0;
-  font-size: 1.25rem;
 }
 
 .admin-editor-heading p {
@@ -157,16 +149,12 @@
     padding-top: 4rem;
   }
 
-  .admin-session,
   .admin-grid,
   .project-form {
     grid-template-columns: 1fr;
   }
 
-  .admin-session {
-    display: grid;
-  }
-
+  .admin-session,
   .admin-editor-heading,
   .admin-project-row,
   .admin-project-actions {

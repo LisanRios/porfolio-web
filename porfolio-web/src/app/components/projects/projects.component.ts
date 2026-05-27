@@ -14,6 +14,7 @@ import { PorfolioService } from '../../service/porfolio.service';
 
 @Component({
   selector: 'app-projects',
+  standalone: false,
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
