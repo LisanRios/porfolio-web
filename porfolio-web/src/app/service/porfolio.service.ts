@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
-import { catchError, shareReplay, switchMap } from 'rxjs/operators';
+import { BehaviorSubject, forkJoin, Observable, of } from 'rxjs';
+import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { PortfolioData } from '../models/portfolio.model';
 
@@ -34,11 +34,30 @@ export class PorfolioService {
       return localData$;
     }
 
-    return this.http
-      .get<PortfolioData>(`${this.apiBaseUrl}/portfolio`)
-      .pipe(
-        switchMap((portfolio) => (portfolio.nombre ? of(portfolio) : localData$)),
-        catchError(() => localData$)
-      );
+    return forkJoin({
+      local: localData$,
+      remote: this.http
+        .get<PortfolioData>(`${this.apiBaseUrl}/portfolio`)
+        .pipe(catchError(() => of(null))),
+    }).pipe(
+      map(({ local, remote }) => {
+        if (!remote) {
+          return local;
+        }
+
+        return {
+          ...local,
+          ...remote,
+          project: remote.project?.length ? remote.project : local.project,
+          trabajo: remote.trabajo?.length ? remote.trabajo : local.trabajo,
+          tecnology: remote.tecnology?.length ? remote.tecnology : local.tecnology,
+          titule: remote.titule?.length ? remote.titule : local.titule,
+          certifications: remote.certifications?.length
+            ? remote.certifications
+            : local.certifications ?? [],
+          about: remote.about || local.about,
+        };
+      })
+    );
   }
 }

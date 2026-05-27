@@ -13,6 +13,7 @@ const RANGES = {
   work: 'work!A:J',
   technologies: 'technologies!A:E',
   education: 'education!A:G',
+  certifications: 'certifications!A:H',
 };
 
 export class PortfolioRepository {
@@ -22,12 +23,13 @@ export class PortfolioRepository {
   }
 
   async getPortfolio() {
-    const [profile, projects, work, technologies, education] = await Promise.all([
+    const [profile, projects, work, technologies, education, certifications] = await Promise.all([
       this.getProfile(),
       this.getProjects(),
       this.getWork(),
       this.getTechnologies(),
       this.getEducation(),
+      this.getCertifications(),
     ]);
 
     return {
@@ -36,6 +38,7 @@ export class PortfolioRepository {
       trabajo: work,
       tecnology: technologies,
       titule: education,
+      certifications,
     };
   }
 
@@ -248,6 +251,93 @@ export class PortfolioRepository {
     });
   }
 
+  async createCertification(certification) {
+    const normalizedCertification = this.normalizeCertification(certification);
+    await this.ensureIdIsAvailable(RANGES.certifications, normalizedCertification.id);
+
+    await this.sheets.spreadsheets.values.append({
+      spreadsheetId: this.spreadsheetId,
+      range: RANGES.certifications,
+      valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS',
+      requestBody: {
+        values: [this.certificationToRow(normalizedCertification)],
+      },
+    });
+
+    return normalizedCertification;
+  }
+
+  async updateCertification(certificationId, certification) {
+    const existing = await this.findRowById(
+      RANGES.certifications,
+      certificationId,
+      'Certificacion no encontrada'
+    );
+    const normalizedCertification = this.normalizeCertification({
+      ...certification,
+      id: existing.id,
+    });
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `certifications!A${existing.rowNumber}:H${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [this.certificationToRow(normalizedCertification)],
+      },
+    });
+
+    return normalizedCertification;
+  }
+
+  async deleteCertification(certificationId) {
+    const existing = await this.findRowById(
+      RANGES.certifications,
+      certificationId,
+      'Certificacion no encontrada'
+    );
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `certifications!H${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [['FALSE']],
+      },
+    });
+  }
+
+  async updateProfileValue(key, value) {
+    const values = await this.getValues(RANGES.profile);
+    const rowIndex = values.findIndex((row, index) => index > 0 && row[0] === key);
+    const rowNumber = rowIndex >= 0 ? rowIndex + 1 : null;
+
+    if (rowNumber) {
+      await this.sheets.spreadsheets.values.update({
+        spreadsheetId: this.spreadsheetId,
+        range: `profile!A${rowNumber}:B${rowNumber}`,
+        valueInputOption: 'RAW',
+        requestBody: {
+          values: [[key, value]],
+        },
+      });
+    } else {
+      await this.sheets.spreadsheets.values.append({
+        spreadsheetId: this.spreadsheetId,
+        range: RANGES.profile,
+        valueInputOption: 'RAW',
+        insertDataOption: 'INSERT_ROWS',
+        requestBody: {
+          values: [[key, value]],
+        },
+      });
+    }
+
+    return { key, value };
+  }
+
+
   async getProfile() {
     const values = await this.getValues(RANGES.profile);
 
@@ -316,6 +406,20 @@ export class PortfolioRepository {
       dateInicio: row.dateInicio,
       dateFin: row.dateFin,
       description: row.description,
+    }));
+  }
+
+  async getCertifications() {
+    const rows = rowsToObjects(await this.getValues(RANGES.certifications));
+
+    return rows.filter((row) => isActive(row.active)).map((row) => ({
+      id: row.id,
+      title: row.title,
+      issuer: row.issuer,
+      date: row.date,
+      credentialUrl: row.credentialUrl,
+      description: row.description,
+      icon: row.icon,
     }));
   }
 
@@ -462,6 +566,33 @@ export class PortfolioRepository {
       education.dateInicio,
       education.dateFin,
       education.description,
+      'TRUE',
+    ];
+  }
+
+  normalizeCertification(certification) {
+    const id = certification.id || makeId(`${certification.issuer}-${certification.title}`);
+
+    return {
+      id,
+      title: certification.title,
+      issuer: certification.issuer,
+      date: certification.date,
+      credentialUrl: certification.credentialUrl,
+      description: certification.description,
+      icon: certification.icon,
+    };
+  }
+
+  certificationToRow(certification) {
+    return [
+      certification.id,
+      certification.title,
+      certification.issuer,
+      certification.date,
+      certification.credentialUrl,
+      certification.description,
+      certification.icon,
       'TRUE',
     ];
   }

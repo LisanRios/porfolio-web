@@ -39,6 +39,16 @@ const sheetDefinitions = {
     'description',
     'active',
   ],
+  certifications: [
+    'id',
+    'title',
+    'issuer',
+    'date',
+    'credentialUrl',
+    'description',
+    'icon',
+    'active',
+  ],
 };
 
 let metadata;

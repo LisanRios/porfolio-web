@@ -423,5 +423,34 @@
         }
       ]
     }
+  ],
+  "certifications": [
+    {
+      "id": "argentina-programa-fullstack",
+      "title": "Programador Web Full Stack",
+      "issuer": "Argentina Programa 4.0",
+      "date": "2023",
+      "credentialUrl": "https://www.linkedin.com/in/lisandro-rios-a2882b252/details/certifications/",
+      "description": "Formación full stack con foco en desarrollo web, arquitectura de aplicaciones y buenas prácticas.",
+      "icon": "bi bi-award"
+    },
+    {
+      "id": "oracle-next-education-backend",
+      "title": "Programador Backend",
+      "issuer": "Oracle Next Education",
+      "date": "2023",
+      "credentialUrl": "https://www.linkedin.com/in/lisandro-rios-a2882b252/details/certifications/",
+      "description": "Especialización orientada a backend, lógica de negocio, APIs y fundamentos sólidos de programación.",
+      "icon": "bi bi-patch-check"
+    },
+    {
+      "id": "talento-tech-react",
+      "title": "Programador React JS",
+      "issuer": "Talento Tech",
+      "date": "2025",
+      "credentialUrl": "https://www.linkedin.com/in/lisandro-rios-a2882b252/details/certifications/",
+      "description": "Formación frontend moderna con énfasis en interfaces dinámicas, componentes y experiencia de usuario.",
+      "icon": "bi bi-stars"
+    }
   ]
 }

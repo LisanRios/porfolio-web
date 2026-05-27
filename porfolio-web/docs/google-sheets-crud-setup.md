@@ -47,6 +47,13 @@ El comando crea estas pestañas y encabezados:
 - `work`
 - `technologies`
 - `education`
+- `certifications`
+
+Para importar los datos actuales de `data.json`:
+
+```bash
+npm run seed:data-json
+```
 
 ## 4. Levantar backend
 

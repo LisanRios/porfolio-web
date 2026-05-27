@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import {
+  Certification,
   Education,
   PortfolioData,
   Project,
@@ -118,6 +119,40 @@ export class AdminPortfolioApiService {
   deleteEducation(educationId: string): Observable<void> {
     return this.http.delete<void>(
       this.buildUrl(`/education/${encodeURIComponent(educationId)}`),
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  createCertification(certification: Certification): Observable<Certification> {
+    return this.http.post<Certification>(
+      this.buildUrl('/certifications'),
+      certification,
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  updateCertification(
+    certificationId: string,
+    certification: Certification
+  ): Observable<Certification> {
+    return this.http.put<Certification>(
+      this.buildUrl(`/certifications/${encodeURIComponent(certificationId)}`),
+      certification,
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  deleteCertification(certificationId: string): Observable<void> {
+    return this.http.delete<void>(
+      this.buildUrl(`/certifications/${encodeURIComponent(certificationId)}`),
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  updateProfileValue(key: string, value: string): Observable<{ key: string; value: string }> {
+    return this.http.put<{ key: string; value: string }>(
+      this.buildUrl(`/profile/${encodeURIComponent(key)}`),
+      { value },
       { headers: this.buildAuthHeaders() }
     );
   }

@@ -14,7 +14,7 @@
 
 .admin-eyebrow {
   margin-bottom: 0.5rem;
-  color: #4d29ff !important;
+  color: var(--app-accent) !important;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -29,8 +29,9 @@
 .admin-project-list {
   border: 1px solid #d9d9e3;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: var(--app-surface);
   padding: 1.25rem;
+  box-shadow: var(--app-shadow-soft);
 }
 
 .admin-login {
@@ -54,14 +55,13 @@
 
 .admin-session div {
   display: grid;
-  gap: 0.15rem;
   margin-right: auto;
 }
 
 .admin-session span,
 .admin-warning,
 .admin-card p {
-  color: #4f4f5f;
+  color: var(--app-muted);
 }
 
 .admin-grid {
@@ -109,7 +109,7 @@
 
 .admin-editor-heading p {
   margin: 0.25rem 0 0;
-  color: #4f4f5f;
+  color: var(--app-muted);
 }
 
 .project-form {
@@ -121,7 +121,7 @@
 .project-form label {
   display: grid;
   gap: 0.35rem;
-  color: #160f29;
+  color: var(--app-text);
   font-weight: 600;
 }
 
@@ -139,21 +139,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border-top: 1px solid #ececf2;
+  border-top: 1px solid var(--app-border);
   padding: 1rem 0;
 }
 
-.admin-project-row:first-of-type {
-  border-top: 0;
-}
-
-.admin-project-row div:first-child {
-  display: grid;
-  gap: 0.2rem;
-}
-
 .admin-project-row span {
-  color: #4f4f5f;
+  color: var(--app-muted);
 }
 
 .admin-project-actions {

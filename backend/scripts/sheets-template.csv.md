@@ -11,6 +11,7 @@ age,21 años
 foto,https://example.com/foto.jpg
 position,Programador Full Stack
 ubication,Buenos Aires (Argentina)
+about,Me destaco por ser una persona responsable, dedicada y orientada a la mejora continua.
 ```
 
 ## projects
@@ -40,4 +41,11 @@ typescript,bx bxl-typescript,TypeScript,★★★★☆,TRUE
 ```csv
 id,type,name,dateInicio,dateFin,description,active
 unsam-tupi,Tecnico Universitario en Programacion Informatica,Universidad Nacional de San Martin,01/02/2022,En curso,Formacion universitaria orientada al desarrollo de software.,TRUE
+```
+
+## certifications
+
+```csv
+id,title,issuer,date,credentialUrl,description,icon,active
+argentina-programa-fullstack,Programador Web Full Stack,Argentina Programa 4.0,2023,https://www.linkedin.com/in/lisandro-rios-a2882b252/details/certifications/,Formacion full stack con foco en desarrollo web y buenas practicas.,bi bi-award,TRUE
 ```

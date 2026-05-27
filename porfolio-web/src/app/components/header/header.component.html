@@ -1,7 +1,19 @@
 <ng-container *ngIf="portfolio$ | async as portfolio">
   <section class="container" aria-labelledby="hero-title">
     <div class="hero-section">
-      <p class="foc2 hero-kicker">Hola, soy {{ portfolio.nombre }}</p>
+      <div class="hero-admin-toolbar">
+        <p class="foc2 hero-kicker">Hola, soy {{ portfolio.nombre }}</p>
+        <button
+          *ngIf="isAdmin$ | async"
+          type="button"
+          class="admin-icon-button"
+          title="Editar perfil"
+          aria-label="Editar perfil"
+          (click)="startEditProfile(portfolio)"
+        >
+          <i class="bi bi-pencil" aria-hidden="true"></i>
+        </button>
+      </div>
       <div class="content-wrapper">
         <div class="row justify-content-center">
           <div class="profile-image col-md-4 col-10 text-center miFoto">
@@ -10,6 +22,10 @@
         </div>
 
         <h1 id="hero-title" class="title foc2">{{ portfolio.position }}</h1>
+        <div class="hero-meta foc2">
+          <span>{{ portfolio.age }}</span>
+          <span>{{ portfolio.ubication }}</span>
+        </div>
         <p class="subtitle foc2">
           Especializado en crear experiencias web modernas, accesibles y
           orientadas a producto.
@@ -32,6 +48,53 @@
             <i class="bi bi-github" aria-hidden="true"></i> Ver Proyectos
           </a>
         </div>
+
+        <form
+          *ngIf="showProfileForm"
+          class="admin-inline-form profile-form"
+          (ngSubmit)="saveProfile()"
+          #profileEditor="ngForm"
+        >
+          <label>
+            Nombre
+            <input class="form-control" name="profileName" [(ngModel)]="profileForm.nombre" required />
+          </label>
+          <label>
+            Edad
+            <input class="form-control" name="profileAge" [(ngModel)]="profileForm.age" required />
+          </label>
+          <label class="wide">
+            Foto
+            <input class="form-control" name="profilePhoto" [(ngModel)]="profileForm.foto" required />
+          </label>
+          <label>
+            Posición
+            <input
+              class="form-control"
+              name="profilePosition"
+              [(ngModel)]="profileForm.position"
+              required
+            />
+          </label>
+          <label>
+            Ubicación
+            <input
+              class="form-control"
+              name="profileLocation"
+              [(ngModel)]="profileForm.ubication"
+              required
+            />
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-dark" [disabled]="profileEditor.invalid">
+              Guardar
+            </button>
+            <button type="button" class="btn btn-outline-dark" (click)="closeProfileForm()">
+              Cancelar
+            </button>
+          </div>
+        </form>
+        <p *ngIf="profileStatus" class="foc2" aria-live="polite">{{ profileStatus }}</p>
       </div>
     </div>
   </section>
@@ -116,6 +179,56 @@
         alt=""
         aria-hidden="true"
       />
+    </div>
+  </section>
+
+  <section class="container portfolio-signal" aria-labelledby="impact-title">
+    <div class="section-heading">
+      <p class="section-eyebrow">Portfolio vivo</p>
+      <h2 id="impact-title" class="foc2">Impacto, foco y forma de construir</h2>
+    </div>
+
+    <div class="impact-grid">
+      <article class="impact-card">
+        <span>{{ portfolio.project.length }}+</span>
+        <p>Proyectos publicados y en evolución</p>
+      </article>
+      <article class="impact-card">
+        <span>{{ portfolio.trabajo.length }}</span>
+        <p>Experiencias profesionales y freelance</p>
+      </article>
+      <article class="impact-card">
+        <span>{{ portfolio.tecnology.length }}</span>
+        <p>Tecnologías aplicadas en productos reales</p>
+      </article>
+      <article class="impact-card">
+        <span>{{ portfolio.titule.length }}</span>
+        <p>Instancias de formación técnica verificable</p>
+      </article>
+    </div>
+
+    <div class="craft-grid">
+      <article>
+        <i class="bi bi-compass" aria-hidden="true"></i>
+        <h3 class="foc2">Producto</h3>
+        <p class="foc2">
+          Interfaces claras, orientadas a usuarios reales y pensadas para escalar.
+        </p>
+      </article>
+      <article>
+        <i class="bi bi-diagram-3" aria-hidden="true"></i>
+        <h3 class="foc2">Arquitectura</h3>
+        <p class="foc2">
+          APIs, datos y frontend conectados con criterios mantenibles.
+        </p>
+      </article>
+      <article>
+        <i class="bi bi-rocket-takeoff" aria-hidden="true"></i>
+        <h3 class="foc2">Entrega</h3>
+        <p class="foc2">
+          Iteración rápida, documentación útil y despliegues preparados para producción.
+        </p>
+      </article>
     </div>
   </section>
 
@@ -251,16 +364,213 @@
     </ul>
   </section>
 
-  <section class="container" aria-labelledby="about-title">
-    <div class="row container_textoDeMiVida">
-      <h2 id="about-title" class="pt-5 foc2">Sobre mi</h2>
-      <p class="foc2">
-        Me destaco por ser una persona responsable, dedicada y orientada a la
-        mejora continua. Mi ética de trabajo se refleja en el esfuerzo constante
-        por elevar mis habilidades y conocimientos. Mi entusiasmo por la
-        tecnología y mi compromiso con el crecimiento profesional son activos
-        que busco aportar a cada equipo.
-      </p>
+  <section class="container" aria-labelledby="certifications-title">
+    <div class="admin-inline-toolbar pb-2">
+      <div class="section-heading compact">
+        <p class="section-eyebrow">Credenciales</p>
+        <h2 id="certifications-title" class="foc2">Diplomas y certificados</h2>
+      </div>
+      <button
+        *ngIf="isAdmin$ | async"
+        type="button"
+        class="admin-icon-button"
+        title="Agregar diploma"
+        aria-label="Agregar diploma"
+        (click)="startCreateCertification()"
+      >
+        <i class="bi bi-plus-lg" aria-hidden="true"></i>
+      </button>
     </div>
+
+    <form
+      *ngIf="showCertificationForm"
+      class="admin-inline-form"
+      (ngSubmit)="saveCertification()"
+      #certificationEditor="ngForm"
+    >
+      <label>
+        ID
+        <input
+          class="form-control"
+          name="certificationId"
+          [(ngModel)]="certificationForm.id"
+          [disabled]="!!editingCertificationId"
+          placeholder="oracle-next-education-backend"
+        />
+      </label>
+      <label>
+        Título
+        <input
+          class="form-control"
+          name="certificationTitle"
+          [(ngModel)]="certificationForm.title"
+          required
+        />
+      </label>
+      <label>
+        Emisor
+        <input
+          class="form-control"
+          name="certificationIssuer"
+          [(ngModel)]="certificationForm.issuer"
+          required
+        />
+      </label>
+      <label>
+        Fecha
+        <input
+          class="form-control"
+          name="certificationDate"
+          [(ngModel)]="certificationForm.date"
+          required
+        />
+      </label>
+      <label>
+        Ícono
+        <input
+          class="form-control"
+          name="certificationIcon"
+          [(ngModel)]="certificationForm.icon"
+          required
+          placeholder="bi bi-award"
+        />
+      </label>
+      <label class="wide">
+        Link del diploma
+        <input
+          class="form-control"
+          name="certificationUrl"
+          [(ngModel)]="certificationForm.credentialUrl"
+          required
+        />
+      </label>
+      <label class="wide">
+        Descripción
+        <textarea
+          class="form-control"
+          name="certificationDescription"
+          [(ngModel)]="certificationForm.description"
+          required
+          rows="4"
+        ></textarea>
+      </label>
+      <div class="form-actions">
+        <button
+          type="submit"
+          class="btn btn-dark"
+          [disabled]="certificationEditor.invalid"
+        >
+          Guardar
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-dark"
+          (click)="closeCertificationForm()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+    <p *ngIf="certificationStatus" class="foc2" aria-live="polite">
+      {{ certificationStatus }}
+    </p>
+
+    <div class="certification-grid">
+      <article
+        class="certification-card admin-editable-card"
+        *ngFor="
+          let certification of portfolio.certifications ?? [];
+          trackBy: trackCertification
+        "
+      >
+        <div *ngIf="isAdmin$ | async" class="admin-card-actions">
+          <button
+            type="button"
+            class="admin-icon-button"
+            title="Editar diploma"
+            aria-label="Editar diploma"
+            (click)="startEditCertification(certification)"
+          >
+            <i class="bi bi-pencil" aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+            class="admin-icon-button delete"
+            title="Eliminar diploma"
+            aria-label="Eliminar diploma"
+            (click)="deleteCertification(certification)"
+          >
+            <i class="bi bi-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="certification-icon">
+          <i class="{{ certification.icon }}" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="certification-issuer foc2">
+            {{ certification.issuer }} · {{ certification.date }}
+          </p>
+          <h3 class="foc2">{{ certification.title }}</h3>
+          <p class="foc2 certification-description">
+            {{ certification.description }}
+          </p>
+        </div>
+        <a
+          class="btn btn-outline-dark"
+          [href]="certification.credentialUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver diploma
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="container" aria-labelledby="about-title">
+    <article class="about-panel admin-editable-card">
+      <div class="admin-inline-toolbar">
+        <h2 id="about-title" class="foc2">Sobre mí</h2>
+        <button
+          *ngIf="isAdmin$ | async"
+          type="button"
+          class="admin-icon-button"
+          title="Editar Sobre mí"
+          aria-label="Editar Sobre mí"
+          (click)="startEditAbout(portfolio)"
+        >
+          <i class="bi bi-pencil" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <form
+        *ngIf="showAboutForm"
+        class="admin-inline-form about-form"
+        (ngSubmit)="saveAbout()"
+        #aboutEditor="ngForm"
+      >
+        <label class="wide">
+          Contenido
+          <textarea
+            class="form-control"
+            name="aboutText"
+            [(ngModel)]="aboutText"
+            required
+            rows="6"
+          ></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-dark" [disabled]="aboutEditor.invalid">
+            Guardar
+          </button>
+          <button type="button" class="btn btn-outline-dark" (click)="closeAboutForm()">
+            Cancelar
+          </button>
+        </div>
+      </form>
+
+      <p *ngIf="aboutStatus" class="foc2" aria-live="polite">{{ aboutStatus }}</p>
+      <p class="foc2 about-copy">{{ portfolio.about || defaultAboutText }}</p>
+    </article>
   </section>
 </ng-container>

@@ -22,6 +22,7 @@ cd ../backend
 npm install
 npm run check-env
 npm run setup-sheet
+npm run seed:data-json
 npm run dev
 ```
 
@@ -56,9 +57,12 @@ validada la cuenta contra el backend, aparecen controles inline:
 
 Secciones editables:
 
+- Sobre mí.
 - Educación y formación.
 - Trabajos.
 - Tecnologías dominadas.
+- Mis Proyectos.
+- Diplomas y certificados.
 
 La allowlist de administradores vive solo en `backend/.env` o en las variables
 del servidor de producción.

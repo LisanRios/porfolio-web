@@ -44,6 +44,7 @@ Endpoints:
 ```http
 GET /portfolio
 PUT /portfolio
+PUT /profile/:key
 POST /projects
 PUT /projects/:projectId
 DELETE /projects/:projectId
@@ -56,6 +57,9 @@ DELETE /technologies/:technologyId
 POST /education
 PUT /education/:educationId
 DELETE /education/:educationId
+POST /certifications
+PUT /certifications/:certificationId
+DELETE /certifications/:certificationId
 GET /cv
 ```
 

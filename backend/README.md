@@ -54,8 +54,15 @@ Ese comando crea estas pestañas si faltan:
 - `work`
 - `technologies`
 - `education`
+- `certifications`
 
 Tambien escribe los encabezados esperados por el backend.
+
+Para cargar en Google Sheets los datos actuales de `porfolio-web/src/assets/data/data.json`:
+
+```bash
+npm run seed:data-json
+```
 
 ## Ejecutar
 
@@ -81,6 +88,7 @@ GET /portfolio
 Administrativos:
 
 ```http
+PUT /profile/:key
 POST /projects
 PUT /projects/:projectId
 DELETE /projects/:projectId
@@ -93,6 +101,9 @@ DELETE /technologies/:technologyId
 POST /education
 PUT /education/:educationId
 DELETE /education/:educationId
+POST /certifications
+PUT /certifications/:certificationId
+DELETE /certifications/:certificationId
 GET /cv
 ```
 

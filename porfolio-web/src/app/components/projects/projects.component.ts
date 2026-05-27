@@ -4,6 +4,7 @@ import {
   DescriptionPoint,
   IconReference,
   PortfolioData,
+  Project,
   WorkExperience,
 } from '../../models/portfolio.model';
 import { AdminPortfolioApiService } from '../../service/admin-portfolio-api.service';
@@ -25,6 +26,11 @@ export class ProjectsComponent implements OnInit{
   editingWorkId: string | null = null;
   showWorkForm = false;
   workStatus = '';
+  projectForm: Project = this.createEmptyProject();
+  projectLanguageText = '';
+  editingProjectId: string | null = null;
+  showProjectForm = false;
+  projectStatus = '';
 
   constructor(
     private datosPorfolio:PorfolioService,
@@ -112,8 +118,83 @@ export class ProjectsComponent implements OnInit{
     this.workTechnologyText = '';
   }
 
+  startCreateProject(): void {
+    this.editingProjectId = null;
+    this.projectForm = this.createEmptyProject();
+    this.projectLanguageText = '';
+    this.showProjectForm = true;
+  }
+
+  startEditProject(project: Project): void {
+    this.editingProjectId = project.id ?? null;
+    this.projectForm = {
+      ...project,
+      lenguaje: [...project.lenguaje],
+    };
+    this.projectLanguageText = project.lenguaje
+      .map((item) => item.name)
+      .filter((name): name is string => Boolean(name))
+      .join(', ');
+    this.showProjectForm = true;
+  }
+
+  saveProject(): void {
+    const payload: Project = {
+      ...this.projectForm,
+      lenguaje: this.parseLanguageText(this.projectLanguageText),
+    };
+    const request$ = this.editingProjectId
+      ? this.adminApi.updateProject(this.editingProjectId, payload)
+      : this.adminApi.createProject(payload);
+
+    request$.subscribe({
+      next: () => {
+        this.projectStatus = this.editingProjectId
+          ? 'Proyecto actualizado.'
+          : 'Proyecto creado.';
+        this.closeProjectForm();
+        this.datosPorfolio.refresh();
+      },
+      error: () => {
+        this.projectStatus = 'No se pudo guardar el proyecto.';
+      },
+    });
+  }
+
+  deleteProject(project: Project): void {
+    if (!project.id) {
+      this.projectStatus = 'El proyecto no tiene ID para eliminar.';
+      return;
+    }
+
+    if (!window.confirm(`Eliminar "${project.name}"?`)) {
+      return;
+    }
+
+    this.adminApi.deleteProject(project.id).subscribe({
+      next: () => {
+        this.projectStatus = 'Proyecto eliminado.';
+        this.datosPorfolio.refresh();
+      },
+      error: () => {
+        this.projectStatus = 'No se pudo eliminar el proyecto.';
+      },
+    });
+  }
+
+  closeProjectForm(): void {
+    this.showProjectForm = false;
+    this.editingProjectId = null;
+    this.projectForm = this.createEmptyProject();
+    this.projectLanguageText = '';
+  }
+
   trackWork(_index: number, work: WorkExperience): string {
     return work.id ?? `${work.name}-${work.type}`;
+  }
+
+  trackProject(_index: number, project: Project): string {
+    return project.id ?? `${project.name}-${project.type}`;
   }
 
   private createEmptyWork(): WorkExperience {
@@ -127,6 +208,19 @@ export class ProjectsComponent implements OnInit{
       link: '',
       description: [],
       technologies: [],
+    };
+  }
+
+  private createEmptyProject(): Project {
+    return {
+      id: '',
+      type: '',
+      name: '',
+      date: '',
+      image: '',
+      description: '',
+      link: '',
+      lenguaje: [],
     };
   }
 
@@ -144,5 +238,13 @@ export class ProjectsComponent implements OnInit{
       .map((icon) => icon.trim())
       .filter(Boolean)
       .map((icon) => ({ icon }));
+  }
+
+  private parseLanguageText(value: string): IconReference[] {
+    return value
+      .split(',')
+      .map((name) => name.trim())
+      .filter(Boolean)
+      .map((name) => ({ name }));
   }
 }

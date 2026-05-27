@@ -55,6 +55,20 @@ const educationSchema = z.object({
   description: z.string().trim().min(1),
 });
 
+const certificationSchema = z.object({
+  id: z.string().trim().optional(),
+  title: z.string().trim().min(1),
+  issuer: z.string().trim().min(1),
+  date: z.string().trim().min(1),
+  credentialUrl: z.string().trim().min(1),
+  description: z.string().trim().min(1),
+  icon: z.string().trim().min(1),
+});
+
+const profileValueSchema = z.object({
+  value: z.string().trim().min(1),
+});
+
 app.use(express.json({ limit: '1mb' }));
 app.use(
   cors({
@@ -83,6 +97,15 @@ app.get('/portfolio', async (_req, res, next) => {
 
 app.get('/auth/session', requireAdmin, (req, res) => {
   res.json({ ok: true, email: req.user.email });
+});
+
+app.put('/profile/:key', requireAdmin, async (req, res, next) => {
+  try {
+    const { value } = profileValueSchema.parse(req.body);
+    res.json(await repository.updateProfileValue(req.params.key, value));
+  } catch (error) {
+    next(error);
+  }
 });
 
 app.post('/projects', requireAdmin, async (req, res, next) => {
@@ -187,6 +210,35 @@ app.put('/education/:educationId', requireAdmin, async (req, res, next) => {
 app.delete('/education/:educationId', requireAdmin, async (req, res, next) => {
   try {
     await repository.deleteEducation(req.params.educationId);
+    res.status(204).send();
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post('/certifications', requireAdmin, async (req, res, next) => {
+  try {
+    const certification = certificationSchema.parse(req.body);
+    res.status(201).json(await repository.createCertification(certification));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.put('/certifications/:certificationId', requireAdmin, async (req, res, next) => {
+  try {
+    const certification = certificationSchema.parse(req.body);
+    res.json(
+      await repository.updateCertification(req.params.certificationId, certification)
+    );
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.delete('/certifications/:certificationId', requireAdmin, async (req, res, next) => {
+  try {
+    await repository.deleteCertification(req.params.certificationId);
     res.status(204).send();
   } catch (error) {
     next(error);

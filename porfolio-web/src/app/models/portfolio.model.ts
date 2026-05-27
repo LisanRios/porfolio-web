@@ -4,10 +4,12 @@ export interface PortfolioData {
   foto: string;
   position: string;
   ubication: string;
+  about?: string;
   project: Project[];
   tecnology: Technology[];
   titule: Education[];
   trabajo: WorkExperience[];
+  certifications?: Certification[];
 }
 
 export interface Project {
@@ -56,4 +58,14 @@ export interface DescriptionPoint {
 export interface IconReference {
   name?: string;
   icon?: string;
+}
+
+export interface Certification {
+  id?: string;
+  title: string;
+  issuer: string;
+  date: string;
+  credentialUrl: string;
+  description: string;
+  icon: string;
 }

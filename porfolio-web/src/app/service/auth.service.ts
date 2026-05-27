@@ -47,6 +47,7 @@ declare global {
 })
 export class AuthService {
   private readonly apiBaseUrl = environment.apiBaseUrl.replace(/\/$/, '');
+  private readonly storageKey = 'portfolio-admin-session';
   private readonly userSubject = new BehaviorSubject<AdminUser | null>(null);
   private initialized = false;
 
@@ -56,7 +57,9 @@ export class AuthService {
     distinctUntilChanged()
   );
 
-  constructor(private zone: NgZone, private http: HttpClient) {}
+  constructor(private zone: NgZone, private http: HttpClient) {
+    this.restoreSession();
+  }
 
   get isConfigured(): boolean {
     return environment.googleClientId.endsWith('.apps.googleusercontent.com');
@@ -102,6 +105,7 @@ export class AuthService {
 
   signOut(): void {
     this.googleApi?.accounts.id.disableAutoSelect();
+    window.sessionStorage.removeItem(this.storageKey);
     this.userSubject.next(null);
   }
 
@@ -124,10 +128,62 @@ export class AuthService {
         headers: new HttpHeaders({ Authorization: `Bearer ${user.credential}` }),
       })
       .subscribe({
-        next: () => this.zone.run(() => this.userSubject.next(user)),
-        error: () => this.zone.run(() => this.userSubject.next(null)),
+        next: () =>
+          this.zone.run(() => {
+            this.storeSession(user);
+            this.userSubject.next(user);
+          }),
+        error: () =>
+          this.zone.run(() => {
+            window.sessionStorage.removeItem(this.storageKey);
+            this.userSubject.next(null);
+          }),
       });
   };
+
+  private restoreSession(): void {
+    const rawSession = window.sessionStorage.getItem(this.storageKey);
+
+    if (!rawSession) {
+      return;
+    }
+
+    try {
+      const user = JSON.parse(rawSession) as AdminUser;
+      const nowInSeconds = Math.floor(Date.now() / 1000);
+
+      if (!user.credential || (user.expiresAt && user.expiresAt <= nowInSeconds)) {
+        window.sessionStorage.removeItem(this.storageKey);
+        return;
+      }
+
+      this.userSubject.next(user);
+      this.validateStoredSession(user);
+    } catch {
+      window.sessionStorage.removeItem(this.storageKey);
+    }
+  }
+
+  private validateStoredSession(user: AdminUser): void {
+    if (!this.apiBaseUrl) {
+      return;
+    }
+
+    this.http
+      .get<{ ok: boolean }>(`${this.apiBaseUrl}/auth/session`, {
+        headers: new HttpHeaders({ Authorization: `Bearer ${user.credential}` }),
+      })
+      .subscribe({
+        error: () => {
+          window.sessionStorage.removeItem(this.storageKey);
+          this.userSubject.next(null);
+        },
+      });
+  }
+
+  private storeSession(user: AdminUser): void {
+    window.sessionStorage.setItem(this.storageKey, JSON.stringify(user));
+  }
 
   private parseCredential(credential: string): AdminUser | null {
     const payload = credential.split('.')[1];

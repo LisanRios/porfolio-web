@@ -164,15 +164,114 @@
   </section>
 
   <section class="container" aria-labelledby="projects-title">
-    <h2 id="projects-title" class="p-2 foc2">Mis Proyectos</h2>
+    <div class="admin-inline-toolbar pb-2">
+      <h2 id="projects-title" class="p-2 foc2">Mis Proyectos</h2>
+      <button
+        *ngIf="isAdmin$ | async"
+        type="button"
+        class="admin-icon-button"
+        title="Agregar proyecto"
+        aria-label="Agregar proyecto"
+        (click)="startCreateProject()"
+      >
+        <i class="bi bi-plus-lg" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <form
+      *ngIf="showProjectForm"
+      class="admin-inline-form"
+      (ngSubmit)="saveProject()"
+      #projectEditor="ngForm"
+    >
+      <label>
+        ID
+        <input
+          class="form-control"
+          name="projectId"
+          [(ngModel)]="projectForm.id"
+          [disabled]="!!editingProjectId"
+          placeholder="porfolio-web"
+        />
+      </label>
+      <label>
+        Tipo
+        <input class="form-control" name="projectType" [(ngModel)]="projectForm.type" required />
+      </label>
+      <label>
+        Nombre
+        <input class="form-control" name="projectName" [(ngModel)]="projectForm.name" required />
+      </label>
+      <label>
+        Fecha
+        <input class="form-control" name="projectDate" [(ngModel)]="projectForm.date" required />
+      </label>
+      <label class="wide">
+        Imagen
+        <input class="form-control" name="projectImage" [(ngModel)]="projectForm.image" required />
+      </label>
+      <label class="wide">
+        Link
+        <input class="form-control" name="projectLink" [(ngModel)]="projectForm.link" required />
+      </label>
+      <label class="wide">
+        Iconos
+        <input
+          class="form-control"
+          name="projectLanguages"
+          [(ngModel)]="projectLanguageText"
+          placeholder="fa-brands fa-angular, fa-brands fa-css3-alt"
+        />
+      </label>
+      <label class="wide">
+        Descripción
+        <textarea
+          class="form-control"
+          name="projectDescription"
+          [(ngModel)]="projectForm.description"
+          required
+          rows="5"
+        ></textarea>
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-dark" [disabled]="projectEditor.invalid">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="closeProjectForm()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+    <p *ngIf="projectStatus" class="foc2" aria-live="polite">{{ projectStatus }}</p>
+
     <ul class="row pb-5 p-0">
       <li
         class="linea1 list-group-item p-2 col-md-12"
-        *ngFor="let project of portfolio.project"
+        *ngFor="let project of portfolio.project; trackBy: trackProject"
       >
         <article
-          class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 admin-editable-card"
         >
+          <div *ngIf="isAdmin$ | async" class="admin-card-actions">
+            <button
+              type="button"
+              class="admin-icon-button"
+              title="Editar proyecto"
+              aria-label="Editar proyecto"
+              (click)="startEditProject(project)"
+            >
+              <i class="bi bi-pencil" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="admin-icon-button delete"
+              title="Eliminar proyecto"
+              aria-label="Eliminar proyecto"
+              (click)="deleteProject(project)"
+            >
+              <i class="bi bi-trash" aria-hidden="true"></i>
+            </button>
+          </div>
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="foc2 d-inline-block mb-2 text-primary-emphasis">
               {{ project.type }}
