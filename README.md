@@ -47,6 +47,11 @@ El sitio permite administrar desde la UI, con cuenta autorizada:
 Los registros se crean, editan y eliminan mediante baja lógica en Google Sheets
 usando la columna `active`.
 
+Cada registro editable incluye el campo `order`. Los valores mas bajos se
+muestran primero en el portfolio. Si importas desde `data.json`, el script
+asigna el orden segun la posicion de cada elemento cuando no exista un valor
+definido.
+
 ## Requisitos
 
 - Node.js 20 o superior.
@@ -163,6 +168,9 @@ http://127.0.0.1:4200/admin
 
 `npm run seed:data-json` limpia y vuelve a cargar esas pestañas con el contenido
 de `porfolio-web/src/assets/data/data.json`.
+Si agregas la columna `order` a una base existente, ejecuta primero
+`npm run setup-sheet` y luego `npm run seed:data-json` para regenerar encabezados
+y datos de prueba.
 
 ## Endpoints
 
@@ -379,7 +387,7 @@ https://TU_BACKEND_CLOUD_RUN_URL/health
 ## Futuras Mejoras
 
 - Auditoría visible de cambios: usuario, fecha, entidad y acción.
-- Orden manual de secciones y registros desde la UI.
+- Reordenamiento visual con drag and drop en lugar de campo numerico.
 - Subida de imágenes a Firebase Storage o Cloudinary.
 - Vista previa antes de publicar cambios.
 - Estados `draft/published` para preparar cambios sin mostrarlos al público.

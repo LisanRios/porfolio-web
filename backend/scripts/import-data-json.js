@@ -14,6 +14,7 @@ const sheetDefinitions = {
   profile: ['key', 'value'],
   projects: [
     'id',
+    'order',
     'type',
     'name',
     'date',
@@ -25,6 +26,7 @@ const sheetDefinitions = {
   ],
   work: [
     'id',
+    'order',
     'type',
     'name',
     'dateInicio',
@@ -35,9 +37,10 @@ const sheetDefinitions = {
     'technologies_json',
     'active',
   ],
-  technologies: ['id', 'icon', 'name', 'nivel', 'active'],
+  technologies: ['id', 'order', 'icon', 'name', 'nivel', 'active'],
   education: [
     'id',
+    'order',
     'type',
     'name',
     'dateInicio',
@@ -47,6 +50,7 @@ const sheetDefinitions = {
   ],
   certifications: [
     'id',
+    'order',
     'title',
     'issuer',
     'date',
@@ -55,10 +59,10 @@ const sheetDefinitions = {
     'icon',
     'active',
   ],
-  organizations: ['id', 'name', 'image', 'alt', 'link', 'active'],
-  highlights: ['id', 'value', 'label', 'icon', 'active'],
-  focusAreas: ['id', 'icon', 'title', 'description', 'active'],
-  links: ['id', 'label', 'url', 'icon', 'placement', 'downloadName', 'active'],
+  organizations: ['id', 'order', 'name', 'image', 'alt', 'link', 'active'],
+  highlights: ['id', 'order', 'value', 'label', 'icon', 'active'],
+  focusAreas: ['id', 'order', 'icon', 'title', 'description', 'active'],
+  links: ['id', 'order', 'label', 'url', 'icon', 'placement', 'downloadName', 'active'],
 };
 
 const rawData = JSON.parse(await readFile(dataPath, 'utf8'));
@@ -70,15 +74,15 @@ await sheets.spreadsheets.values.batchClear({
   requestBody: {
     ranges: [
       'profile!A:B',
-      'projects!A:I',
-      'work!A:J',
-      'technologies!A:E',
-      'education!A:G',
-      'certifications!A:H',
-      'organizations!A:F',
-      'highlights!A:E',
-      'focusAreas!A:E',
-      'links!A:G',
+      'projects!A:J',
+      'work!A:K',
+      'technologies!A:F',
+      'education!A:H',
+      'certifications!A:I',
+      'organizations!A:G',
+      'highlights!A:F',
+      'focusAreas!A:F',
+      'links!A:H',
     ],
   },
 });
@@ -116,11 +120,12 @@ await sheets.spreadsheets.values.batchUpdate({
         ],
       },
       {
-        range: 'projects!A:I',
+        range: 'projects!A:J',
         values: [
           sheetDefinitions.projects,
-          ...(data.project ?? []).map((project) => [
+          ...(data.project ?? []).map((project, index) => [
             project.id || makeId(project.name),
+            orderValue(project, index),
             project.type,
             project.name,
             project.date,
@@ -133,11 +138,12 @@ await sheets.spreadsheets.values.batchUpdate({
         ],
       },
       {
-        range: 'work!A:J',
+        range: 'work!A:K',
         values: [
           sheetDefinitions.work,
-          ...(data.trabajo ?? []).map((work) => [
+          ...(data.trabajo ?? []).map((work, index) => [
             work.id || makeId(`${work.name}-${work.type}`),
+            orderValue(work, index),
             work.type,
             work.name,
             work.dateInicio,
@@ -151,11 +157,12 @@ await sheets.spreadsheets.values.batchUpdate({
         ],
       },
       {
-        range: 'technologies!A:E',
+        range: 'technologies!A:F',
         values: [
           sheetDefinitions.technologies,
-          ...(data.tecnology ?? []).map((technology) => [
+          ...(data.tecnology ?? []).map((technology, index) => [
             technology.id || makeId(technology.name),
+            orderValue(technology, index),
             technology.icon,
             technology.name,
             technology.nivel,
@@ -164,11 +171,12 @@ await sheets.spreadsheets.values.batchUpdate({
         ],
       },
       {
-        range: 'education!A:G',
+        range: 'education!A:H',
         values: [
           sheetDefinitions.education,
-          ...(data.titule ?? []).map((education) => [
+          ...(data.titule ?? []).map((education, index) => [
             education.id || makeId(`${education.name}-${education.type}`),
+            orderValue(education, index),
             education.type,
             education.name,
             education.dateInicio,
@@ -179,11 +187,12 @@ await sheets.spreadsheets.values.batchUpdate({
         ],
       },
       {
-        range: 'certifications!A:H',
+        range: 'certifications!A:I',
         values: [
           sheetDefinitions.certifications,
-          ...(data.certifications ?? []).map((certification) => [
+          ...(data.certifications ?? []).map((certification, index) => [
             certification.id || makeId(`${certification.issuer}-${certification.title}`),
+            orderValue(certification, index),
             certification.title,
             certification.issuer,
             certification.date,
@@ -195,11 +204,12 @@ await sheets.spreadsheets.values.batchUpdate({
         ],
       },
       {
-        range: 'organizations!A:F',
+        range: 'organizations!A:G',
         values: [
           sheetDefinitions.organizations,
-          ...(data.organizations ?? []).map((organization) => [
+          ...(data.organizations ?? []).map((organization, index) => [
             organization.id || makeId(organization.name),
+            orderValue(organization, index),
             organization.name,
             organization.image,
             organization.alt,
@@ -209,11 +219,12 @@ await sheets.spreadsheets.values.batchUpdate({
         ],
       },
       {
-        range: 'highlights!A:E',
+        range: 'highlights!A:F',
         values: [
           sheetDefinitions.highlights,
-          ...(data.highlights ?? []).map((highlight) => [
+          ...(data.highlights ?? []).map((highlight, index) => [
             highlight.id || makeId(highlight.label),
+            orderValue(highlight, index),
             highlight.value,
             highlight.label,
             highlight.icon,
@@ -222,11 +233,12 @@ await sheets.spreadsheets.values.batchUpdate({
         ],
       },
       {
-        range: 'focusAreas!A:E',
+        range: 'focusAreas!A:F',
         values: [
           sheetDefinitions.focusAreas,
-          ...(data.focusAreas ?? []).map((focusArea) => [
+          ...(data.focusAreas ?? []).map((focusArea, index) => [
             focusArea.id || makeId(focusArea.title),
+            orderValue(focusArea, index),
             focusArea.icon,
             focusArea.title,
             focusArea.description,
@@ -235,11 +247,12 @@ await sheets.spreadsheets.values.batchUpdate({
         ],
       },
       {
-        range: 'links!A:G',
+        range: 'links!A:H',
         values: [
           sheetDefinitions.links,
-          ...(data.links ?? []).map((link) => [
+          ...(data.links ?? []).map((link, index) => [
             link.id || makeId(`${link.placement}-${link.label}`),
+            orderValue(link, index),
             link.label,
             link.url,
             link.icon,
@@ -330,6 +343,12 @@ function repairMojibake(value) {
 
 function looksMojibake(value) {
   return /Ã|Â|â|ð/.test(value);
+}
+
+function orderValue(item, index) {
+  const parsed = Number(item?.order);
+
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : index + 1;
 }
 
 function decodeWindows1252AsUtf8(value) {

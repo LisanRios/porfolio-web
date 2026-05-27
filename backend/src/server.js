@@ -13,6 +13,7 @@ const repository = new PortfolioRepository(sheets);
 
 const projectSchema = z.object({
   id: z.string().trim().optional(),
+  order: z.coerce.number().optional().default(0),
   type: z.string().trim().min(1),
   name: z.string().trim().min(1),
   date: z.string().trim().min(1),
@@ -29,6 +30,7 @@ const iconReferenceSchema = z.object({
 
 const workSchema = z.object({
   id: z.string().trim().optional(),
+  order: z.coerce.number().optional().default(0),
   type: z.string().trim().min(1),
   name: z.string().trim().min(1),
   dateInicio: z.string().trim().min(1),
@@ -41,6 +43,7 @@ const workSchema = z.object({
 
 const technologySchema = z.object({
   id: z.string().trim().optional(),
+  order: z.coerce.number().optional().default(0),
   icon: z.string().trim().min(1),
   name: z.string().trim().min(1),
   nivel: z.string().trim().min(1),
@@ -48,6 +51,7 @@ const technologySchema = z.object({
 
 const educationSchema = z.object({
   id: z.string().trim().optional(),
+  order: z.coerce.number().optional().default(0),
   type: z.string().trim().min(1),
   name: z.string().trim().min(1),
   dateInicio: z.string().trim().min(1),
@@ -57,6 +61,7 @@ const educationSchema = z.object({
 
 const certificationSchema = z.object({
   id: z.string().trim().optional(),
+  order: z.coerce.number().optional().default(0),
   title: z.string().trim().min(1),
   issuer: z.string().trim().min(1),
   date: z.string().trim().min(1),
@@ -67,6 +72,7 @@ const certificationSchema = z.object({
 
 const organizationSchema = z.object({
   id: z.string().trim().optional(),
+  order: z.coerce.number().optional().default(0),
   name: z.string().trim().min(1),
   image: z.string().trim().min(1),
   alt: z.string().trim().min(1),
@@ -75,6 +81,7 @@ const organizationSchema = z.object({
 
 const highlightSchema = z.object({
   id: z.string().trim().optional(),
+  order: z.coerce.number().optional().default(0),
   value: z.string().trim().min(1),
   label: z.string().trim().min(1),
   icon: z.string().trim().min(1),
@@ -82,6 +89,7 @@ const highlightSchema = z.object({
 
 const focusAreaSchema = z.object({
   id: z.string().trim().optional(),
+  order: z.coerce.number().optional().default(0),
   icon: z.string().trim().min(1),
   title: z.string().trim().min(1),
   description: z.string().trim().min(1),
@@ -89,6 +97,7 @@ const focusAreaSchema = z.object({
 
 const linkSchema = z.object({
   id: z.string().trim().optional(),
+  order: z.coerce.number().optional().default(0),
   label: z.string().trim().min(1),
   url: z.string().trim().min(1),
   icon: z.string().trim().min(1),

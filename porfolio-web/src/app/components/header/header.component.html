@@ -147,27 +147,47 @@
         <i class="bi bi-plus-lg" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="lineaphotos">
-      <ng-container *ngFor="let organization of portfolio.organizations ?? []; trackBy: trackOrganization">
-        <a
-          class="organization-logo"
-          [href]="organization.link || null"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img class="photos" [src]="organization.image" [alt]="organization.alt" />
-        </a>
-      </ng-container>
-      <ng-container *ngFor="let organization of portfolio.organizations ?? []; trackBy: trackOrganization">
-        <img
-          class="photos"
-          [src]="organization.image"
-          alt=""
-          aria-hidden="true"
-        />
-      </ng-container>
-    </div>
-  </section>
+      <div class="lineaphotos">
+        <ng-container *ngFor="let organization of portfolio.organizations ?? []; trackBy: trackOrganization">
+          <a
+            class="organization-logo"
+            [href]="organization.link || null"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="organization.name"
+          >
+            <img
+              *ngIf="organization.image"
+              class="photos"
+              [src]="organization.image"
+              [alt]="organization.alt"
+              loading="lazy"
+              (error)="organization.image = ''"
+            />
+            <span *ngIf="!organization.image" class="organization-fallback">
+              {{ organization.name }}
+            </span>
+          </a>
+        </ng-container>
+        <ng-container *ngFor="let organization of portfolio.organizations ?? []; trackBy: trackOrganization">
+          <span
+            class="organization-logo organization-logo-copy"
+            aria-hidden="true"
+          >
+            <img
+              *ngIf="organization.image"
+              class="photos"
+              [src]="organization.image"
+              alt=""
+              loading="lazy"
+            />
+            <span *ngIf="!organization.image" class="organization-fallback">
+              {{ organization.name }}
+            </span>
+          </span>
+        </ng-container>
+      </div>
+    </section>
 
   <section
     *ngIf="showOrganizationForm || organizationStatus"
@@ -187,6 +207,16 @@
           name="organizationId"
           [(ngModel)]="organizationForm.id"
           [disabled]="!!editingOrganizationId"
+        />
+      </label>
+      <label>
+        Orden
+        <input
+          class="form-control"
+          name="organizationOrder"
+          type="number"
+          [(ngModel)]="organizationForm.order"
+          required
         />
       </label>
       <label>
@@ -317,6 +347,16 @@
         />
       </label>
       <label>
+        Orden
+        <input
+          class="form-control"
+          name="highlightOrder"
+          type="number"
+          [(ngModel)]="highlightForm.order"
+          required
+        />
+      </label>
+      <label>
         Valor
         <input class="form-control" name="highlightValue" [(ngModel)]="highlightForm.value" required />
       </label>
@@ -405,6 +445,16 @@
         />
       </label>
       <label>
+        Orden
+        <input
+          class="form-control"
+          name="focusAreaOrder"
+          type="number"
+          [(ngModel)]="focusAreaForm.order"
+          required
+        />
+      </label>
+      <label>
         Ícono
         <input class="form-control" name="focusAreaIcon" [(ngModel)]="focusAreaForm.icon" required />
       </label>
@@ -472,6 +522,16 @@
           [(ngModel)]="educationForm.id"
           [disabled]="!!editingEducationId"
           placeholder="unsam-programacion"
+        />
+      </label>
+      <label>
+        Orden
+        <input
+          class="form-control"
+          name="educationOrder"
+          type="number"
+          [(ngModel)]="educationForm.order"
+          required
         />
       </label>
       <label>
@@ -598,6 +658,16 @@
           [(ngModel)]="certificationForm.id"
           [disabled]="!!editingCertificationId"
           placeholder="oracle-next-education-backend"
+        />
+      </label>
+      <label>
+        Orden
+        <input
+          class="form-control"
+          name="certificationOrder"
+          type="number"
+          [(ngModel)]="certificationForm.order"
+          required
         />
       </label>
       <label>
@@ -760,6 +830,16 @@
           name="linkId"
           [(ngModel)]="linkForm.id"
           [disabled]="!!editingLinkId"
+        />
+      </label>
+      <label>
+        Orden
+        <input
+          class="form-control"
+          name="linkOrder"
+          type="number"
+          [(ngModel)]="linkForm.order"
+          required
         />
       </label>
       <label>

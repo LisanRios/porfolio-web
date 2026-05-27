@@ -8,6 +8,7 @@ const sheetDefinitions = {
   profile: ['key', 'value'],
   projects: [
     'id',
+    'order',
     'type',
     'name',
     'date',
@@ -19,6 +20,7 @@ const sheetDefinitions = {
   ],
   work: [
     'id',
+    'order',
     'type',
     'name',
     'dateInicio',
@@ -29,9 +31,10 @@ const sheetDefinitions = {
     'technologies_json',
     'active',
   ],
-  technologies: ['id', 'icon', 'name', 'nivel', 'active'],
+  technologies: ['id', 'order', 'icon', 'name', 'nivel', 'active'],
   education: [
     'id',
+    'order',
     'type',
     'name',
     'dateInicio',
@@ -41,6 +44,7 @@ const sheetDefinitions = {
   ],
   certifications: [
     'id',
+    'order',
     'title',
     'issuer',
     'date',
@@ -49,10 +53,10 @@ const sheetDefinitions = {
     'icon',
     'active',
   ],
-  organizations: ['id', 'name', 'image', 'alt', 'link', 'active'],
-  highlights: ['id', 'value', 'label', 'icon', 'active'],
-  focusAreas: ['id', 'icon', 'title', 'description', 'active'],
-  links: ['id', 'label', 'url', 'icon', 'placement', 'downloadName', 'active'],
+  organizations: ['id', 'order', 'name', 'image', 'alt', 'link', 'active'],
+  highlights: ['id', 'order', 'value', 'label', 'icon', 'active'],
+  focusAreas: ['id', 'order', 'icon', 'title', 'description', 'active'],
+  links: ['id', 'order', 'label', 'url', 'icon', 'placement', 'downloadName', 'active'],
 };
 
 let metadata;

@@ -200,6 +200,7 @@ export class ProjectsComponent implements OnInit{
   private createEmptyWork(): WorkExperience {
     return {
       id: '',
+      order: 0,
       type: '',
       name: '',
       dateInicio: '',
@@ -214,6 +215,7 @@ export class ProjectsComponent implements OnInit{
   private createEmptyProject(): Project {
     return {
       id: '',
+      order: 0,
       type: '',
       name: '',
       date: '',

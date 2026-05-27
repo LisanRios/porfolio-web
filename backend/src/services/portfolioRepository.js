@@ -9,15 +9,15 @@ import {
 
 const RANGES = {
   profile: 'profile!A:B',
-  projects: 'projects!A:I',
-  work: 'work!A:J',
-  technologies: 'technologies!A:E',
-  education: 'education!A:G',
-  certifications: 'certifications!A:H',
-  organizations: 'organizations!A:F',
-  highlights: 'highlights!A:E',
-  focusAreas: 'focusAreas!A:E',
-  links: 'links!A:G',
+  projects: 'projects!A:J',
+  work: 'work!A:K',
+  technologies: 'technologies!A:F',
+  education: 'education!A:H',
+  certifications: 'certifications!A:I',
+  organizations: 'organizations!A:G',
+  highlights: 'highlights!A:F',
+  focusAreas: 'focusAreas!A:F',
+  links: 'links!A:H',
 };
 
 export class PortfolioRepository {
@@ -91,7 +91,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `projects!A${existing.rowNumber}:I${existing.rowNumber}`,
+      range: `projects!A${existing.rowNumber}:J${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [this.projectToRow(normalizedProject)],
@@ -106,7 +106,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `projects!I${existing.rowNumber}`,
+      range: `projects!J${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [['FALSE']],
@@ -137,7 +137,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `work!A${existing.rowNumber}:J${existing.rowNumber}`,
+      range: `work!A${existing.rowNumber}:K${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [this.workToRow(normalizedWork)],
@@ -152,7 +152,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `work!J${existing.rowNumber}`,
+      range: `work!K${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [['FALSE']],
@@ -190,7 +190,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `technologies!A${existing.rowNumber}:E${existing.rowNumber}`,
+      range: `technologies!A${existing.rowNumber}:F${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [this.technologyToRow(normalizedTechnology)],
@@ -209,7 +209,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `technologies!E${existing.rowNumber}`,
+      range: `technologies!F${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [['FALSE']],
@@ -247,7 +247,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `education!A${existing.rowNumber}:G${existing.rowNumber}`,
+      range: `education!A${existing.rowNumber}:H${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [this.educationToRow(normalizedEducation)],
@@ -266,7 +266,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `education!G${existing.rowNumber}`,
+      range: `education!H${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [['FALSE']],
@@ -304,7 +304,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `certifications!A${existing.rowNumber}:H${existing.rowNumber}`,
+      range: `certifications!A${existing.rowNumber}:I${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [this.certificationToRow(normalizedCertification)],
@@ -323,7 +323,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `certifications!H${existing.rowNumber}`,
+      range: `certifications!I${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [['FALSE']],
@@ -361,7 +361,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `organizations!A${existing.rowNumber}:F${existing.rowNumber}`,
+      range: `organizations!A${existing.rowNumber}:G${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [this.organizationToRow(normalizedOrganization)],
@@ -380,7 +380,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `organizations!F${existing.rowNumber}`,
+      range: `organizations!G${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [['FALSE']],
@@ -415,7 +415,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `highlights!A${existing.rowNumber}:E${existing.rowNumber}`,
+      range: `highlights!A${existing.rowNumber}:F${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [this.highlightToRow(normalizedHighlight)],
@@ -434,7 +434,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `highlights!E${existing.rowNumber}`,
+      range: `highlights!F${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [['FALSE']],
@@ -469,7 +469,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `focusAreas!A${existing.rowNumber}:E${existing.rowNumber}`,
+      range: `focusAreas!A${existing.rowNumber}:F${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [this.focusAreaToRow(normalizedFocusArea)],
@@ -488,7 +488,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `focusAreas!E${existing.rowNumber}`,
+      range: `focusAreas!F${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [['FALSE']],
@@ -519,7 +519,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `links!A${existing.rowNumber}:G${existing.rowNumber}`,
+      range: `links!A${existing.rowNumber}:H${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [this.linkToRow(normalizedLink)],
@@ -534,7 +534,7 @@ export class PortfolioRepository {
 
     await this.sheets.spreadsheets.values.update({
       spreadsheetId: this.spreadsheetId,
-      range: `links!G${existing.rowNumber}`,
+      range: `links!H${existing.rowNumber}`,
       valueInputOption: 'RAW',
       requestBody: {
         values: [['FALSE']],
@@ -593,6 +593,7 @@ export class PortfolioRepository {
       .filter((row) => includeInactive || isActive(row.active))
       .map((row) => ({
         id: row.id,
+        order: parseOrder(row.order),
         type: row.type,
         name: row.name,
         date: row.date,
@@ -600,7 +601,8 @@ export class PortfolioRepository {
         description: row.description,
         link: row.link,
         lenguaje: parseJsonCell(row.lenguaje_json, []),
-      }));
+      }))
+      .sort(byOrder);
   }
 
   async getWork() {
@@ -608,6 +610,7 @@ export class PortfolioRepository {
 
     return rows.filter((row) => isActive(row.active)).map((row) => ({
       id: row.id,
+      order: parseOrder(row.order),
       type: row.type,
       name: row.name,
       dateInicio: row.dateInicio,
@@ -616,7 +619,7 @@ export class PortfolioRepository {
       link: row.link,
       description: parseJsonCell(row.description_json, []),
       technologies: parseJsonCell(row.technologies_json, []),
-    }));
+    })).sort(byOrder);
   }
 
   async getTechnologies() {
@@ -624,10 +627,11 @@ export class PortfolioRepository {
 
     return rows.filter((row) => isActive(row.active)).map((row) => ({
       id: row.id,
+      order: parseOrder(row.order),
       icon: row.icon,
       name: row.name,
       nivel: row.nivel,
-    }));
+    })).sort(byOrder);
   }
 
   async getEducation() {
@@ -635,12 +639,13 @@ export class PortfolioRepository {
 
     return rows.filter((row) => isActive(row.active)).map((row) => ({
       id: row.id,
+      order: parseOrder(row.order),
       type: row.type,
       name: row.name,
       dateInicio: row.dateInicio,
       dateFin: row.dateFin,
       description: row.description,
-    }));
+    })).sort(byOrder);
   }
 
   async getCertifications() {
@@ -648,13 +653,14 @@ export class PortfolioRepository {
 
     return rows.filter((row) => isActive(row.active)).map((row) => ({
       id: row.id,
+      order: parseOrder(row.order),
       title: row.title,
       issuer: row.issuer,
       date: row.date,
       credentialUrl: row.credentialUrl,
       description: row.description,
       icon: row.icon,
-    }));
+    })).sort(byOrder);
   }
 
   async getOrganizations() {
@@ -662,11 +668,12 @@ export class PortfolioRepository {
 
     return rows.filter((row) => isActive(row.active)).map((row) => ({
       id: row.id,
+      order: parseOrder(row.order),
       name: row.name,
       image: row.image,
       alt: row.alt,
       link: row.link,
-    }));
+    })).sort(byOrder);
   }
 
   async getHighlights() {
@@ -674,10 +681,11 @@ export class PortfolioRepository {
 
     return rows.filter((row) => isActive(row.active)).map((row) => ({
       id: row.id,
+      order: parseOrder(row.order),
       value: row.value,
       label: row.label,
       icon: row.icon,
-    }));
+    })).sort(byOrder);
   }
 
   async getFocusAreas() {
@@ -685,10 +693,11 @@ export class PortfolioRepository {
 
     return rows.filter((row) => isActive(row.active)).map((row) => ({
       id: row.id,
+      order: parseOrder(row.order),
       icon: row.icon,
       title: row.title,
       description: row.description,
-    }));
+    })).sort(byOrder);
   }
 
   async getLinks() {
@@ -696,12 +705,13 @@ export class PortfolioRepository {
 
     return rows.filter((row) => isActive(row.active)).map((row) => ({
       id: row.id,
+      order: parseOrder(row.order),
       label: row.label,
       url: row.url,
       icon: row.icon,
       placement: row.placement,
       downloadName: row.downloadName,
-    }));
+    })).sort(byOrder);
   }
 
   async getValues(range) {
@@ -750,6 +760,7 @@ export class PortfolioRepository {
 
     return {
       id,
+      order: parseOrder(project.order),
       type: project.type,
       name: project.name,
       date: project.date,
@@ -763,6 +774,7 @@ export class PortfolioRepository {
   projectToRow(project) {
     return [
       project.id,
+      project.order,
       project.type,
       project.name,
       project.date,
@@ -779,6 +791,7 @@ export class PortfolioRepository {
 
     return {
       id,
+      order: parseOrder(work.order),
       type: work.type,
       name: work.name,
       dateInicio: work.dateInicio,
@@ -793,6 +806,7 @@ export class PortfolioRepository {
   workToRow(work) {
     return [
       work.id,
+      work.order,
       work.type,
       work.name,
       work.dateInicio,
@@ -810,6 +824,7 @@ export class PortfolioRepository {
 
     return {
       id,
+      order: parseOrder(technology.order),
       icon: technology.icon,
       name: technology.name,
       nivel: technology.nivel,
@@ -819,6 +834,7 @@ export class PortfolioRepository {
   technologyToRow(technology) {
     return [
       technology.id,
+      technology.order,
       technology.icon,
       technology.name,
       technology.nivel,
@@ -831,6 +847,7 @@ export class PortfolioRepository {
 
     return {
       id,
+      order: parseOrder(education.order),
       type: education.type,
       name: education.name,
       dateInicio: education.dateInicio,
@@ -842,6 +859,7 @@ export class PortfolioRepository {
   educationToRow(education) {
     return [
       education.id,
+      education.order,
       education.type,
       education.name,
       education.dateInicio,
@@ -856,6 +874,7 @@ export class PortfolioRepository {
 
     return {
       id,
+      order: parseOrder(certification.order),
       title: certification.title,
       issuer: certification.issuer,
       date: certification.date,
@@ -868,6 +887,7 @@ export class PortfolioRepository {
   certificationToRow(certification) {
     return [
       certification.id,
+      certification.order,
       certification.title,
       certification.issuer,
       certification.date,
@@ -883,6 +903,7 @@ export class PortfolioRepository {
 
     return {
       id,
+      order: parseOrder(organization.order),
       name: organization.name,
       image: organization.image,
       alt: organization.alt,
@@ -893,6 +914,7 @@ export class PortfolioRepository {
   organizationToRow(organization) {
     return [
       organization.id,
+      organization.order,
       organization.name,
       organization.image,
       organization.alt,
@@ -906,6 +928,7 @@ export class PortfolioRepository {
 
     return {
       id,
+      order: parseOrder(highlight.order),
       value: highlight.value,
       label: highlight.label,
       icon: highlight.icon,
@@ -915,6 +938,7 @@ export class PortfolioRepository {
   highlightToRow(highlight) {
     return [
       highlight.id,
+      highlight.order,
       highlight.value,
       highlight.label,
       highlight.icon,
@@ -927,6 +951,7 @@ export class PortfolioRepository {
 
     return {
       id,
+      order: parseOrder(focusArea.order),
       icon: focusArea.icon,
       title: focusArea.title,
       description: focusArea.description,
@@ -936,6 +961,7 @@ export class PortfolioRepository {
   focusAreaToRow(focusArea) {
     return [
       focusArea.id,
+      focusArea.order,
       focusArea.icon,
       focusArea.title,
       focusArea.description,
@@ -948,6 +974,7 @@ export class PortfolioRepository {
 
     return {
       id,
+      order: parseOrder(link.order),
       label: link.label,
       url: link.url,
       icon: link.icon,
@@ -959,6 +986,7 @@ export class PortfolioRepository {
   linkToRow(link) {
     return [
       link.id,
+      link.order,
       link.label,
       link.url,
       link.icon,
@@ -967,4 +995,22 @@ export class PortfolioRepository {
       'TRUE',
     ];
   }
+}
+
+function parseOrder(value) {
+  const parsed = Number(value);
+
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function byOrder(left, right) {
+  const orderDiff = parseOrder(left.order) - parseOrder(right.order);
+
+  if (orderDiff !== 0) {
+    return orderDiff;
+  }
+
+  return String(left.name ?? left.title ?? left.label ?? left.id ?? '').localeCompare(
+    String(right.name ?? right.title ?? right.label ?? right.id ?? '')
+  );
 }

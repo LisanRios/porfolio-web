@@ -513,6 +513,7 @@ export class HeaderComponent implements OnInit {
   private createEmptyEducation(): Education {
     return {
       id: '',
+      order: 0,
       type: '',
       name: '',
       dateInicio: '',
@@ -546,6 +547,7 @@ export class HeaderComponent implements OnInit {
   private createEmptyCertification(): Certification {
     return {
       id: '',
+      order: 0,
       title: '',
       issuer: '',
       date: '',
@@ -558,6 +560,7 @@ export class HeaderComponent implements OnInit {
   private createEmptyOrganization(): OrganizationLogo {
     return {
       id: '',
+      order: 0,
       name: '',
       image: '',
       alt: '',
@@ -568,6 +571,7 @@ export class HeaderComponent implements OnInit {
   private createEmptyHighlight(): PortfolioHighlight {
     return {
       id: '',
+      order: 0,
       value: '',
       label: '',
       icon: 'bi bi-stars',
@@ -577,6 +581,7 @@ export class HeaderComponent implements OnInit {
   private createEmptyFocusArea(): FocusArea {
     return {
       id: '',
+      order: 0,
       icon: 'bi bi-compass',
       title: '',
       description: '',
@@ -586,6 +591,7 @@ export class HeaderComponent implements OnInit {
   private createEmptyLink(): PortfolioLink {
     return {
       id: '',
+      order: 0,
       label: '',
       url: '',
       icon: 'bi bi-link-45deg',

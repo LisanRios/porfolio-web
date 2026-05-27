@@ -93,6 +93,7 @@ export class TechnologiesComponent implements OnInit {
   private createEmptyTechnology(): Technology {
     return {
       id: '',
+      order: 0,
       icon: '',
       name: '',
       nivel: '',
