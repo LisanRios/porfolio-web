@@ -414,6 +414,20 @@ app.use((error, _req, res, _next) => {
   });
 });
 
-app.listen(config.port, () => {
+const server = app.listen(config.port, () => {
   console.log(`Portfolio API listening on http://localhost:${config.port}`);
+});
+
+server.on('error', (error) => {
+  if (error.code === 'EADDRINUSE') {
+    console.error(`El puerto ${config.port} ya esta en uso.`);
+    console.error('Cierra el backend anterior o libera el puerto con:');
+    console.error(
+      `netstat -ano | Select-String -Pattern ':${config.port}'`
+    );
+    console.error('Stop-Process -Id <PID> -Force');
+    process.exit(1);
+  }
+
+  throw error;
 });
