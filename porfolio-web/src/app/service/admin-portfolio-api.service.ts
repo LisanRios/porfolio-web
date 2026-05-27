@@ -5,7 +5,11 @@ import { environment } from '../../environments/environment';
 import {
   Certification,
   Education,
+  FocusArea,
+  OrganizationLogo,
   PortfolioData,
+  PortfolioHighlight,
+  PortfolioLink,
   Project,
   Technology,
   WorkExperience,
@@ -145,6 +149,98 @@ export class AdminPortfolioApiService {
   deleteCertification(certificationId: string): Observable<void> {
     return this.http.delete<void>(
       this.buildUrl(`/certifications/${encodeURIComponent(certificationId)}`),
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  createOrganization(organization: OrganizationLogo): Observable<OrganizationLogo> {
+    return this.http.post<OrganizationLogo>(
+      this.buildUrl('/organizations'),
+      organization,
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  updateOrganization(
+    organizationId: string,
+    organization: OrganizationLogo
+  ): Observable<OrganizationLogo> {
+    return this.http.put<OrganizationLogo>(
+      this.buildUrl(`/organizations/${encodeURIComponent(organizationId)}`),
+      organization,
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  deleteOrganization(organizationId: string): Observable<void> {
+    return this.http.delete<void>(
+      this.buildUrl(`/organizations/${encodeURIComponent(organizationId)}`),
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  createHighlight(highlight: PortfolioHighlight): Observable<PortfolioHighlight> {
+    return this.http.post<PortfolioHighlight>(this.buildUrl('/highlights'), highlight, {
+      headers: this.buildAuthHeaders(),
+    });
+  }
+
+  updateHighlight(
+    highlightId: string,
+    highlight: PortfolioHighlight
+  ): Observable<PortfolioHighlight> {
+    return this.http.put<PortfolioHighlight>(
+      this.buildUrl(`/highlights/${encodeURIComponent(highlightId)}`),
+      highlight,
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  deleteHighlight(highlightId: string): Observable<void> {
+    return this.http.delete<void>(
+      this.buildUrl(`/highlights/${encodeURIComponent(highlightId)}`),
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  createFocusArea(focusArea: FocusArea): Observable<FocusArea> {
+    return this.http.post<FocusArea>(this.buildUrl('/focus-areas'), focusArea, {
+      headers: this.buildAuthHeaders(),
+    });
+  }
+
+  updateFocusArea(focusAreaId: string, focusArea: FocusArea): Observable<FocusArea> {
+    return this.http.put<FocusArea>(
+      this.buildUrl(`/focus-areas/${encodeURIComponent(focusAreaId)}`),
+      focusArea,
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  deleteFocusArea(focusAreaId: string): Observable<void> {
+    return this.http.delete<void>(
+      this.buildUrl(`/focus-areas/${encodeURIComponent(focusAreaId)}`),
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  createLink(link: PortfolioLink): Observable<PortfolioLink> {
+    return this.http.post<PortfolioLink>(this.buildUrl('/links'), link, {
+      headers: this.buildAuthHeaders(),
+    });
+  }
+
+  updateLink(linkId: string, link: PortfolioLink): Observable<PortfolioLink> {
+    return this.http.put<PortfolioLink>(
+      this.buildUrl(`/links/${encodeURIComponent(linkId)}`),
+      link,
+      { headers: this.buildAuthHeaders() }
+    );
+  }
+
+  deleteLink(linkId: string): Observable<void> {
+    return this.http.delete<void>(
+      this.buildUrl(`/links/${encodeURIComponent(linkId)}`),
       { headers: this.buildAuthHeaders() }
     );
   }

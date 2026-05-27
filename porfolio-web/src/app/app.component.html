@@ -114,12 +114,30 @@
 
 <footer class="container-fluid my-5 text-muted text-center text-small">
   <div class="row">
-    <section class="col-12" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="foc2">¿Interesado en conocerme?</h2>
+    <section
+      class="col-12"
+      aria-labelledby="contact-title"
+      *ngIf="portfolio$ | async as portfolio"
+    >
+      <h2 id="contact-title" class="foc2">
+        {{ portfolio.contactTitle || '¿Interesado en conocerme?' }}
+      </h2>
 
       <div class="social-links">
         <div class="button-group">
           <a
+            *ngFor="let link of footerLinks(portfolio); trackBy: trackLink"
+            class="btn btn-dark border-bottom foc4 foc6"
+            [href]="link.url"
+            [attr.download]="link.downloadName || null"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="{{ link.icon }}" aria-hidden="true"></i>
+            {{ link.label }}
+          </a>
+          <a
+            *ngIf="!footerLinks(portfolio).length"
             class="btn btn-dark border-bottom foc4 foc6"
             href="https://github.com/LisanRios"
             target="_blank"
@@ -130,6 +148,7 @@
           </a>
 
           <a
+            *ngIf="!footerLinks(portfolio).length"
             class="btn btn-dark border-bottom foc4 foc6"
             href="https://www.linkedin.com/in/lisandro-rios-a2882b252/"
             target="_blank"
@@ -140,6 +159,7 @@
           </a>
 
           <a
+            *ngIf="!footerLinks(portfolio).length"
             class="btn btn-dark border-bottom foc4 foc6"
             href="mailto:rios.lisandro369@gmail.com?subject=Contacto%20desde%20el%20portfolio&body=Hola%20Lisandro%2C%0A%0ASoy%20%5BNombre%5D%20de%20%5BEmpresa%5D.%20Queria%20hablar%20contigo%20sobre%20una%20oportunidad%20laboral%20en%20nuestra%20empresa.%20Actualmente%20estamos%20buscando%20a%20alguien%20para%20el%20puesto%20de%20%5BPuesto%5D%2C%20y%20pensamos%20que%20podrias%20ser%20un%20buen%20candidato.%0A%0AEl%20trabajo%20involucra%20%5Bbreve%20descripcion%20del%20trabajo%5D%2C%20y%20creemos%20que%20tus%20habilidades%20y%20experiencia%20encajarian%20perfectamente%20con%20lo%20que%20estamos%20buscando.%0A%0ASi%20estas%20interesado%2C%20me%20encantaria%20discutir%20mas%20detalles%20contigo.%20Espero%20tu%20respuesta!%0A%0ASaludos%20cordiales%2C%0A%5BTu%20nombre%5D%0A%5BTu%20puesto%5D%0A%5BEmpresa%5D%0A%5BTelefono%5D%0A%5BCorreo%20electronico%5D"
           >
@@ -148,6 +168,7 @@
           </a>
 
           <a
+            *ngIf="!footerLinks(portfolio).length"
             class="btn btn-dark button foc2"
             [href]="cvPdfPath"
             download="Lisandro-Gabriel-Rios-De-Morla-CV"
@@ -157,7 +178,9 @@
         </div>
       </div>
 
-      <p class="p-5 yo foc2">&copy;{{ currentYear }} Lisandro Gabriel Rios De Morla</p>
+      <p class="p-5 yo foc2">
+        &copy;{{ currentYear }} {{ portfolio.copyrightName || 'Lisandro Gabriel Rios De Morla' }}
+      </p>
     </section>
   </div>
 </footer>

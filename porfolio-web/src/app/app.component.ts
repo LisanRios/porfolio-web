@@ -5,7 +5,9 @@ import { Observable, Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import { environment } from '../environments/environment';
 import { AdminUser } from './models/admin-user.model';
+import { PortfolioData, PortfolioLink } from './models/portfolio.model';
 import { AuthService } from './service/auth.service';
+import { PorfolioService } from './service/porfolio.service';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
   cvPdfPath = environment.cvPdfPath;
   isDarkMode = false;
   user$: Observable<AdminUser | null>;
+  portfolio$: Observable<PortfolioData>;
 
   private previousTitle = 'Lisandro Rios || Portfolio Web';
   private readonly destroy$ = new Subject<void>();
@@ -49,9 +52,11 @@ export class AppComponent implements OnInit, OnDestroy {
     private titleService: Title,
     private metaService: Meta,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private portfolioService: PorfolioService
   ) {
     this.user$ = this.authService.user$;
+    this.portfolio$ = this.portfolioService.obtenerDatos();
   }
 
   ngOnInit(): void {
@@ -113,5 +118,13 @@ export class AppComponent implements OnInit, OnDestroy {
       property: 'og:description',
       content: metadata.description,
     });
+  }
+
+  footerLinks(portfolio: PortfolioData): PortfolioLink[] {
+    return (portfolio.links ?? []).filter((link) => link.placement === 'footer');
+  }
+
+  trackLink(_index: number, link: PortfolioLink): string {
+    return link.id ?? `${link.placement}-${link.label}`;
   }
 }

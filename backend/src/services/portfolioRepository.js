@@ -14,6 +14,10 @@ const RANGES = {
   technologies: 'technologies!A:E',
   education: 'education!A:G',
   certifications: 'certifications!A:H',
+  organizations: 'organizations!A:F',
+  highlights: 'highlights!A:E',
+  focusAreas: 'focusAreas!A:E',
+  links: 'links!A:G',
 };
 
 export class PortfolioRepository {
@@ -23,13 +27,28 @@ export class PortfolioRepository {
   }
 
   async getPortfolio() {
-    const [profile, projects, work, technologies, education, certifications] = await Promise.all([
+    const [
+      profile,
+      projects,
+      work,
+      technologies,
+      education,
+      certifications,
+      organizations,
+      highlights,
+      focusAreas,
+      links,
+    ] = await Promise.all([
       this.getProfile(),
       this.getProjects(),
       this.getWork(),
       this.getTechnologies(),
       this.getEducation(),
       this.getCertifications(),
+      this.getOrganizations(),
+      this.getHighlights(),
+      this.getFocusAreas(),
+      this.getLinks(),
     ]);
 
     return {
@@ -39,6 +58,10 @@ export class PortfolioRepository {
       tecnology: technologies,
       titule: education,
       certifications,
+      organizations,
+      highlights,
+      focusAreas,
+      links,
     };
   }
 
@@ -308,6 +331,217 @@ export class PortfolioRepository {
     });
   }
 
+  async createOrganization(organization) {
+    const normalizedOrganization = this.normalizeOrganization(organization);
+    await this.ensureIdIsAvailable(RANGES.organizations, normalizedOrganization.id);
+
+    await this.sheets.spreadsheets.values.append({
+      spreadsheetId: this.spreadsheetId,
+      range: RANGES.organizations,
+      valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS',
+      requestBody: {
+        values: [this.organizationToRow(normalizedOrganization)],
+      },
+    });
+
+    return normalizedOrganization;
+  }
+
+  async updateOrganization(organizationId, organization) {
+    const existing = await this.findRowById(
+      RANGES.organizations,
+      organizationId,
+      'Organizacion no encontrada'
+    );
+    const normalizedOrganization = this.normalizeOrganization({
+      ...organization,
+      id: existing.id,
+    });
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `organizations!A${existing.rowNumber}:F${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [this.organizationToRow(normalizedOrganization)],
+      },
+    });
+
+    return normalizedOrganization;
+  }
+
+  async deleteOrganization(organizationId) {
+    const existing = await this.findRowById(
+      RANGES.organizations,
+      organizationId,
+      'Organizacion no encontrada'
+    );
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `organizations!F${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [['FALSE']],
+      },
+    });
+  }
+
+  async createHighlight(highlight) {
+    const normalizedHighlight = this.normalizeHighlight(highlight);
+    await this.ensureIdIsAvailable(RANGES.highlights, normalizedHighlight.id);
+
+    await this.sheets.spreadsheets.values.append({
+      spreadsheetId: this.spreadsheetId,
+      range: RANGES.highlights,
+      valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS',
+      requestBody: {
+        values: [this.highlightToRow(normalizedHighlight)],
+      },
+    });
+
+    return normalizedHighlight;
+  }
+
+  async updateHighlight(highlightId, highlight) {
+    const existing = await this.findRowById(
+      RANGES.highlights,
+      highlightId,
+      'Indicador no encontrado'
+    );
+    const normalizedHighlight = this.normalizeHighlight({ ...highlight, id: existing.id });
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `highlights!A${existing.rowNumber}:E${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [this.highlightToRow(normalizedHighlight)],
+      },
+    });
+
+    return normalizedHighlight;
+  }
+
+  async deleteHighlight(highlightId) {
+    const existing = await this.findRowById(
+      RANGES.highlights,
+      highlightId,
+      'Indicador no encontrado'
+    );
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `highlights!E${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [['FALSE']],
+      },
+    });
+  }
+
+  async createFocusArea(focusArea) {
+    const normalizedFocusArea = this.normalizeFocusArea(focusArea);
+    await this.ensureIdIsAvailable(RANGES.focusAreas, normalizedFocusArea.id);
+
+    await this.sheets.spreadsheets.values.append({
+      spreadsheetId: this.spreadsheetId,
+      range: RANGES.focusAreas,
+      valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS',
+      requestBody: {
+        values: [this.focusAreaToRow(normalizedFocusArea)],
+      },
+    });
+
+    return normalizedFocusArea;
+  }
+
+  async updateFocusArea(focusAreaId, focusArea) {
+    const existing = await this.findRowById(
+      RANGES.focusAreas,
+      focusAreaId,
+      'Area de foco no encontrada'
+    );
+    const normalizedFocusArea = this.normalizeFocusArea({ ...focusArea, id: existing.id });
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `focusAreas!A${existing.rowNumber}:E${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [this.focusAreaToRow(normalizedFocusArea)],
+      },
+    });
+
+    return normalizedFocusArea;
+  }
+
+  async deleteFocusArea(focusAreaId) {
+    const existing = await this.findRowById(
+      RANGES.focusAreas,
+      focusAreaId,
+      'Area de foco no encontrada'
+    );
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `focusAreas!E${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [['FALSE']],
+      },
+    });
+  }
+
+  async createLink(link) {
+    const normalizedLink = this.normalizeLink(link);
+    await this.ensureIdIsAvailable(RANGES.links, normalizedLink.id);
+
+    await this.sheets.spreadsheets.values.append({
+      spreadsheetId: this.spreadsheetId,
+      range: RANGES.links,
+      valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS',
+      requestBody: {
+        values: [this.linkToRow(normalizedLink)],
+      },
+    });
+
+    return normalizedLink;
+  }
+
+  async updateLink(linkId, link) {
+    const existing = await this.findRowById(RANGES.links, linkId, 'Enlace no encontrado');
+    const normalizedLink = this.normalizeLink({ ...link, id: existing.id });
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `links!A${existing.rowNumber}:G${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [this.linkToRow(normalizedLink)],
+      },
+    });
+
+    return normalizedLink;
+  }
+
+  async deleteLink(linkId) {
+    const existing = await this.findRowById(RANGES.links, linkId, 'Enlace no encontrado');
+
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range: `links!G${existing.rowNumber}`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [['FALSE']],
+      },
+    });
+  }
+
   async updateProfileValue(key, value) {
     const values = await this.getValues(RANGES.profile);
     const rowIndex = values.findIndex((row, index) => index > 0 && row[0] === key);
@@ -420,6 +654,53 @@ export class PortfolioRepository {
       credentialUrl: row.credentialUrl,
       description: row.description,
       icon: row.icon,
+    }));
+  }
+
+  async getOrganizations() {
+    const rows = rowsToObjects(await this.getValues(RANGES.organizations));
+
+    return rows.filter((row) => isActive(row.active)).map((row) => ({
+      id: row.id,
+      name: row.name,
+      image: row.image,
+      alt: row.alt,
+      link: row.link,
+    }));
+  }
+
+  async getHighlights() {
+    const rows = rowsToObjects(await this.getValues(RANGES.highlights));
+
+    return rows.filter((row) => isActive(row.active)).map((row) => ({
+      id: row.id,
+      value: row.value,
+      label: row.label,
+      icon: row.icon,
+    }));
+  }
+
+  async getFocusAreas() {
+    const rows = rowsToObjects(await this.getValues(RANGES.focusAreas));
+
+    return rows.filter((row) => isActive(row.active)).map((row) => ({
+      id: row.id,
+      icon: row.icon,
+      title: row.title,
+      description: row.description,
+    }));
+  }
+
+  async getLinks() {
+    const rows = rowsToObjects(await this.getValues(RANGES.links));
+
+    return rows.filter((row) => isActive(row.active)).map((row) => ({
+      id: row.id,
+      label: row.label,
+      url: row.url,
+      icon: row.icon,
+      placement: row.placement,
+      downloadName: row.downloadName,
     }));
   }
 
@@ -593,6 +874,96 @@ export class PortfolioRepository {
       certification.credentialUrl,
       certification.description,
       certification.icon,
+      'TRUE',
+    ];
+  }
+
+  normalizeOrganization(organization) {
+    const id = organization.id || makeId(organization.name);
+
+    return {
+      id,
+      name: organization.name,
+      image: organization.image,
+      alt: organization.alt,
+      link: organization.link ?? '',
+    };
+  }
+
+  organizationToRow(organization) {
+    return [
+      organization.id,
+      organization.name,
+      organization.image,
+      organization.alt,
+      organization.link,
+      'TRUE',
+    ];
+  }
+
+  normalizeHighlight(highlight) {
+    const id = highlight.id || makeId(highlight.label);
+
+    return {
+      id,
+      value: highlight.value,
+      label: highlight.label,
+      icon: highlight.icon,
+    };
+  }
+
+  highlightToRow(highlight) {
+    return [
+      highlight.id,
+      highlight.value,
+      highlight.label,
+      highlight.icon,
+      'TRUE',
+    ];
+  }
+
+  normalizeFocusArea(focusArea) {
+    const id = focusArea.id || makeId(focusArea.title);
+
+    return {
+      id,
+      icon: focusArea.icon,
+      title: focusArea.title,
+      description: focusArea.description,
+    };
+  }
+
+  focusAreaToRow(focusArea) {
+    return [
+      focusArea.id,
+      focusArea.icon,
+      focusArea.title,
+      focusArea.description,
+      'TRUE',
+    ];
+  }
+
+  normalizeLink(link) {
+    const id = link.id || makeId(`${link.placement}-${link.label}`);
+
+    return {
+      id,
+      label: link.label,
+      url: link.url,
+      icon: link.icon,
+      placement: link.placement,
+      downloadName: link.downloadName ?? '',
+    };
+  }
+
+  linkToRow(link) {
+    return [
+      link.id,
+      link.label,
+      link.url,
+      link.icon,
+      link.placement,
+      link.downloadName,
       'TRUE',
     ];
   }

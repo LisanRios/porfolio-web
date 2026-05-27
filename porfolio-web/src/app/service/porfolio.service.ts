@@ -55,6 +55,14 @@ export class PorfolioService {
           certifications: remote.certifications?.length
             ? remote.certifications
             : local.certifications ?? [],
+          organizations: remote.organizations?.length
+            ? remote.organizations
+            : local.organizations ?? [],
+          highlights: remote.highlights?.length ? remote.highlights : local.highlights ?? [],
+          focusAreas: remote.focusAreas?.length
+            ? remote.focusAreas
+            : local.focusAreas ?? [],
+          links: remote.links?.length ? remote.links : local.links ?? [],
           about: remote.about || local.about,
         };
       })

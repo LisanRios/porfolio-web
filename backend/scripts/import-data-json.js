@@ -55,6 +55,10 @@ const sheetDefinitions = {
     'icon',
     'active',
   ],
+  organizations: ['id', 'name', 'image', 'alt', 'link', 'active'],
+  highlights: ['id', 'value', 'label', 'icon', 'active'],
+  focusAreas: ['id', 'icon', 'title', 'description', 'active'],
+  links: ['id', 'label', 'url', 'icon', 'placement', 'downloadName', 'active'],
 };
 
 const rawData = JSON.parse(await readFile(dataPath, 'utf8'));
@@ -71,6 +75,10 @@ await sheets.spreadsheets.values.batchClear({
       'technologies!A:E',
       'education!A:G',
       'certifications!A:H',
+      'organizations!A:F',
+      'highlights!A:E',
+      'focusAreas!A:E',
+      'links!A:G',
     ],
   },
 });
@@ -89,6 +97,17 @@ await sheets.spreadsheets.values.batchUpdate({
           ['foto', data.foto],
           ['position', data.position],
           ['ubication', data.ubication],
+          ['heroKicker', data.heroKicker || `Hola, soy ${data.nombre}`],
+          [
+            'heroSubtitle',
+            data.heroSubtitle ||
+              'Especializado en crear experiencias web modernas, accesibles y orientadas a producto.',
+          ],
+          ['contactTitle', data.contactTitle || '¿Interesado en conocerme?'],
+          [
+            'copyrightName',
+            data.copyrightName || 'Lisandro Gabriel Rios De Morla',
+          ],
           [
             'about',
             data.about ||
@@ -171,6 +190,61 @@ await sheets.spreadsheets.values.batchUpdate({
             certification.credentialUrl,
             certification.description,
             certification.icon,
+            'TRUE',
+          ]),
+        ],
+      },
+      {
+        range: 'organizations!A:F',
+        values: [
+          sheetDefinitions.organizations,
+          ...(data.organizations ?? []).map((organization) => [
+            organization.id || makeId(organization.name),
+            organization.name,
+            organization.image,
+            organization.alt,
+            organization.link ?? '',
+            'TRUE',
+          ]),
+        ],
+      },
+      {
+        range: 'highlights!A:E',
+        values: [
+          sheetDefinitions.highlights,
+          ...(data.highlights ?? []).map((highlight) => [
+            highlight.id || makeId(highlight.label),
+            highlight.value,
+            highlight.label,
+            highlight.icon,
+            'TRUE',
+          ]),
+        ],
+      },
+      {
+        range: 'focusAreas!A:E',
+        values: [
+          sheetDefinitions.focusAreas,
+          ...(data.focusAreas ?? []).map((focusArea) => [
+            focusArea.id || makeId(focusArea.title),
+            focusArea.icon,
+            focusArea.title,
+            focusArea.description,
+            'TRUE',
+          ]),
+        ],
+      },
+      {
+        range: 'links!A:G',
+        values: [
+          sheetDefinitions.links,
+          ...(data.links ?? []).map((link) => [
+            link.id || makeId(`${link.placement}-${link.label}`),
+            link.label,
+            link.url,
+            link.icon,
+            link.placement,
+            link.downloadName ?? '',
             'TRUE',
           ]),
         ],

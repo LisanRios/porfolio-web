@@ -4,12 +4,20 @@ export interface PortfolioData {
   foto: string;
   position: string;
   ubication: string;
+  heroKicker?: string;
+  heroSubtitle?: string;
+  contactTitle?: string;
+  copyrightName?: string;
   about?: string;
   project: Project[];
   tecnology: Technology[];
   titule: Education[];
   trabajo: WorkExperience[];
   certifications?: Certification[];
+  organizations?: OrganizationLogo[];
+  highlights?: PortfolioHighlight[];
+  focusAreas?: FocusArea[];
+  links?: PortfolioLink[];
 }
 
 export interface Project {
@@ -68,4 +76,35 @@ export interface Certification {
   credentialUrl: string;
   description: string;
   icon: string;
+}
+
+export interface OrganizationLogo {
+  id?: string;
+  name: string;
+  image: string;
+  alt: string;
+  link: string;
+}
+
+export interface PortfolioHighlight {
+  id?: string;
+  value: string;
+  label: string;
+  icon: string;
+}
+
+export interface FocusArea {
+  id?: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface PortfolioLink {
+  id?: string;
+  label: string;
+  url: string;
+  icon: string;
+  placement: string;
+  downloadName?: string;
 }

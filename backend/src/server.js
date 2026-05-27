@@ -65,6 +65,37 @@ const certificationSchema = z.object({
   icon: z.string().trim().min(1),
 });
 
+const organizationSchema = z.object({
+  id: z.string().trim().optional(),
+  name: z.string().trim().min(1),
+  image: z.string().trim().min(1),
+  alt: z.string().trim().min(1),
+  link: z.string().trim().default(''),
+});
+
+const highlightSchema = z.object({
+  id: z.string().trim().optional(),
+  value: z.string().trim().min(1),
+  label: z.string().trim().min(1),
+  icon: z.string().trim().min(1),
+});
+
+const focusAreaSchema = z.object({
+  id: z.string().trim().optional(),
+  icon: z.string().trim().min(1),
+  title: z.string().trim().min(1),
+  description: z.string().trim().min(1),
+});
+
+const linkSchema = z.object({
+  id: z.string().trim().optional(),
+  label: z.string().trim().min(1),
+  url: z.string().trim().min(1),
+  icon: z.string().trim().min(1),
+  placement: z.string().trim().min(1),
+  downloadName: z.string().trim().optional().default(''),
+});
+
 const profileValueSchema = z.object({
   value: z.string().trim().min(1),
 });
@@ -239,6 +270,114 @@ app.put('/certifications/:certificationId', requireAdmin, async (req, res, next)
 app.delete('/certifications/:certificationId', requireAdmin, async (req, res, next) => {
   try {
     await repository.deleteCertification(req.params.certificationId);
+    res.status(204).send();
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post('/organizations', requireAdmin, async (req, res, next) => {
+  try {
+    const organization = organizationSchema.parse(req.body);
+    res.status(201).json(await repository.createOrganization(organization));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.put('/organizations/:organizationId', requireAdmin, async (req, res, next) => {
+  try {
+    const organization = organizationSchema.parse(req.body);
+    res.json(await repository.updateOrganization(req.params.organizationId, organization));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.delete('/organizations/:organizationId', requireAdmin, async (req, res, next) => {
+  try {
+    await repository.deleteOrganization(req.params.organizationId);
+    res.status(204).send();
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post('/highlights', requireAdmin, async (req, res, next) => {
+  try {
+    const highlight = highlightSchema.parse(req.body);
+    res.status(201).json(await repository.createHighlight(highlight));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.put('/highlights/:highlightId', requireAdmin, async (req, res, next) => {
+  try {
+    const highlight = highlightSchema.parse(req.body);
+    res.json(await repository.updateHighlight(req.params.highlightId, highlight));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.delete('/highlights/:highlightId', requireAdmin, async (req, res, next) => {
+  try {
+    await repository.deleteHighlight(req.params.highlightId);
+    res.status(204).send();
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post('/focus-areas', requireAdmin, async (req, res, next) => {
+  try {
+    const focusArea = focusAreaSchema.parse(req.body);
+    res.status(201).json(await repository.createFocusArea(focusArea));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.put('/focus-areas/:focusAreaId', requireAdmin, async (req, res, next) => {
+  try {
+    const focusArea = focusAreaSchema.parse(req.body);
+    res.json(await repository.updateFocusArea(req.params.focusAreaId, focusArea));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.delete('/focus-areas/:focusAreaId', requireAdmin, async (req, res, next) => {
+  try {
+    await repository.deleteFocusArea(req.params.focusAreaId);
+    res.status(204).send();
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post('/links', requireAdmin, async (req, res, next) => {
+  try {
+    const link = linkSchema.parse(req.body);
+    res.status(201).json(await repository.createLink(link));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.put('/links/:linkId', requireAdmin, async (req, res, next) => {
+  try {
+    const link = linkSchema.parse(req.body);
+    res.json(await repository.updateLink(req.params.linkId, link));
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.delete('/links/:linkId', requireAdmin, async (req, res, next) => {
+  try {
+    await repository.deleteLink(req.params.linkId);
     res.status(204).send();
   } catch (error) {
     next(error);

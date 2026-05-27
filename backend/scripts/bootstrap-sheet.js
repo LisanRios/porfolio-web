@@ -49,6 +49,10 @@ const sheetDefinitions = {
     'icon',
     'active',
   ],
+  organizations: ['id', 'name', 'image', 'alt', 'link', 'active'],
+  highlights: ['id', 'value', 'label', 'icon', 'active'],
+  focusAreas: ['id', 'icon', 'title', 'description', 'active'],
+  links: ['id', 'label', 'url', 'icon', 'placement', 'downloadName', 'active'],
 };
 
 let metadata;

@@ -2,7 +2,9 @@
   <section class="container" aria-labelledby="hero-title">
     <div class="hero-section">
       <div class="hero-admin-toolbar">
-        <p class="foc2 hero-kicker">Hola, soy {{ portfolio.nombre }}</p>
+        <p class="foc2 hero-kicker">
+          {{ portfolio.heroKicker || 'Hola, soy ' + portfolio.nombre }}
+        </p>
         <button
           *ngIf="isAdmin$ | async"
           type="button"
@@ -27,25 +29,22 @@
           <span>{{ portfolio.ubication }}</span>
         </div>
         <p class="subtitle foc2">
-          Especializado en crear experiencias web modernas, accesibles y
-          orientadas a producto.
+          {{
+            portfolio.heroSubtitle ||
+              'Especializado en crear experiencias web modernas, accesibles y orientadas a producto.'
+          }}
         </p>
 
         <div class="button-group">
           <a
+            *ngFor="let link of linksByPlacement(portfolio, 'hero'); trackBy: trackLink"
             class="btn btn-dark border-bottom foc4"
-            href="mailto:rios.lisandro369@gmail.com"
-          >
-            <i class="fa-regular fa-envelope" aria-hidden="true"></i> Contactar
-          </a>
-
-          <a
-            class="btn btn-dark border-bottom foc4 foc6"
-            href="https://github.com/LisanRios"
+            [href]="link.url"
+            [attr.download]="link.downloadName || null"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="bi bi-github" aria-hidden="true"></i> Ver Proyectos
+            <i class="{{ link.icon }}" aria-hidden="true"></i> {{ link.label }}
           </a>
         </div>
 
@@ -85,6 +84,43 @@
               required
             />
           </label>
+          <label class="wide">
+            Frase superior
+            <input
+              class="form-control"
+              name="profileKicker"
+              [(ngModel)]="profileForm.heroKicker"
+              required
+            />
+          </label>
+          <label class="wide">
+            Bajada principal
+            <textarea
+              class="form-control"
+              name="profileSubtitle"
+              [(ngModel)]="profileForm.heroSubtitle"
+              required
+              rows="3"
+            ></textarea>
+          </label>
+          <label>
+            Título de contacto
+            <input
+              class="form-control"
+              name="profileContactTitle"
+              [(ngModel)]="profileForm.contactTitle"
+              required
+            />
+          </label>
+          <label>
+            Nombre del copyright
+            <input
+              class="form-control"
+              name="profileCopyright"
+              [(ngModel)]="profileForm.copyrightName"
+              required
+            />
+          </label>
           <div class="form-actions">
             <button type="submit" class="btn btn-dark" [disabled]="profileEditor.invalid">
               Guardar
@@ -99,86 +135,117 @@
     </div>
   </section>
 
-  <section class="laLinea" aria-label="Instituciones y organizaciones">
+  <section class="laLinea admin-editable-card" aria-label="Instituciones y organizaciones">
+    <div *ngIf="isAdmin$ | async" class="admin-card-actions carousel-actions">
+      <button
+        type="button"
+        class="admin-icon-button"
+        title="Agregar organización"
+        aria-label="Agregar organización"
+        (click)="startCreateOrganization()"
+      >
+        <i class="bi bi-plus-lg" aria-hidden="true"></i>
+      </button>
+    </div>
     <div class="lineaphotos">
-      <img
-        class="photos"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png"
-        alt="Banco de la Nacion Argentina"
-      />
-      <img
-        class="photos"
-        src="https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900"
-        alt="Argentina Programa"
-      />
-      <img
-        class="photos"
-        src="https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png"
-        alt="INTI"
-      />
-      <img
-        class="photos"
-        src="https://www.argentina.gob.ar/sites/default/files/min_economia.png"
-        alt="Ministerio de Economia"
-      />
-      <img
-        class="photos"
-        src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png"
-        alt="UNSAM"
-      />
-      <img
-        class="photos"
-        src="https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png"
-        alt="Alura Oracle ONE"
-      />
-      <img
-        class="photos"
-        src="https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png"
-        alt="Municipalidad de San Martin"
-      />
+      <ng-container *ngFor="let organization of portfolio.organizations ?? []; trackBy: trackOrganization">
+        <a
+          class="organization-logo"
+          [href]="organization.link || null"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img class="photos" [src]="organization.image" [alt]="organization.alt" />
+        </a>
+      </ng-container>
+      <ng-container *ngFor="let organization of portfolio.organizations ?? []; trackBy: trackOrganization">
+        <img
+          class="photos"
+          [src]="organization.image"
+          alt=""
+          aria-hidden="true"
+        />
+      </ng-container>
+    </div>
+  </section>
 
-      <img
-        class="photos"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        class="photos"
-        src="https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        class="photos"
-        src="https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        class="photos"
-        src="https://www.argentina.gob.ar/sites/default/files/min_economia.png"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        class="photos"
-        src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        class="photos"
-        src="https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        class="photos"
-        src="https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png"
-        alt=""
-        aria-hidden="true"
-      />
+  <section
+    *ngIf="showOrganizationForm || organizationStatus"
+    class="container admin-section-editor"
+    aria-label="Editor de organizaciones"
+  >
+    <form
+      *ngIf="showOrganizationForm"
+      class="admin-inline-form"
+      (ngSubmit)="saveOrganization()"
+      #organizationEditor="ngForm"
+    >
+      <label>
+        ID
+        <input
+          class="form-control"
+          name="organizationId"
+          [(ngModel)]="organizationForm.id"
+          [disabled]="!!editingOrganizationId"
+        />
+      </label>
+      <label>
+        Nombre
+        <input
+          class="form-control"
+          name="organizationName"
+          [(ngModel)]="organizationForm.name"
+          required
+        />
+      </label>
+      <label class="wide">
+        Imagen
+        <input
+          class="form-control"
+          name="organizationImage"
+          [(ngModel)]="organizationForm.image"
+          required
+        />
+      </label>
+      <label>
+        Alt
+        <input
+          class="form-control"
+          name="organizationAlt"
+          [(ngModel)]="organizationForm.alt"
+          required
+        />
+      </label>
+      <label>
+        Link
+        <input
+          class="form-control"
+          name="organizationLink"
+          [(ngModel)]="organizationForm.link"
+        />
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-dark" [disabled]="organizationEditor.invalid">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="closeOrganizationForm()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+    <p *ngIf="organizationStatus" class="foc2" aria-live="polite">
+      {{ organizationStatus }}
+    </p>
+    <div *ngIf="isAdmin$ | async" class="admin-mini-list">
+      <article *ngFor="let organization of portfolio.organizations ?? []; trackBy: trackOrganization">
+        <span>{{ organization.name }}</span>
+        <button type="button" class="admin-icon-button" (click)="startEditOrganization(organization)">
+          <i class="bi bi-pencil" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="admin-icon-button delete" (click)="deleteOrganization(organization)">
+          <i class="bi bi-trash" aria-hidden="true"></i>
+        </button>
+      </article>
     </div>
   </section>
 
@@ -188,7 +255,25 @@
       <h2 id="impact-title" class="foc2">Impacto, foco y forma de construir</h2>
     </div>
 
-    <div class="impact-grid">
+    <div class="impact-grid" *ngIf="portfolio.highlights?.length">
+      <article
+        class="impact-card admin-editable-card"
+        *ngFor="let highlight of portfolio.highlights ?? []; trackBy: trackHighlight"
+      >
+        <div *ngIf="isAdmin$ | async" class="admin-card-actions">
+          <button type="button" class="admin-icon-button" (click)="startEditHighlight(highlight)">
+            <i class="bi bi-pencil" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="admin-icon-button delete" (click)="deleteHighlight(highlight)">
+            <i class="bi bi-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+        <i class="{{ highlight.icon }}" aria-hidden="true"></i>
+        <span>{{ highlight.value }}</span>
+        <p>{{ highlight.label }}</p>
+      </article>
+    </div>
+    <div class="impact-grid" *ngIf="!(portfolio.highlights?.length)">
       <article class="impact-card">
         <span>{{ portfolio.project.length }}+</span>
         <p>Proyectos publicados y en evolución</p>
@@ -207,7 +292,72 @@
       </article>
     </div>
 
-    <div class="craft-grid">
+    <button
+      *ngIf="isAdmin$ | async"
+      type="button"
+      class="btn btn-outline-dark admin-add-row"
+      (click)="startCreateHighlight()"
+    >
+      <i class="bi bi-plus-lg" aria-hidden="true"></i> Agregar indicador
+    </button>
+
+    <form
+      *ngIf="showHighlightForm"
+      class="admin-inline-form"
+      (ngSubmit)="saveHighlight()"
+      #highlightEditor="ngForm"
+    >
+      <label>
+        ID
+        <input
+          class="form-control"
+          name="highlightId"
+          [(ngModel)]="highlightForm.id"
+          [disabled]="!!editingHighlightId"
+        />
+      </label>
+      <label>
+        Valor
+        <input class="form-control" name="highlightValue" [(ngModel)]="highlightForm.value" required />
+      </label>
+      <label>
+        Ícono
+        <input class="form-control" name="highlightIcon" [(ngModel)]="highlightForm.icon" required />
+      </label>
+      <label class="wide">
+        Texto
+        <input class="form-control" name="highlightLabel" [(ngModel)]="highlightForm.label" required />
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-dark" [disabled]="highlightEditor.invalid">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="closeHighlightForm()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+    <p *ngIf="highlightStatus" class="foc2" aria-live="polite">{{ highlightStatus }}</p>
+
+    <div class="craft-grid" *ngIf="portfolio.focusAreas?.length">
+      <article
+        class="admin-editable-card"
+        *ngFor="let focusArea of portfolio.focusAreas ?? []; trackBy: trackFocusArea"
+      >
+        <div *ngIf="isAdmin$ | async" class="admin-card-actions">
+          <button type="button" class="admin-icon-button" (click)="startEditFocusArea(focusArea)">
+            <i class="bi bi-pencil" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="admin-icon-button delete" (click)="deleteFocusArea(focusArea)">
+            <i class="bi bi-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+        <i class="{{ focusArea.icon }}" aria-hidden="true"></i>
+        <h3 class="foc2">{{ focusArea.title }}</h3>
+        <p class="foc2">{{ focusArea.description }}</p>
+      </article>
+    </div>
+    <div class="craft-grid" *ngIf="!(portfolio.focusAreas?.length)">
       <article>
         <i class="bi bi-compass" aria-hidden="true"></i>
         <h3 class="foc2">Producto</h3>
@@ -230,6 +380,58 @@
         </p>
       </article>
     </div>
+    <button
+      *ngIf="isAdmin$ | async"
+      type="button"
+      class="btn btn-outline-dark admin-add-row"
+      (click)="startCreateFocusArea()"
+    >
+      <i class="bi bi-plus-lg" aria-hidden="true"></i> Agregar área
+    </button>
+
+    <form
+      *ngIf="showFocusAreaForm"
+      class="admin-inline-form"
+      (ngSubmit)="saveFocusArea()"
+      #focusAreaEditor="ngForm"
+    >
+      <label>
+        ID
+        <input
+          class="form-control"
+          name="focusAreaId"
+          [(ngModel)]="focusAreaForm.id"
+          [disabled]="!!editingFocusAreaId"
+        />
+      </label>
+      <label>
+        Ícono
+        <input class="form-control" name="focusAreaIcon" [(ngModel)]="focusAreaForm.icon" required />
+      </label>
+      <label class="wide">
+        Título
+        <input class="form-control" name="focusAreaTitle" [(ngModel)]="focusAreaForm.title" required />
+      </label>
+      <label class="wide">
+        Descripción
+        <textarea
+          class="form-control"
+          name="focusAreaDescription"
+          [(ngModel)]="focusAreaForm.description"
+          required
+          rows="4"
+        ></textarea>
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-dark" [disabled]="focusAreaEditor.invalid">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="closeFocusAreaForm()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+    <p *ngIf="focusAreaStatus" class="foc2" aria-live="polite">{{ focusAreaStatus }}</p>
   </section>
 
   <section class="container" aria-labelledby="education-title">
@@ -523,6 +725,98 @@
         >
           Ver diploma
         </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="container" aria-labelledby="links-title">
+    <div class="admin-inline-toolbar pb-2">
+      <div class="section-heading compact">
+        <p class="section-eyebrow">Conversión</p>
+        <h2 id="links-title" class="foc2">Enlaces y llamadas a la acción</h2>
+      </div>
+      <button
+        *ngIf="isAdmin$ | async"
+        type="button"
+        class="admin-icon-button"
+        title="Agregar enlace"
+        aria-label="Agregar enlace"
+        (click)="startCreateLink()"
+      >
+        <i class="bi bi-plus-lg" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <form
+      *ngIf="showLinkForm"
+      class="admin-inline-form"
+      (ngSubmit)="saveLink()"
+      #linkEditor="ngForm"
+    >
+      <label>
+        ID
+        <input
+          class="form-control"
+          name="linkId"
+          [(ngModel)]="linkForm.id"
+          [disabled]="!!editingLinkId"
+        />
+      </label>
+      <label>
+        Texto
+        <input class="form-control" name="linkLabel" [(ngModel)]="linkForm.label" required />
+      </label>
+      <label>
+        Ubicación
+        <select class="form-control" name="linkPlacement" [(ngModel)]="linkForm.placement" required>
+          <option value="hero">Hero</option>
+          <option value="footer">Footer</option>
+        </select>
+      </label>
+      <label>
+        Ícono
+        <input class="form-control" name="linkIcon" [(ngModel)]="linkForm.icon" required />
+      </label>
+      <label class="wide">
+        URL
+        <input class="form-control" name="linkUrl" [(ngModel)]="linkForm.url" required />
+      </label>
+      <label class="wide">
+        Nombre de descarga
+        <input
+          class="form-control"
+          name="linkDownload"
+          [(ngModel)]="linkForm.downloadName"
+          placeholder="Solo para enlaces descargables"
+        />
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-dark" [disabled]="linkEditor.invalid">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="closeLinkForm()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+    <p *ngIf="linkStatus" class="foc2" aria-live="polite">{{ linkStatus }}</p>
+
+    <div class="link-management-grid">
+      <article
+        class="link-management-card admin-editable-card"
+        *ngFor="let link of portfolio.links ?? []; trackBy: trackLink"
+      >
+        <div *ngIf="isAdmin$ | async" class="admin-card-actions">
+          <button type="button" class="admin-icon-button" (click)="startEditLink(link)">
+            <i class="bi bi-pencil" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="admin-icon-button delete" (click)="deleteLink(link)">
+            <i class="bi bi-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+        <i class="{{ link.icon }}" aria-hidden="true"></i>
+        <strong>{{ link.label }}</strong>
+        <span>{{ link.placement }}</span>
       </article>
     </div>
   </section>

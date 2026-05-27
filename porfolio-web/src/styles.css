@@ -1270,6 +1270,75 @@ footer .btn {
   font-weight: 800;
 }
 
+.admin-section-editor {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.admin-add-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.admin-mini-list,
+.link-management-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.admin-mini-list article,
+.link-management-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 64px;
+  border: 1px solid var(--app-border);
+  border-radius: 8px;
+  background: var(--app-surface);
+  padding: 0.75rem;
+  box-shadow: var(--app-shadow-soft);
+}
+
+.admin-mini-list article span,
+.link-management-card strong {
+  flex: 1;
+  color: var(--app-text);
+}
+
+.link-management-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.link-management-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.link-management-card > .admin-card-actions {
+  grid-column: 1 / -1;
+  padding: 0 0 0.25rem;
+}
+
+.link-management-card > i {
+  color: var(--app-primary);
+  font-size: 1.25rem;
+}
+
+.link-management-card span {
+  grid-column: 2;
+  color: var(--app-muted);
+  font-size: 0.9rem;
+}
+
+.organization-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
 html.dark-mode .impact-card,
 html.dark-mode .craft-grid article,
 html.dark-mode .certification-card,
@@ -1279,7 +1348,8 @@ html.dark-mode .hero-meta span {
 
 @media (max-width: 992px) {
   .impact-grid,
-  .certification-grid {
+  .certification-grid,
+  .link-management-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1290,7 +1360,8 @@ html.dark-mode .hero-meta span {
 
 @media (max-width: 576px) {
   .impact-grid,
-  .certification-grid {
+  .certification-grid,
+  .link-management-grid {
     grid-template-columns: 1fr;
   }
 

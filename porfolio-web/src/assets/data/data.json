@@ -4,6 +4,10 @@
   "foto": "https://lh3.googleusercontent.com/a/ACg8ocIOgZjS0G6wUwIHrTKl5ABme33DTipAl2hJvFgKgpW68g=s432-c-no",
   "position": "Programador Full Stack",
   "ubication": "Buenos Aires (Argentina)",
+  "heroKicker": "Hola, soy Lisandro",
+  "heroSubtitle": "Especializado en crear experiencias web modernas, accesibles y orientadas a producto.",
+  "contactTitle": "¿Interesado en conocerme?",
+  "copyrightName": "Lisandro Gabriel Rios De Morla",
   "project": [
     {
       "type": "Página Web",
@@ -451,6 +455,153 @@
       "credentialUrl": "https://www.linkedin.com/in/lisandro-rios-a2882b252/details/certifications/",
       "description": "Formación frontend moderna con énfasis en interfaces dinámicas, componentes y experiencia de usuario.",
       "icon": "bi bi-stars"
+    }
+  ],
+  "organizations": [
+    {
+      "id": "banco-nacion",
+      "name": "Banco de la Nación Argentina",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_Banco_de_la_Nacion_Argentina.svg/750px-Logo_Banco_de_la_Nacion_Argentina.svg.png",
+      "alt": "Banco de la Nación Argentina",
+      "link": "https://www.bna.com.ar/"
+    },
+    {
+      "id": "argentina-programa",
+      "name": "Argentina Programa",
+      "image": "https://pbs.twimg.com/media/E8YoUlFWEAAeBu_?format=jpg&name=900x900",
+      "alt": "Argentina Programa",
+      "link": "https://www.argentina.gob.ar/economia/conocimiento/argentina-programa"
+    },
+    {
+      "id": "inti",
+      "name": "INTI",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/INTI_Logo_2019.png",
+      "alt": "INTI",
+      "link": "https://www.inti.gob.ar/"
+    },
+    {
+      "id": "ministerio-economia",
+      "name": "Ministerio de Economía",
+      "image": "https://www.argentina.gob.ar/sites/default/files/min_economia.png",
+      "alt": "Ministerio de Economía",
+      "link": "https://www.argentina.gob.ar/economia"
+    },
+    {
+      "id": "unsam",
+      "name": "UNSAM",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_UNSAM.png",
+      "alt": "UNSAM",
+      "link": "https://unsam.edu.ar/"
+    },
+    {
+      "id": "alura-oracle-one",
+      "name": "Alura Oracle ONE",
+      "image": "https://raw.githubusercontent.com/joshuaFrias95/Encriptador-Alura-Oracle-ONE/main/img/readme/aluraoracle.png",
+      "alt": "Alura Oracle ONE",
+      "link": "https://www.oracle.com/ar/education/oracle-next-education/"
+    },
+    {
+      "id": "municipalidad-san-martin",
+      "name": "Municipalidad de San Martín",
+      "image": "https://autenticacion.sanmartin.gov.ar/App_themes/images/logoMGSM.png",
+      "alt": "Municipalidad de San Martín",
+      "link": "https://sanmartin.gob.ar/"
+    }
+  ],
+  "highlights": [
+    {
+      "id": "proyectos-vivos",
+      "value": "13+",
+      "label": "Proyectos publicados y en evolución",
+      "icon": "bi bi-kanban"
+    },
+    {
+      "id": "experiencias",
+      "value": "4",
+      "label": "Experiencias profesionales y freelance",
+      "icon": "bi bi-briefcase"
+    },
+    {
+      "id": "tecnologias",
+      "value": "12",
+      "label": "Tecnologías aplicadas en productos reales",
+      "icon": "bi bi-cpu"
+    },
+    {
+      "id": "formacion",
+      "value": "4",
+      "label": "Instancias de formación técnica verificable",
+      "icon": "bi bi-mortarboard"
+    }
+  ],
+  "focusAreas": [
+    {
+      "id": "producto",
+      "icon": "bi bi-compass",
+      "title": "Producto",
+      "description": "Interfaces claras, orientadas a usuarios reales y pensadas para escalar."
+    },
+    {
+      "id": "arquitectura",
+      "icon": "bi bi-diagram-3",
+      "title": "Arquitectura",
+      "description": "APIs, datos y frontend conectados con criterios mantenibles."
+    },
+    {
+      "id": "entrega",
+      "icon": "bi bi-rocket-takeoff",
+      "title": "Entrega",
+      "description": "Iteración rápida, documentación útil y despliegues preparados para producción."
+    }
+  ],
+  "links": [
+    {
+      "id": "hero-contacto",
+      "label": "Contactar",
+      "url": "mailto:rios.lisandro369@gmail.com",
+      "icon": "fa-regular fa-envelope",
+      "placement": "hero",
+      "downloadName": ""
+    },
+    {
+      "id": "hero-github",
+      "label": "Ver Proyectos",
+      "url": "https://github.com/LisanRios",
+      "icon": "bi bi-github",
+      "placement": "hero",
+      "downloadName": ""
+    },
+    {
+      "id": "footer-github",
+      "label": "GitHub",
+      "url": "https://github.com/LisanRios",
+      "icon": "bi bi-github",
+      "placement": "footer",
+      "downloadName": ""
+    },
+    {
+      "id": "footer-linkedin",
+      "label": "Linkedin",
+      "url": "https://www.linkedin.com/in/lisandro-rios-a2882b252/",
+      "icon": "bx bxl-linkedin",
+      "placement": "footer",
+      "downloadName": ""
+    },
+    {
+      "id": "footer-correo",
+      "label": "Correo",
+      "url": "mailto:rios.lisandro369@gmail.com?subject=Contacto%20desde%20el%20portfolio",
+      "icon": "fa-regular fa-envelope",
+      "placement": "footer",
+      "downloadName": ""
+    },
+    {
+      "id": "footer-cv",
+      "label": "Descargar Curriculum Vitae",
+      "url": "assets/data/CV_Lisandro_Rios_De_Morla.pdf",
+      "icon": "bi bi-file-earmark-person",
+      "placement": "footer",
+      "downloadName": "Lisandro-Gabriel-Rios-De-Morla-CV"
     }
   ]
 }
