@@ -239,6 +239,63 @@ npm test -- --watch=false --browsers=ChromeHeadless
 
 ## Producción Paso a Paso
 
+### Opcion gratis: Render Blueprint
+
+Este repo incluye `render.yaml` en la raiz para desplegar sin billing en Render:
+
+- `lisanrios-porfolio-api`: backend Express en plan `free`.
+- `lisanrios-porfolio-web`: frontend Angular como static site.
+
+En Render, crear un Blueprint con:
+
+```txt
+Branch: main
+Blueprint Path: render.yaml
+```
+
+Render va a pedir estas variables porque estan marcadas con `sync: false`:
+
+```env
+GOOGLE_CLIENT_ID=tu-web-client-id.apps.googleusercontent.com
+GOOGLE_SHEET_ID=id-real-de-la-planilla
+GOOGLE_SERVICE_ACCOUNT_EMAIL=service-account@proyecto.iam.gserviceaccount.com
+GOOGLE_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n
+ADMIN_EMAILS=admin1@example.com,admin2@example.com
+```
+
+La URL esperada del backend es:
+
+```txt
+https://lisanrios-porfolio-api.onrender.com
+```
+
+Probar:
+
+```txt
+https://lisanrios-porfolio-api.onrender.com/health
+```
+
+El frontend de produccion ya apunta a esa API desde
+`porfolio-web/src/environments/environment.prod.ts`.
+
+Para que el login admin funcione desde Render, agregar este origin al OAuth
+Client ID de Google:
+
+```txt
+https://lisanrios-porfolio-web.onrender.com
+```
+
+Mantener tambien los origins de Firebase si vas a seguir usando Firebase
+Hosting:
+
+```txt
+https://porfolio-web-fe382.web.app
+https://porfolio-web-fe382.firebaseapp.com
+```
+
+Nota: el plan gratis de Render puede dormir el backend cuando no recibe trafico.
+La primera carga despues de un rato puede tardar mas.
+
 ### 1. Preparar OAuth
 
 1. En Google Cloud, abrir `APIs & Services` -> `Credentials`.
